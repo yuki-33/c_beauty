@@ -1,0 +1,19 @@
+=bootstrap_form_with model: @shop, local: true do |f|
+  =f.text_field :name
+  =f.text_field :adress
+  =f.text_field :tel
+  =f.text_field :business_hour
+  =f.text_field :regular_closed
+  =f.text_area :introduction
+  -# =f.file_field :
+  -# =f.hidden_field :image_cache
+  -# -if @shop.image?
+  -#   .m-t-5
+  -#     =image_tag @shop.image_url(:thumb)
+  -#     .checkbox.checkbox-primary.m-t-5
+  -#       =f.check_box_without_bootstrap :remove_image
+  -#       =f.label :remove_image, 'Image Delete'
+  -#
+  =f.submit class: "btn btn-info"
+%br
+=link_to "Back to the list", shops_path

@@ -1,0 +1,19 @@
+=@shop.name
+-# = link_to "#{@work.director.name}", director_path(@work.director)
+%br
+=@shop.adress
+%br
+=@shop.tel
+%br
+="#{@shop.business_hour} / #{@shop.regular_closed}"
+%br
+=@shop.introduction
+%br
+
+%hr
+=link_to "Edit", edit_shop_path(@shop)
+%hr
+=link_to "Delete", shop_path(@shop), method: :delete, data: {confirm: "Are you sure?"}
+
+%br
+=link_to "Back to the list", shops_path
