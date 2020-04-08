@@ -1,21 +1,18 @@
 .container
-  .row.list-group
-    -@shops.each do |shop|
-      .list-group-item
-        -# =link_to "#{work.title} / #{work.director.name}(#{work.release.year})", work_path(work)
-        %hr
-        = " SHOP :"
-        =link_to "#{shop.name}", shop_path(shop)
-        -# = link_to "#{work.title}", work_path(work)
-        -# = " /#{work.director.name} (#{work.release.year})"
-        %br
-        = " ADRESS :"
-        =shop.adress
-        %br
-        = " TEL :"
-        =shop.tel
-        %hr
-        -# =link_to "Edit", edit_work_path(work)
-        -# =link_to "Delete", work_path(work), method: :delete, data: {confirm: "Are you sure?"}
-
-=link_to "Registrarion", new_shop_path
+  -@shops.each do |shop|
+    -# =link_to "#{work.title} / #{work.director.name}(#{work.release.year})", work_path(work)
+    .row
+      SHOP :
+      =link_to "#{shop.name}", shop_path(shop)
+      -# = link_to "#{work.title}", work_path(work)
+      -# = " /#{work.director.name} (#{work.release.year})"
+    .row
+      ADRESS :
+      =shop.adress
+    .row      
+      TEL :
+      =shop.tel
+      -# =link_to "Edit", edit_work_path(work)
+      -# =link_to "Delete", work_path(work), method: :delete, data: {confirm: "Are you sure?"}
+.container
+  =link_to "Registrarion", new_shop_path
