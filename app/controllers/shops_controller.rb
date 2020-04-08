@@ -53,7 +53,8 @@ class ShopsController < ApplicationController
       :regular_closed,
       :business_hour,
       :introduction,
-      :image
+      :image,
+      :category
     )
   end
 
