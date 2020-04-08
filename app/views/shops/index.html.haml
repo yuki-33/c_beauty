@@ -4,15 +4,15 @@
     .row
       SHOP :
       =link_to "#{shop.name}", shop_path(shop)
-      -# = link_to "#{work.title}", work_path(work)
-      -# = " /#{work.director.name} (#{work.release.year})"
     .row
       ADRESS :
       =shop.adress
-    .row      
+    .row
       TEL :
       =shop.tel
-      -# =link_to "Edit", edit_work_path(work)
-      -# =link_to "Delete", work_path(work), method: :delete, data: {confirm: "Are you sure?"}
+    .row
+      =image_tag shop.image_url, class: 'img-fluid'
+      -# =link_to "Edit", edit_shop_path(shop)
+      -# =link_to "Delete", work_path(shop), method: :delete, data: {confirm: "Are you sure?"}
 .container
   =link_to "Registrarion", new_shop_path
