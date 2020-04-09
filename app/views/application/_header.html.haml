@@ -1,0 +1,99 @@
+/ start header section
+%header
+  .navbar-default
+    / start top search
+    .top-search.bg-black
+      .container
+        %form.search-form{"accept-charset" => "utf-8", :action => "search.html", :method => "GET"}
+          .input-group
+            %span.input-group-addon.cursor-pointer
+              %button.search-form_submit.fas.fa-search.font-size18.text-white{:type => "submit"}
+            %input.search-form_input.form-control{:autocomplete => "off", :name => "s", :placeholder => "Type & hit enter...", :type => "text"}/
+            %span.input-group-addon.close-search
+              %i.fas.fa-times.font-size18.line-height-28.margin-5px-top
+    / end top search
+    .container
+      .row.align-items-center
+        .col-12.col-lg-12
+          .menu_area.alt-font.sm-padding-10px-tb
+            %nav.navbar.navbar-expand-lg.navbar-light.no-padding
+              .navbar-header.navbar-header-custom
+                / start logo
+                %a.navbar-brand.logo4{:href => "index.html"}
+                  %img#logo{:alt => "logo", :src => "img/logos/logo.png"}/
+                / end logo
+              .navbar-toggler
+              / start menu area
+              %ul#nav.navbar-nav.ml-auto{:style => "display: none;"}
+                %li
+                  %a{:href => "#"} Home
+                  %ul
+                    %li
+                      %a{:href => "demo-1.html"} Demo-1
+                    %li
+                      %a{:href => "demo-2.html"} Demo-2
+                    %li
+                      %a{:href => "demo-3.html"} Demo-3
+                %li
+                  %a{:href => "about.html"} About Us
+                %li
+                  %a{:href => "#"} Pages
+                  %ul
+                    %li
+                      %a{:href => "testimonial.html"} Testimonial
+                    %li
+                      %a{:href => "offer-packages.html"} Offre Packages
+                    %li
+                      %a{:href => "my-booking.html"} My Booking
+                    %li
+                      %a{:href => "restaurant.html"} Restaurant
+                    %li
+                      %a{:href => "#"} Other
+                      %ul
+                        %li
+                          %a{:href => "login.html"} Login
+                        %li
+                          %a{:href => "registration.html"} Registration
+                        %li
+                          %a{:href => "coming-soon.html"} Coming Soon
+                        %li
+                          %a{:href => "404-page.html"} 404 Page
+                %li
+                  %a{:href => "#"} Rooms
+                  %ul
+                    %li
+                      %a{:href => "our-rooms.html"} Our Rooms
+                    %li
+                      %a{:href => "single-room.html"} Single Rooms
+                %li
+                  %a{:href => "#"} Gallery
+                  %ul
+                    %li
+                      %a{:href => "gallery-style1.html"} Gallery style1
+                    %li
+                      %a{:href => "gallery-style2.html"} Gallery style2
+                    %li
+                      %a{:href => "gallery-masonry.html"} Gallery Masonry
+                    %li
+                      %a{:href => "single-gallery.html"} Single Gallery
+                %li
+                  %a{:href => "#"} Blog
+                  %ul
+                    %li
+                      %a{:href => "blog-grid.html"} Blog Grid
+                    %li
+                      %a{:href => "blog-details.html"} Blog Detail
+                    %li
+                      %a{:href => "blog-masonry.html"} Blog Masonry
+                %li
+                  %a{:href => "contact-us.html"} Contact
+              / end menu area
+              / start atribute navigation
+              .attr-nav.sm-no-margin.sm-margin-65px-right.xs-margin-50px-right
+                %ul.no-margin-top
+                  %li.search
+                    %a{:href => "#"}
+                      %i.fas.fa-search
+              / end atribute navigation
+/ end header section
+/ start banner

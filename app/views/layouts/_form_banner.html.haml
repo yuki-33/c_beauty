@@ -1,0 +1,26 @@
+  / start banner form
+  .banner-form
+    .container
+      .bg-white-opacity.padding-40px-all.sm-padding-30px-all.xs-padding-20px-all.border-radius-3
+        %form{:action => "#!", :method => "post"}
+          .row.align-items-center.justify-content-center
+            .col-md-6.col-lg-3
+              .form-group
+                %label Arrival Date
+                %input{"data-provide" => "datepicker", :name => "date", :placeholder => "Date:", :type => "text"}/
+            .col-md-6.col-lg-3
+              .form-group
+                %label Departure Date
+                %input{"data-provide" => "datepicker", :name => "date", :placeholder => "Date:", :type => "text"}/
+            .col-md-6.col-lg-3
+              .form-group
+                .select-option
+                  %label Guests
+                  %select
+                    %option{:value => "0"} 0
+                    %option{:value => "1"} 1
+                    %option{:value => "2"} 2
+                    %option{:value => "3"} 3
+            .col-md-6.col-lg-3.margin-30px-top.xs-margin-15px-top
+              %button.butn.no-margin-bottom.float-right{:type => "submit"} Check Availability
+  / end banner form
