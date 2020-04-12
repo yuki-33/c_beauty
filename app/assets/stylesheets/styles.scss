@@ -19,9 +19,9 @@
     09. Pages
     10. Portfolio
     11. Blog
-    12. Contact info        
+    12. Contact info
     13. Footer
-    
+
 ---------------------------------- */
 
 $PrimaryColor: #2196f3;
@@ -29,7 +29,7 @@ $PrimaryRgbColor: rgb(33, 150, 243);
 
 $desk-lg-screen: 1200px;
 $desk-md-screen: 1199px;
-$desk-sm-screen: 992px; 
+$desk-sm-screen: 992px;
 $desk-xs-screen: 991px;
 $tablet-sm-screen: 768px;
 $tablet-xs-screen: 767px;
@@ -563,7 +563,7 @@ input {
       color: #232323;
     }
   }
-}    
+}
 
 /* header-style-1 */
 .header-style-1 {
@@ -595,7 +595,7 @@ input {
   position: relative;
 
   .header-text {
-    
+
 
     h1 {
       font-size: 40px;
@@ -636,7 +636,7 @@ input {
 
 @media screen and (max-width: $desk-xs-screen) {
   .line-banner .header-text {
-    
+
     h1 {
       font-size: 42px;
       line-height: 48px;
@@ -672,7 +672,7 @@ input {
   position: relative;
 
   .header-text {
-    
+
     h1 {
       font-size: 80px;
       color: #fff;
@@ -743,7 +743,7 @@ input {
   position: relative;
 
   .header-text {
-    
+
     h1 {
       font-size: 70px;
       color: #fff;
@@ -780,7 +780,7 @@ input {
 
 @media screen and (max-width: $desk-xs-screen) {
   .laxury-banner .header-text {
-    
+
     h1 {
       font-size: 42px;
       line-height: 55px;
@@ -790,7 +790,7 @@ input {
 
 @media screen and (max-width: $tablet-xs-screen) {
   .laxury-banner {
-    
+
     .header-text h1 {
       font-size: 36px;
       line-height: 42px;
@@ -2437,7 +2437,7 @@ ul.countdown li {
         }
 
         }
-        
+
       }
     }
 
@@ -2990,7 +2990,7 @@ footer {
 }
 
 @media screen and (max-width: $tablet-xs-screen) {
-  
+
   footer .list-style-1 li {
     padding: 0 0 5px 0;
 
