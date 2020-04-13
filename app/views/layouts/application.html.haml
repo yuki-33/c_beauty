@@ -8,9 +8,19 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     -# = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    =render 'header'
+    #preloader
+      .row.loader
+        .loader-icon
+    / end page loading
+    / start main-wrapper section
+    .main-wrapper
+      =render 'header'
 
-    = yield
-    =render 'footer'    
+      = yield
+      =render 'footer'
+    / start scroll to top
+    %a.scroll-to-top{:href => "javascript:void(0)"}
+      %i.fas.fa-angle-up{"aria-hidden" => "true"}
+    / end scroll to top
 
-  = javascript_include_tag "application"
+    = javascript_include_tag "application"

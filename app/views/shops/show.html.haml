@@ -25,134 +25,142 @@
 -#     .loader-icon
 -# / end page loading
 / start main-wrapper section
-.main-wrapper
+-# .main-wrapper
 
-  / start page title section
-  %section.page-title-section.bg-img.cover-background{"data-background" => "#{@shop.image_url}", "data-overlay-dark" => "1"}
-    .container
-      %h1=@shop.name
-      -# %ul
-      -#   %li
-      -#     %a{:href => "index.html"} Home
-      -#   %li
-      -#     %a{:href => "#!"} Single Room
-  / end page title section
-  / start single rooms section
-  %section
-    .container
-      .row
-        .col-lg-10.center-col
-          #single-room.owl-carousel.owl-theme
+/ start page title section
+%section.page-title-section.bg-img.cover-background{"data-background" => "#{@shop.image_url}", "data-overlay-dark" => "1"}
+  .container
+    %h1=@shop.name
+    -# %ul
+    -#   %li
+    -#     %a{:href => "index.html"} Home
+    -#   %li
+    -#     %a{:href => "#!"} Single Room
+/ end page title section
+/ start single rooms section
+%section
+  .container
+    .row
+      .col-lg-10.center-col
+        #single-room.owl-carousel.owl-theme
+          -(2..4).each do |i|
             %div
-              %img{:alt => "", :src => "#{@shop.image_2_url}"}/
-            %div
-              %img{:alt => "", :src => "#{@shop.image_3_url}"}/
-            %div
-              %img{:alt => "", :src => "#{@shop.image_4_url}"}/
-            -# %div
-            -#   %img{:alt => "", :src => "img/content/room-14.jpg"}/
-          .margin-30px-top
-            .horizontaltab.tab-style1
-              %ul.resp-tabs-list.hor_1
-                %li Shop Details
-                %li Location
-                %li Reviews
-              .resp-tabs-container.hor_1
-                %div
-                  .border-bottom.margin-30px-bottom.padding-30px-bottom
-                    %h4.font-size28.xs-font-size24 About us
-                    %p.no-margin-bottom It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages.
-                  %h4.font-size28.xs-font-size24 Facility
-                  .row
-                    .col-md-4
-                      %ul.list-style-2
-                        %li Casino
-                        %li Health Club
-                        %li Pet Friendly
-                        %li Safe Deposit Box
-                    -# .col-md-4
-                    -#   %ul.list-style-2
-                    -#     %li Elevator
-                    -#     %li Minibar
-                    -#     %li Restaurant
-                    -#     %li Sauna
-                    -# .col-md-4
-                    -#   %ul.list-style-2
-                    -#     %li Garage Space
-                    -#     %li Parking
-                    -#     %li Room Service
-                    -#     %li Wi-Fi
-                %div
-                  %h4.font-size28.xs-font-size24 Location
-                  %iframe#gmap_canvas.map{:marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?q=london&t=&z=13&ie=UTF8&iwloc=&output=embed"}
-                  .row.margin-40px-top
-                    .col-md-4.xs-margin-20px-bottom
-                      %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom City
-                      %p.no-margin-bottom London
-                    .col-md-4.xs-margin-20px-bottom
-                      %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Shop contact
-                      %p.no-margin-bottom (+44) 123 456 789
-                      %p.no-margin-bottom City Main Street
-                    .col-md-4
-                      %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Reservations
-                      %p.no-margin-bottom your@name.com
-                %div
-                  %h4.font-size28.xs-font-size24 Reviews
-                  .blogs
-                    .comments-area
-                      .comment-box
-                        .author-thumb
-                          %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/01.png"}/
-                        .comment-info
-                          %h6
-                            %a{:href => "javascript:void(0);"} Alex Joyrina
-                          %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          .reply
-                            %a{:href => "javascript:void(0);"}
-                              %i.fa.fa-reply{"aria-hidden" => "true"}
-                              Reply
-                      .comment-box
-                        .author-thumb
-                          %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/02.png"}/
-                        .comment-info
-                          %h6
-                            %a{:href => "javascript:void(0);"} Jama Karleny
-                          %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          .reply
-                            %a{:href => "javascript:void(0);"}
-                              %i.fa.fa-reply{"aria-hidden" => "true"}
-                              Reply
-                      .comment-box
-                        .author-thumb
-                          %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/03.png"}/
-                        .comment-info
-                          %h6
-                            %a{:href => "javascript:void(0);"} Ivonne Drennen
-                          %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          .reply
-                            %a{:href => "javascript:void(0);"}
-                              %i.fa.fa-reply{"aria-hidden" => "true"}
-                              Reply
-                    .comment-form
-                      %div
-                        %h4.font-size28.xs-font-size24 Post a Comment
-                      %form{:action => "#!", :method => "post"}
-                        .row
-                          .col-md-6
-                            .form-group
-                              %input#form_name{:name => "name", :placeholder => "Name", :type => "text"}/
-                          .col-md-6
-                            .form-group
-                              %input#form_email{:name => "email", :placeholder => "Email", :type => "email"}/
-                          .col-md-12
-                            .form-group
-                              %textarea#form_message{:name => "message", :placeholder => "Message", :rows => "4"}
-                          .col-md-12
-                            %button.butn{:type => "submit"}
-                              %span Send Message
+              -# %img{:alt => "", :src => "#{@shop.image_2_url}"}/
+              =image_tag @shop.try("image_#{i}_url", :shop_image)
+        %section
+          .container
+            .row.align-items-center
+              .col-md-6.xs-margin-30px-bottom
+                .row
+                  .col-sm-6.mobile-display-none
+                    %img{:alt => "", :src => "/img/content/08.jpg"}/
+                  .col-sm-6.mobile-display-none
+                    %img{:alt => "", :src => "/img/content/09.jpg"}/
+              .col-md-6.align-self-center
+                .row.justify-content-center
+                  .col-lg-10
+                    .margin-20px-bottom.sm-margin-5px-bottom.text-center.sm-text-left.text-uppercase.letter-spacing-2 hotel fivestar
+                    %h4.margin-30px-bottom.sm-margin-15px-bottom.font-size34.sm-font-size30.text-center.sm-text-left Explore Our Restaurant
+                    %p.no-margin-bottom.text-center It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+        / end about section
+        .margin-30px-top
+          .horizontaltab.tab-style1
+            %ul.resp-tabs-list.hor_1
+              %li Shop Details
+              %li Location
+              %li Reviews
+            .resp-tabs-container.hor_1
+              %div
+                .border-bottom.margin-30px-bottom.padding-30px-bottom
+                  %h4.font-size28.xs-font-size24 About us
+                  %p.no-margin-bottom It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages.
+                %h4.font-size28.xs-font-size24 Facility
+                .row
+                  .col-md-4
+                    %ul.list-style-2
+                      %li Casino
+                      %li Health Club
+                      %li Pet Friendly
+                      %li Safe Deposit Box
+                  -# .col-md-4
+                  -#   %ul.list-style-2
+                  -#     %li Elevator
+                  -#     %li Minibar
+                  -#     %li Restaurant
+                  -#     %li Sauna
+                  -# .col-md-4
+                  -#   %ul.list-style-2
+                  -#     %li Garage Space
+                  -#     %li Parking
+                  -#     %li Room Service
+                  -#     %li Wi-Fi
+              %div
+                %h4.font-size28.xs-font-size24 Location
+                %iframe#gmap_canvas.map{:marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?q=london&t=&z=13&ie=UTF8&iwloc=&output=embed"}
+                .row.margin-40px-top
+                  .col-md-4.xs-margin-20px-bottom
+                    %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom City
+                    %p.no-margin-bottom London
+                  .col-md-4.xs-margin-20px-bottom
+                    %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Shop contact
+                    %p.no-margin-bottom (+44) 123 456 789
+                    %p.no-margin-bottom City Main Street
+                  .col-md-4
+                    %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Reservations
+                    %p.no-margin-bottom your@name.com
+              %div
+                %h4.font-size28.xs-font-size24 Reviews
+                .blogs
+                  .comments-area
+                    .comment-box
+                      .author-thumb
+                        %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/01.png"}/
+                      .comment-info
+                        %h6
+                          %a{:href => "javascript:void(0);"} Alex Joyrina
+                        %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        .reply
+                          %a{:href => "javascript:void(0);"}
+                            %i.fa.fa-reply{"aria-hidden" => "true"}
+                            Reply
+                    .comment-box
+                      .author-thumb
+                        %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/02.png"}/
+                      .comment-info
+                        %h6
+                          %a{:href => "javascript:void(0);"} Jama Karleny
+                        %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        .reply
+                          %a{:href => "javascript:void(0);"}
+                            %i.fa.fa-reply{"aria-hidden" => "true"}
+                            Reply
+                    .comment-box
+                      .author-thumb
+                        %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/03.png"}/
+                      .comment-info
+                        %h6
+                          %a{:href => "javascript:void(0);"} Ivonne Drennen
+                        %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        .reply
+                          %a{:href => "javascript:void(0);"}
+                            %i.fa.fa-reply{"aria-hidden" => "true"}
+                            Reply
+                  .comment-form
+                    %div
+                      %h4.font-size28.xs-font-size24 Post a Comment
+                    %form{:action => "#!", :method => "post"}
+                      .row
+                        .col-md-6
+                          .form-group
+                            %input#form_name{:name => "name", :placeholder => "Name", :type => "text"}/
+                        .col-md-6
+                          .form-group
+                            %input#form_email{:name => "email", :placeholder => "Email", :type => "email"}/
+                        .col-md-12
+                          .form-group
+                            %textarea#form_message{:name => "message", :placeholder => "Message", :rows => "4"}
+                        .col-md-12
+                          %button.butn{:type => "submit"}
+                            %span Send Message
   / end single rooms section
 / end main-wrapper section
-/ start scroll to top
-%a.scroll-to-top{:href => "javascript:void(0)"}
-  %i.fas.fa-angle-up{"aria-hidden" => "true"}
-/ end scroll to top
