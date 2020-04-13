@@ -49,12 +49,20 @@ class ShopsController < ApplicationController
       :name,
       :area_id,
       :adress,
+      :email,
+      :website,
       :tel,
       :regular_closed,
       :business_hour,
       :introduction,
+      :about_us,
       :image,
-      :category
+      :image_2,
+      :image_3,
+      :image_4,
+      :image_owner,
+      :image_employee,
+      category_ids: []
     )
   end
 
