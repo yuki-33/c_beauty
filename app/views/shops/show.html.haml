@@ -37,6 +37,35 @@
     -#   %li
     -#     %a{:href => "#!"} Single Room
 / end page title section
+%section
+  .container
+    .row.align-items-center
+      .col-md-4.xs-margin-30px-bottom
+        .row
+          .col-sm-6.mobile-display-none
+            %img{:alt => "", :src => "/img/content/08.jpg"}/
+      .col-md-8.align-self-center
+        .row.justify-content-center
+          .col-lg-10
+            %h4.margin-10px-bottom.sm-margin-5px-bottom.font-size34.sm-font-size30.text-center.sm-text-left=@shop.name
+            .margin-30px-bottom.sm-margin-15px-bottom.text-center.sm-text-left.text-uppercase.letter-spacing-2 サロン　ネーム　カタカナ
+            %p.no-margin-bottom.text-center It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+/ end about section
+-# %section
+-#   .container
+-#     .row.align-items-center
+-#       .col-md-6.xs-margin-30px-bottom
+-#         .row
+-#           .col-sm-6.mobile-display-none
+-#             %img{:alt => "", :src => "img/content/08.jpg"}/
+-#           .col-sm-6.mobile-display-none
+-#             %img{:alt => "", :src => "img/content/09.jpg"}/
+-#       .col-md-6.align-self-center
+-#         .row.justify-content-center
+-#           .col-lg-10
+-#             .margin-20px-bottom.sm-margin-5px-bottom.text-center.sm-text-left.text-uppercase.letter-spacing-2 hotel fivestar
+-#             %h4.margin-30px-bottom.sm-margin-15px-bottom.font-size34.sm-font-size30.text-center.sm-text-left Explore Our Restaurant
+-#             %p.no-margin-bottom.text-center It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
 / start single rooms section
 %section
   .container
@@ -47,26 +76,11 @@
             %div
               -# %img{:alt => "", :src => "#{@shop.image_2_url}"}/
               =image_tag @shop.try("image_#{i}_url", :shop_image)
-        %section
-          .container
-            .row.align-items-center
-              .col-md-6.xs-margin-30px-bottom
-                .row
-                  .col-sm-6.mobile-display-none
-                    %img{:alt => "", :src => "/img/content/08.jpg"}/
-                  .col-sm-6.mobile-display-none
-                    %img{:alt => "", :src => "/img/content/09.jpg"}/
-              .col-md-6.align-self-center
-                .row.justify-content-center
-                  .col-lg-10
-                    .margin-20px-bottom.sm-margin-5px-bottom.text-center.sm-text-left.text-uppercase.letter-spacing-2 hotel fivestar
-                    %h4.margin-30px-bottom.sm-margin-15px-bottom.font-size34.sm-font-size30.text-center.sm-text-left Explore Our Restaurant
-                    %p.no-margin-bottom.text-center It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-        / end about section
+
         .margin-30px-top
           .horizontaltab.tab-style1
             %ul.resp-tabs-list.hor_1
-              %li Shop Details
+              %li Menu
               %li Location
               %li Reviews
             .resp-tabs-container.hor_1
@@ -74,14 +88,41 @@
                 .border-bottom.margin-30px-bottom.padding-30px-bottom
                   %h4.font-size28.xs-font-size24 About us
                   %p.no-margin-bottom It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages.
-                %h4.font-size28.xs-font-size24 Facility
+                %h4.font-size25.xs-font-size20 Menu
                 .row
-                  .col-md-4
-                    %ul.list-style-2
-                      %li Casino
-                      %li Health Club
-                      %li Pet Friendly
-                      %li Safe Deposit Box
+                  .col-md-6.xs-margin-50px-bottom
+                    .padding-20px-right.xs-no-padding-right
+                      .d-flex.justify-content-between.margin-30px-bottom
+                        %div
+                          %h4.no-margin-bottom.font-size20.xs-font-size18 Lemon-Rosemary Chicken
+                          %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
+                        %div
+                          %h6.no-margin-bottom.font-size18 $34.5
+                      .d-flex.justify-content-between.margin-30px-bottom
+                        %div
+                          %h4.no-margin-bottom.font-size20.xs-font-size18 Imported Oysters Grill (5 Pieces)
+                          %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
+                        %div
+                          %h6.no-margin-bottom.font-size18 $25.6
+                      .d-flex.justify-content-between.margin-30px-bottom
+                        %div
+                          %h4.no-margin-bottom.font-size20.xs-font-size18 Wild Mushroom Bucatini with Kale
+                          %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
+                        %div
+                          %h6.no-margin-bottom.font-size18 $45.5
+                      .d-flex.justify-content-between
+                        %div
+                          %h4.no-margin-bottom.font-size20.xs-font-size18 Tuna Roast Source
+                          %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
+                        %div
+                          %h6.no-margin-bottom.font-size18 $72.5
+                  / end menu section
+                  -# .col-md-4
+                  -#   %ul.list-style-2
+                  -#     %li Casino
+                  -#     %li Health Club
+                  -#     %li Pet Friendly
+                  -#     %li Safe Deposit Box
                   -# .col-md-4
                   -#   %ul.list-style-2
                   -#     %li Elevator
@@ -162,5 +203,8 @@
                         .col-md-12
                           %button.butn{:type => "submit"}
                             %span Send Message
-  / end single rooms section
-/ end main-wrapper section
+%section
+  .container
+    .row.align-items-center
+      .col-md-4.xs-margin-30px-bottom
+        %button.butn{:type => "submit"} Booking Now
