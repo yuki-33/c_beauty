@@ -2,9 +2,19 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "Chitrakoot Web", :name => "author"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
+    %meta{:content => "Septosha Hotel Booking Bootstrap Template", :name => "keywords"}/
+    %meta{:content => "Fivestar - Hotel Booking Bootstrap Template", :name => "description"}/
     %title CBeauty
     = csrf_meta_tags
     = csp_meta_tag
+    %link{:href => "img/logos/favicon.png", :rel => "shortcut icon"}/
+    %link{:href => "img/logos/apple-touch-icon-57x57.png", :rel => "apple-touch-icon"}/
+    %link{:href => "img/logos/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
+    %link{:href => "img/logos/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/    
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     -# = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
