@@ -36,6 +36,12 @@ class BeautyImageUploader < CarrierWave::Uploader::Base
   version :shop_image do
     process resize_and_pad: [1000, 650]
   end
+
+  version :shop_small do
+    process resize_to_fill: [500, 550]
+  end
+
+
   # version :thumb do
   #   process resize_to_fit: [50, 50]
   # end
