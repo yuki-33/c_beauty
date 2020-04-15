@@ -33,13 +33,17 @@
               / start menu area
               %ul#nav.navbar-nav.ml-auto{:style => "display: none;"}
                 %li
-                  %a{:href => "#"} Top
+                  -# %a{:href => "#"} Top
+                  =link_to "TOP", tops_path
                 %li
-                  %a{:href => "about.html"} Hair Salon
+                  -# %a{:href => "about.html"} Hair Salon
+                  =link_to "HAIR SALON", shops_path
                 %li
                   %a{:href => "about.html"} Nails & Eyelash Salon
+                  -# =link_to "HAIR SALON", shop_path(@shop)
                 %li
                   %a{:href => "about.html"} Spa & Facial
+                  -# =link_to "HAIR SALON", shop_path(@shop)
                 %li
                   %a{:href => "#"} Sign In
                   %ul
