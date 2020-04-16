@@ -1,5 +1,6 @@
 class Shop < ApplicationRecord
   mount_uploader :image, BeautyImageUploader
+  mount_uploader :image_top, BeautyImageUploader
   mount_uploader :image_2, BeautyImageUploader
   mount_uploader :image_3, BeautyImageUploader
   mount_uploader :image_4, BeautyImageUploader

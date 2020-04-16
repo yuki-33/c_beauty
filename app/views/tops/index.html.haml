@@ -97,7 +97,7 @@
         .border
           -# %img{:alt => "", :src => "img/content/room-5.jpg"}/
           -if shop.image.present?
-            =image_tag shop.image_url(:thumb)
+            =image_tag shop.image_top_url(:thumb)
           -else
             %img{:alt => "", :src => "img/content/room-5.jpg"}/
           .padding-25px-all

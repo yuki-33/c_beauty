@@ -20,7 +20,7 @@
 -#
 
 
-%section.page-title-section.bg-img.cover-background{"data-background" => "#{@shop.image_url}", "data-overlay-dark" => "1"}
+%section.page-title-section.bg-img.cover-background{"data-background" => "#{@shop.image_top_url}", "data-overlay-dark" => "1"}
   .container
     %h1=@shop.name
     %ul
@@ -34,7 +34,7 @@
       .col-md-4.xs-margin-30px-bottom
         .row
           .col-sm-12.mobile-display-none
-            =image_tag @shop.image_top_url(:shop_small)
+            =image_tag @shop.image_url(:shop_small)
           -# .col-sm-6.mobile-display-none
           -#   %img{:alt => "", :src => "/img/content/09.jpg"}/
       .col-md-8.align-self-center
@@ -74,14 +74,14 @@
           .horizontaltab.tab-style1
             %ul.resp-tabs-list.hor_1
               %li Menu
+              %li Time
               %li Location
-              %li Reviews
+              -# %li Reviews
             .resp-tabs-container.hor_1
               %div
                 .border-bottom.margin-30px-bottom.padding-30px-bottom
                   %h4.font-size28.xs-font-size24 About us
-                  %p.no-margin-bottom It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages.
-                %h4.font-size25.xs-font-size20 Menu
+                  %p.no-margin-bottom=@shop.about_us
                 .row
                   .col-md-6.xs-margin-50px-bottom
                     .padding-20px-right.xs-no-padding-right
@@ -129,98 +129,109 @@
                   -#     %li Room Service
                   -#     %li Wi-Fi
               %div
+                %h4.font-size28.xs-font-size24 Time
+                .row
+                  .col-md-8
+                    %ul.list-style-2
+                      %li Business Hour　営業時間　/　#{@shop.business_hour}
+                      %li Regular Closed　定休日　/　#{@shop.regular_closed}
+                      %li Note　備考　/　
+                      -# %li Safe Deposit Box
+              %div
                 %h4.font-size28.xs-font-size24 Location
                 %iframe#gmap_canvas.map{:marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?q=london&t=&z=13&ie=UTF8&iwloc=&output=embed"}
                 .row.margin-40px-top
                   .col-md-4.xs-margin-20px-bottom
                     %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom City
-                    %p.no-margin-bottom London
+                    %p.no-margin-bottom=@shop.area_id
                   .col-md-4.xs-margin-20px-bottom
-                    %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Shop contact
-                    %p.no-margin-bottom (+44) 123 456 789
-                    %p.no-margin-bottom City Main Street
+                    %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Contact
+                    %p.no-margin-bottom=@shop.tel
+                    %p.no-margin-bottom=@shop.email
+                    %p.no-margin-bottom=@shop.adress
                   .col-md-4
-                    %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Reservations
-                    %p.no-margin-bottom your@name.com
-              %div
-                %h4.font-size28.xs-font-size24 Reviews
-                .blogs
-                  .comments-area
-                    .comment-box
-                      .author-thumb
-                        %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/01.png"}/
-                      .comment-info
-                        %h6
-                          %a{:href => "javascript:void(0);"} Alex Joyrina
-                        %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        .reply
-                          %a{:href => "javascript:void(0);"}
-                            %i.fa.fa-reply{"aria-hidden" => "true"}
-                            Reply
-                    .comment-box
-                      .author-thumb
-                        %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/02.png"}/
-                      .comment-info
-                        %h6
-                          %a{:href => "javascript:void(0);"} Jama Karleny
-                        %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        .reply
-                          %a{:href => "javascript:void(0);"}
-                            %i.fa.fa-reply{"aria-hidden" => "true"}
-                            Reply
-                    .comment-box
-                      .author-thumb
-                        %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/03.png"}/
-                      .comment-info
-                        %h6
-                          %a{:href => "javascript:void(0);"} Ivonne Drennen
-                        %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        .reply
-                          %a{:href => "javascript:void(0);"}
-                            %i.fa.fa-reply{"aria-hidden" => "true"}
-                            Reply
-                  .comment-form
-                    %div
-                      %h4.font-size28.xs-font-size24 Post a Comment
-                    %form{:action => "#!", :method => "post"}
-                      .row
-                        .col-md-6
-                          .form-group
-                            %input#form_name{:name => "name", :placeholder => "Name", :type => "text"}/
-                        .col-md-6
-                          .form-group
-                            %input#form_email{:name => "email", :placeholder => "Email", :type => "email"}/
-                        .col-md-12
-                          .form-group
-                            %textarea#form_message{:name => "message", :placeholder => "Message", :rows => "4"}
-                        .col-md-12
-                          %button.butn{:type => "submit"}
-                            %span Send Message
+                    %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Shop site
+                    %p.no-margin-bottom=@shop.website
+              -# %div
+              -#   %h4.font-size28.xs-font-size24 Reviews
+              -#   .blogs
+              -#     .comments-area
+              -#       .comment-box
+              -#         .author-thumb
+              -#           %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/01.png"}/
+              -#         .comment-info
+              -#           %h6
+              -#             %a{:href => "javascript:void(0);"} Alex Joyrina
+              -#           %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              -#           .reply
+              -#             %a{:href => "javascript:void(0);"}
+              -#               %i.fa.fa-reply{"aria-hidden" => "true"}
+              -#               Reply
+              -#       .comment-box
+              -#         .author-thumb
+              -#           %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/02.png"}/
+              -#         .comment-info
+              -#           %h6
+              -#             %a{:href => "javascript:void(0);"} Jama Karleny
+              -#           %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              -#           .reply
+              -#             %a{:href => "javascript:void(0);"}
+              -#               %i.fa.fa-reply{"aria-hidden" => "true"}
+              -#               Reply
+              -#       .comment-box
+              -#         .author-thumb
+              -#           %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/03.png"}/
+              -#         .comment-info
+              -#           %h6
+              -#             %a{:href => "javascript:void(0);"} Ivonne Drennen
+              -#           %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              -#           .reply
+              -#             %a{:href => "javascript:void(0);"}
+              -#               %i.fa.fa-reply{"aria-hidden" => "true"}
+              -#               Reply
+              -#     .comment-form
+              -#       %div
+              -#         %h4.font-size28.xs-font-size24 Post a Comment
+              -#       %form{:action => "#!", :method => "post"}
+              -#         .row
+              -#           .col-md-6
+              -#             .form-group
+              -#               %input#form_name{:name => "name", :placeholder => "Name", :type => "text"}/
+              -#           .col-md-6
+              -#             .form-group
+              -#               %input#form_email{:name => "email", :placeholder => "Email", :type => "email"}/
+              -#           .col-md-12
+              -#             .form-group
+              -#               %textarea#form_message{:name => "message", :placeholder => "Message", :rows => "4"}
+              -#           .col-md-12
+              -#             %button.butn{:type => "submit"}
+              -#               %span Send Message
 / start testimonial style-1 section
 %section
   .container
     .text-center.margin-50px-bottom
       %h3.margin-10px-bottom Hair Stylist
-      %p.no-margin-bottom Lorem Ipsum is simply dummy printing
+      %p.no-margin-bottom #{@shop.name} のスタイリスト,スタッフ
     .row
       .col-md-6.xs-margin-40px-bottom
         .theme-shadow.padding-50px-all.sm-padding-40px-all.testimonial
-          %p.line-height-35.sm-line-height-35.font-size18.sm-font-size16.text-extra-dark-gray.margin-30px-bottom It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that.
           .d-flex.align-items-center
-            .margin-15px-right
-              %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "/img/testmonials/t-1.jpg"}/
+            .margin-15px-right.margin-30px-bottom
+              %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "#{@shop.image_owner}"}/
             %div
-              %h6.font-size18.no-margin-bottom Isabel Rowla
-              %small Customer
+              %h6.font-size18.no-margin-bottom=@shop.owner_name
+              %small=@shop.owner_name_katakana
+          %p.line-height-35.sm-line-height-35.font-size18.sm-font-size16.text-extra-dark-gray.margin-30px-bottom=@shop.about_owner
       .col-md-6
         .theme-shadow.padding-50px-all.sm-padding-40px-all.testimonial
-          %p.line-height-35.sm-line-height-35.font-size18.sm-font-size16.text-extra-dark-gray.margin-30px-bottom Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still.
           .d-flex.align-items-center
-            .margin-15px-right
-              %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "/img/testmonials/t-2.jpg"}/
+            .margin-15px-right.margin-30px-bottom
+              %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "#{@shop.image_employee}"}/
             %div
-              %h6.font-size18.no-margin-bottom James Martin
-              %small Customer
+              %h6.font-size18.no-margin-bottom=@shop.employee_name
+              %small=@shop.employee_name_katakana
+          %p.line-height-35.sm-line-height-35.font-size18.sm-font-size16.text-extra-dark-gray.margin-30px-bottom=@shop.about_employee
+
 / end testimonial style-1 section
 
 %section
