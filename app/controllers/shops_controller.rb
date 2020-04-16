@@ -47,6 +47,7 @@ class ShopsController < ApplicationController
   def shop_params
     params[:shop].permit(
       :name,
+      :shop_name_katakana,
       :area_id,
       :adress,
       :email,
@@ -57,11 +58,20 @@ class ShopsController < ApplicationController
       :introduction,
       :about_us,
       :image,
+      :image_top,
       :image_2,
       :image_3,
       :image_4,
       :image_owner,
       :image_employee,
+      :owner_name,
+      :owner_name_katakana,
+      :about_owner,
+      :employee_name,
+      :employee_name_katakana,
+      :about_employee,
+      :facebook,
+      :instagram,
       category_ids: []
     )
   end

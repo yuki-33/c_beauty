@@ -43,15 +43,14 @@
       .col-md-4.xs-margin-30px-bottom
         .row
           .col-sm-6.mobile-display-none
-            %img{:alt => "", :src => "/img/content/08.jpg"}/
-            -# =image_tag @shop.image_2_url(:shop_small)
+            -# %img{:alt => "", :src => "/img/content/08.jpg"}/
+            =image_tag @shop.image_top_url(:shop_small)
       .col-md-8.align-self-center
         .row.justify-content-center
           .col-lg-10
             %h4.margin-10px-bottom.sm-margin-5px-bottom.font-size34.sm-font-size30.text-center.sm-text-left=@shop.name
-            .margin-30px-bottom.sm-margin-15px-bottom.text-center.sm-text-left.text-uppercase.letter-spacing-2 サロン　ネーム　カタカナ
-            %p.no-margin-bottom.text-center It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-/ end about section
+            .margin-30px-bottom.sm-margin-15px-bottom.text-center.sm-text-left.text-uppercase.letter-spacing-2 〈#{@shop.shop_name_katakana}〉
+            %p.no-margin-bottom.text-center=@shop.introduction
 -# %section
 -#   .container
 -#     .row.align-items-center
