@@ -2,6 +2,7 @@
   =f.text_field :name
   =f.text_field :shop_name_katakana
   =f.text_field :adress
+  =f.collection_select :area_id, Area.all, :id, :name, include_blank: true, class: 'form-control'
   =f.text_field :email
   =f.text_field :tel
   =f.text_field :website

@@ -82,52 +82,36 @@
                 .border-bottom.margin-30px-bottom.padding-30px-bottom
                   %h4.font-size28.xs-font-size24 About us
                   %p.no-margin-bottom=@shop.about_us
+                %h4.font-size28.xs-font-size24 Menu
                 .row
                   .col-md-6.xs-margin-50px-bottom
                     .padding-20px-right.xs-no-padding-right
-                      .d-flex.justify-content-between.margin-30px-bottom
-                        %div
-                          %h4.no-margin-bottom.font-size20.xs-font-size18 Lemon-Rosemary Chicken
-                          %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
-                        %div
-                          %h6.no-margin-bottom.font-size18 $34.5
-                      .d-flex.justify-content-between.margin-30px-bottom
-                        %div
-                          %h4.no-margin-bottom.font-size20.xs-font-size18 Imported Oysters Grill (5 Pieces)
-                          %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
-                        %div
-                          %h6.no-margin-bottom.font-size18 $25.6
-                      .d-flex.justify-content-between.margin-30px-bottom
-                        %div
-                          %h4.no-margin-bottom.font-size20.xs-font-size18 Wild Mushroom Bucatini with Kale
-                          %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
-                        %div
-                          %h6.no-margin-bottom.font-size18 $45.5
-                      .d-flex.justify-content-between
-                        %div
-                          %h4.no-margin-bottom.font-size20.xs-font-size18 Tuna Roast Source
-                          %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
-                        %div
-                          %h6.no-margin-bottom.font-size18 $72.5
-                  / end menu section
-                  -# .col-md-4
-                  -#   %ul.list-style-2
-                  -#     %li Casino
-                  -#     %li Health Club
-                  -#     %li Pet Friendly
-                  -#     %li Safe Deposit Box
-                  -# .col-md-4
-                  -#   %ul.list-style-2
-                  -#     %li Elevator
-                  -#     %li Minibar
-                  -#     %li Restaurant
-                  -#     %li Sauna
-                  -# .col-md-4
-                  -#   %ul.list-style-2
-                  -#     %li Garage Space
-                  -#     %li Parking
-                  -#     %li Room Service
-                  -#     %li Wi-Fi
+                      -@shop.menus.each do |menu|
+                        .d-flex.justify-content-between.margin-30px-bottom
+                          %div
+                            %h4.no-margin-bottom.font-size20.xs-font-size18=menu.menu
+                            -# %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
+                          %div
+                            %h6.no-margin-bottom.font-size18=memu.price
+                        -# .d-flex.justify-content-between.margin-30px-bottom
+                        -#   %div
+                        -#     %h4.no-margin-bottom.font-size20.xs-font-size18 Imported Oysters Grill (5 Pieces)
+                        -#     %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
+                        -#   %div
+                        -#     %h6.no-margin-bottom.font-size18 $25.6
+                        -# .d-flex.justify-content-between.margin-30px-bottom
+                        -#   %div
+                        -#     %h4.no-margin-bottom.font-size20.xs-font-size18 Wild Mushroom Bucatini with Kale
+                        -#     %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
+                        -#   %div
+                        -#     %h6.no-margin-bottom.font-size18 $45.5
+                        -# .d-flex.justify-content-between
+                        -#   %div
+                        -#     %h4.no-margin-bottom.font-size20.xs-font-size18 Tuna Roast Source
+                        -#     %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
+                        -#   %div
+                        -#     %h6.no-margin-bottom.font-size18 $72.5
+                    / end menu section
               %div
                 %h4.font-size28.xs-font-size24 Time
                 .row
@@ -143,14 +127,14 @@
                 .row.margin-40px-top
                   .col-md-4.xs-margin-20px-bottom
                     %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom City
-                    %p.no-margin-bottom=@shop.area_id
+                    %p.no-margin-bottom=@shop.area.name
                   .col-md-4.xs-margin-20px-bottom
                     %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Contact
                     %p.no-margin-bottom=@shop.tel
                     %p.no-margin-bottom=@shop.email
                     %p.no-margin-bottom=@shop.adress
                   .col-md-4
-                    %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Shop site
+                    %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Website
                     %p.no-margin-bottom=@shop.website
               -# %div
               -#   %h4.font-size28.xs-font-size24 Reviews
