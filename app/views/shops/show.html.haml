@@ -19,38 +19,31 @@
 -# =link_to "Back to the list", shops_path
 -#
 
--# / start page loading
--# #preloader
--#   .row.loader
--#     .loader-icon
--# / end page loading
-/ start main-wrapper section
--# .main-wrapper
 
-/ start page title section
 %section.page-title-section.bg-img.cover-background{"data-background" => "#{@shop.image_url}", "data-overlay-dark" => "1"}
   .container
     %h1=@shop.name
-    -# %ul
-    -#   %li
-    -#     %a{:href => "index.html"} Home
-    -#   %li
-    -#     %a{:href => "#!"} Single Room
-/ end page title section
+    %ul
+      %li
+        =link_to 'home', root_path
+      %li
+        =link_to @shop.name, shop_path(@shop)
 %section
   .container
     .row.align-items-center
       .col-md-4.xs-margin-30px-bottom
         .row
-          .col-sm-6.mobile-display-none
+          .col-sm-12.mobile-display-none
             %img{:alt => "", :src => "/img/content/08.jpg"}/
-            -# =image_tag @shop.image_2_url(:shop_small)
+          -# .col-sm-6.mobile-display-none
+          -#   %img{:alt => "", :src => "/img/content/09.jpg"}/
       .col-md-8.align-self-center
         .row.justify-content-center
           .col-lg-10
-            %h4.margin-10px-bottom.sm-margin-5px-bottom.font-size34.sm-font-size30.text-center.sm-text-left=@shop.name
-            .margin-30px-bottom.sm-margin-15px-bottom.text-center.sm-text-left.text-uppercase.letter-spacing-2 サロン　ネーム　カタカナ
+            %h4.margin-10px-bottom.sm-margin-15px-bottom.font-size34.sm-font-size30.text-center.sm-text-left=@shop.name
+            .margin-20px-bottom.sm-margin-5px-bottom.text-center.sm-text-left.text-uppercase.letter-spacing-2 サロン　ネーム　カタカナ
             %p.no-margin-bottom.text-center It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+
 / end about section
 -# %section
 -#   .container
@@ -236,147 +229,3 @@
     .row.align-items-center
       .col-md-4.xs-margin-30px-bottom
         %button.butn{:type => "submit"} Booking Now
-
-
-    %section.page-title-section.bg-img.cover-background{"data-background" => "img/banner/bg-02.jpg", "data-overlay-dark" => "4"}
-      .container
-        %h1 Restaurant
-        %ul
-          %li
-            %a{:href => "index.html"} Home
-          %li
-            %a{:href => "#!"} Luxury & Graceful Restaurant
-    / end page title section
-    / start about section
-    %section
-      .container
-        .row.align-items-center
-          .col-md-6.xs-margin-30px-bottom
-            .row
-              .col-sm-6.mobile-display-none
-                %img{:alt => "", :src => "img/content/08.jpg"}/
-              .col-sm-6.mobile-display-none
-                %img{:alt => "", :src => "img/content/09.jpg"}/
-          .col-md-6.align-self-center
-            .row.justify-content-center
-              .col-lg-10
-                .margin-20px-bottom.sm-margin-5px-bottom.text-center.sm-text-left.text-uppercase.letter-spacing-2 hotel fivestar
-                %h4.margin-30px-bottom.sm-margin-15px-bottom.font-size34.sm-font-size30.text-center.sm-text-left Explore Our Restaurant
-                %p.no-margin-bottom.text-center It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-    / end about section
-
-    / start menu section
-    %section
-      .container
-        .text-center.margin-40px-bottom.xs-margin-30px-bottom
-          %h3.no-margin-bottom Food Menu
-          %p.no-margin-bottom Lorem Ipsum is simply dummy printing
-        .row
-          .col-md-6.xs-margin-50px-bottom
-            .padding-20px-right.xs-no-padding-right
-              %h4.text-uppercase.letter-spacing-1.margin-30px-bottom.font-size24.xs-font-size22 Starter:
-              .d-flex.justify-content-between.margin-30px-bottom
-                %div
-                  %h4.no-margin-bottom.font-size20.xs-font-size18 Lemon-Rosemary Chicken
-                  %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
-                %div
-                  %h6.no-margin-bottom.font-size18 $34.5
-              .d-flex.justify-content-between.margin-30px-bottom
-                %div
-                  %h4.no-margin-bottom.font-size20.xs-font-size18 Imported Oysters Grill (5 Pieces)
-                  %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
-                %div
-                  %h6.no-margin-bottom.font-size18 $25.6
-              .d-flex.justify-content-between.margin-30px-bottom
-                %div
-                  %h4.no-margin-bottom.font-size20.xs-font-size18 Wild Mushroom Bucatini with Kale
-                  %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
-                %div
-                  %h6.no-margin-bottom.font-size18 $45.5
-              .d-flex.justify-content-between
-                %div
-                  %h4.no-margin-bottom.font-size20.xs-font-size18 Tuna Roast Source
-                  %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
-                %div
-                  %h6.no-margin-bottom.font-size18 $72.5
-          .col-md-6
-            .padding-20px-left.xs-no-padding-left
-              %h4.text-uppercase.letter-spacing-1.margin-30px-bottom.font-size24.xs-font-size22 Main Course:
-              .d-flex.justify-content-between.margin-30px-bottom
-                %div
-                  %h4.no-margin-bottom.font-size20.xs-font-size18 Salted Fried Chicken
-                  %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
-                %div
-                  %h6.no-margin-bottom.font-size18 $14.5
-              .d-flex.justify-content-between.margin-30px-bottom
-                %div
-                  %h4.no-margin-bottom.font-size20.xs-font-size18 Crab With Curry Sources
-                  %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
-                %div
-                  %h6.no-margin-bottom.font-size18 $42.5
-              .d-flex.justify-content-between.margin-30px-bottom
-                %div
-                  %h4.no-margin-bottom.font-size20.xs-font-size18 Imported Salmon Steak
-                  %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
-                %div
-                  %h6.no-margin-bottom.font-size18 $57.8
-              .d-flex.justify-content-between
-                %div
-                  %h4.no-margin-bottom.font-size20.xs-font-size18 Pork with Italian Salsa Verde
-                  %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
-                %div
-                  %h6.no-margin-bottom.font-size18 $35.5
-    / end menu section
-    / start gallery section
-    %section
-      .container
-        .text-center.margin-40px-bottom.xs-margin-30px-bottom
-          %h3.no-margin-bottom Food Gallery
-          %p.no-margin-bottom Lorem Ipsum is simply dummy printing
-        .row
-          .col-md-4.margin-30px-bottom
-            %img{:alt => "", :src => "img/portfolio/11.jpg"}/
-          .col-md-4.margin-30px-bottom
-            %img{:alt => "", :src => "img/portfolio/12.jpg"}/
-          .col-md-4.margin-30px-bottom
-            %img{:alt => "", :src => "img/portfolio/13.jpg"}/
-          .col-md-4.xs-margin-30px-bottom
-            %img{:alt => "", :src => "img/portfolio/14.jpg"}/
-          .col-md-4.xs-margin-30px-bottom
-            %img{:alt => "", :src => "img/portfolio/15.jpg"}/
-          .col-md-4
-            %img{:alt => "", :src => "img/portfolio/16.jpg"}/
-    / end gallery section
-
-
-
-
-
-/ start offer packages section
-%section
-  .container
-    .row
-      .col-md-6.col-lg-4.margin-40px-bottom
-        .theme-shadow.h-100
-          %img{:alt => "", :src => "img/content/offer-1.jpg"}/
-          .padding-30px-all.text-center
-            %h5.font-size28.sm-font-size26.xs-font-size24.margin-10px-bottom Spa  massage
-            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            %h6.font-size30.sm-font-size28.margin-10px-bottom $99
-            %a.text-theme-color.font-weight-700.letter-spacing-1.text-uppercase.font-size13{:href => "javascript:void(0)"} More Details
-      .col-md-6.col-lg-4.margin-40px-bottom
-        .theme-shadow.h-100
-          %img{:alt => "", :src => "img/content/offer-2.jpg"}/
-          .padding-30px-all.text-center
-            %h5.font-size28.sm-font-size26.xs-font-size24.margin-10px-bottom Honeymoon package
-            %p It is a long established fact that a reader will be distracted by the readable.
-            %h6.font-size30.sm-font-size28.margin-10px-bottom $199
-            %a.text-theme-color.font-weight-700.letter-spacing-1.text-uppercase.font-size13{:href => "javascript:void(0)"} More Details
-      .col-md-6.col-lg-4.margin-40px-bottom
-        .theme-shadow.h-100
-          %img{:alt => "", :src => "img/content/offer-3.jpg"}/
-          .padding-30px-all.text-center
-            %h5.font-size28.sm-font-size26.xs-font-size24.margin-10px-bottom Free breakfast
-            %p Various versions have evolved over the years, sometimes by accident.
-            %h6.font-size30.sm-font-size28.margin-10px-bottom $299
-            %a.text-theme-color.font-weight-700.letter-spacing-1.text-uppercase.font-size13{:href => "javascript:void(0)"} More Details
