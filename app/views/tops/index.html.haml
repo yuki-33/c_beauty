@@ -223,6 +223,12 @@
                 Read More
                 %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
 / end blog section
+%section
+  .container
+    .row.align-items-center
+      .col-md-4.xs-margin-30px-bottom
+        -# %button.butn{:type => "submit"} Create New Shop
+        =link_to 'Create New Shop', new_shop_path, class: 'butn'
 / start gallery section
 %section.no-padding
   .container-fluid.no-padding
