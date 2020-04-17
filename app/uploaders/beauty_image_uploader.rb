@@ -45,6 +45,11 @@ class BeautyImageUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [70, 70, "Center"]
   end
 
+  version :index do
+    process resize_to_fill: [575, 400, "Center"]
+  end
+
+
 
   # version :thumb do
   #   process resize_to_fit: [50, 50]

@@ -134,7 +134,9 @@
                     %p.no-margin-bottom=@shop.adress
                   .col-md-4
                     %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Website
-                    %p.no-margin-bottom=@shop.website
+                    %p
+                      =link_to @shop.website, @shop.website, class: 'no-margin-bottom', target: '_blank'
+                    -# %p.no-margin-bottom=@shop.website
               -# %div
               -#   %h4.font-size28.xs-font-size24 Reviews
               -#   .blogs
@@ -200,22 +202,23 @@
         .theme-shadow.padding-50px-all.sm-padding-40px-all.testimonial
           .d-flex.align-items-center
             .margin-15px-right.margin-30px-bottom
-              %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "#{@shop.image_owner}"}/
+              =image_tag @shop.image_owner_url(:people), class: 'img-fluid rounded-circle width-60px'
+              -# %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "#{@shop.image_owner}"}/
             %div
               %h6.font-size18.no-margin-bottom=@shop.owner_name
               %small=@shop.owner_name_katakana
-          %p.line-height-35.sm-line-height-35.font-size18.sm-font-size16.text-extra-dark-gray.margin-30px-bottom=@shop.about_owner
-      .col-md-6
-        .theme-shadow.padding-50px-all.sm-padding-40px-all.testimonial
-          .d-flex.align-items-center
-            .margin-15px-right.margin-30px-bottom
-              =image_tag @shop.image_employee_url(:people), class: 'img-fluid rounded-circle width-60px'
-              -# %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "#{@shop.image_employee}"}/
-            %div
-              %h6.font-size18.no-margin-bottom=@shop.employee_name
-              %small=@shop.employee_name_katakana
-          %p.line-height-35.sm-line-height-35.font-size18.sm-font-size16.text-extra-dark-gray.margin-30px-bottom=@shop.about_employee
-
+          %p.line-height-35.sm-line-height-35.font-size15.sm-font-size16.text-extra-dark-gray.margin-30px-bottom=@shop.about_owner
+      -if @shop.image_employee_url.present?
+        .col-md-6
+          .theme-shadow.padding-50px-all.sm-padding-40px-all.testimonial
+            .d-flex.align-items-center
+              .margin-15px-right.margin-30px-bottom
+                =image_tag @shop.image_employee_url(:people), class: 'img-fluid rounded-circle width-60px'
+                -# %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "#{@shop.image_employee}"}/
+              %div
+                %h6.font-size18.no-margin-bottom=@shop.employee_name
+                %small=@shop.employee_name_katakana
+            %p.line-height-35.sm-line-height-35.font-size15.sm-font-size16.text-extra-dark-gray.margin-30px-bottom=@shop.about_employee
 / end testimonial style-1 section
 
 %section
