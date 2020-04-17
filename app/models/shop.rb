@@ -10,6 +10,7 @@ class Shop < ApplicationRecord
   has_many :shop_categories, dependent: :destroy
   has_many :categories, through: :shop_categories
   has_many :menus
+  accepts_nested_attributes_for :menus
   belongs_to :area
 
 end

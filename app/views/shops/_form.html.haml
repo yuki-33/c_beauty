@@ -24,7 +24,15 @@
   =f.text_field :employee_name_katakana
   =f.text_area :about_employee
   =f.collection_check_boxes :category_ids, Category.all, :id, :name, class: 'form-contral'
-
+  =f.fields_for :menus do |field|
+    .menu_field
+      =field.hidden_field :id
+      =field.text_field :menu
+      =field.text_field :price
+  -# .form-group
+  -#   %span.btn.btn-outline-info.btn-sm.js-add-form
+  -#     %i.fa.fa-plus
+  -#     %span="メニューを追加"
   -# =f.hidden_field :image_cache
   -# -if @shop.image?
   -#   .m-t-5

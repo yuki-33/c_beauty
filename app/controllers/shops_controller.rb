@@ -19,10 +19,12 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
+    @shop.menus.build
     # @work.director_id = params[:director_id] if params[:director_id].present?
   end
 
   def edit
+    @shop.menus.build if @shop.menus.blank?
   end
 
   def update
@@ -72,7 +74,11 @@ class ShopsController < ApplicationController
       :about_employee,
       :facebook,
       :instagram,
-      category_ids: []
+      category_ids: [],
+      menus_attributes: [
+        :menu,
+        :price
+      ]
     )
   end
 
