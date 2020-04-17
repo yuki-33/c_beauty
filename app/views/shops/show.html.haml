@@ -209,7 +209,8 @@
         .theme-shadow.padding-50px-all.sm-padding-40px-all.testimonial
           .d-flex.align-items-center
             .margin-15px-right.margin-30px-bottom
-              %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "#{@shop.image_employee}"}/
+              =image_tag @shop.image_employee_url(:people), class: 'img-fluid rounded-circle width-60px'
+              -# %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "#{@shop.image_employee}"}/
             %div
               %h6.font-size18.no-margin-bottom=@shop.employee_name
               %small=@shop.employee_name_katakana
