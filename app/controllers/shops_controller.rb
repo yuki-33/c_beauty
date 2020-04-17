@@ -76,6 +76,7 @@ class ShopsController < ApplicationController
       :instagram,
       category_ids: [],
       menus_attributes: [
+        :id,
         :menu,
         :price
       ]
