@@ -198,7 +198,7 @@
       %h3.margin-10px-bottom Hair Stylist
       %p.no-margin-bottom #{@shop.name} のスタイリスト,スタッフ
     .row
-      .col-md-6.xs-margin-40px-bottom
+      .xs-margin-40px-bottom{class: @shop.image_employee_url.present? ? 'col-md-6' : 'col-md-12'}
         .theme-shadow.padding-50px-all.sm-padding-40px-all.testimonial
           .d-flex.align-items-center
             .margin-15px-right.margin-30px-bottom
