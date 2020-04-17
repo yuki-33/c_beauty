@@ -13,3 +13,4 @@
 //= require datepicker.min
 //= require isotope.pkgd.min
 //= require main
+//= require common
