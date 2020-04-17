@@ -9,7 +9,7 @@
 require 'csv'
 require 'nkf'
 POSTGRES_TABLES = [
-  :categories
+  :categories,
   :areas
 ]
 POSTGRES_TABLES.each do |table_name|
