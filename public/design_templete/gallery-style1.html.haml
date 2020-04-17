@@ -1,0 +1,157 @@
+    / end header section
+    / start page title section
+    %section.page-title-section.bg-img.cover-background{"data-background" => "img/banner/bg-01.jpg", "data-overlay-dark" => "4"}
+      .container
+        %h1 Gallery Style1
+        %ul
+          %li
+            %a{:href => "index.html"} Home
+          %li
+            %a{:href => "#!"} Gallery Style1
+    / end page title section
+    / start gallery section
+    %section
+      .container
+        .row
+          / start links
+          .filtering.col-sm-12.text-center
+            %span.active{"data-filter" => "*"} All
+            %span{"data-filter" => ".food"} Food
+            %span{"data-filter" => ".relaxation"} Relaxation
+            %span{"data-filter" => ".vacation"} Vacation
+          / end links
+          .gallery.text-center.width-100
+            .col-lg-4.col-md-6.items.relaxation
+              .project-grid
+                .project-grid-img
+                  %img{:alt => "", :src => "img/portfolio/4.jpg"}/
+                .project-grid-overlay
+                  .width-100
+                    %a.popimg{:href => "img/portfolio/4.jpg"}
+                      %span.ti-search
+            .col-lg-4.col-md-6.items.relaxation
+              .project-grid
+                .project-grid-img
+                  %img{:alt => "", :src => "img/portfolio/5.jpg"}/
+                .project-grid-overlay
+                  .width-100
+                    %a.popimg{:href => "img/portfolio/5.jpg"}
+                      %span.ti-search
+            .col-lg-4.col-md-6.items.food
+              .project-grid
+                .project-grid-img
+                  %img{:alt => "", :src => "img/portfolio/6.jpg"}/
+                .project-grid-overlay
+                  .width-100
+                    %a.popimg{:href => "img/portfolio/6.jpg"}
+                      %span.ti-search
+            .col-lg-4.col-md-6.items.vacation
+              .project-grid
+                .project-grid-img
+                  %img{:alt => "", :src => "img/portfolio/7.jpg"}/
+                .project-grid-overlay
+                  .width-100
+                    %a.popimg{:href => "img/portfolio/7.jpg"}
+                      %span.ti-search
+            .col-lg-4.col-md-6.items.vacation
+              .project-grid
+                .project-grid-img
+                  %img{:alt => "", :src => "img/portfolio/8.jpg"}/
+                .project-grid-overlay
+                  .width-100
+                    %a.popimg{:href => "img/portfolio/8.jpg"}
+                      %span.ti-search
+            .col-lg-4.col-md-6.items.food
+              .project-grid
+                .project-grid-img
+                  %img{:alt => "", :src => "img/portfolio/9.jpg"}/
+                .project-grid-overlay
+                  .width-100
+                    %a.popimg{:href => "img/portfolio/9.jpg"}
+                      %span.ti-search
+    / end gallery section
+    / start footer section
+    %footer
+      .footer-area.padding-70px-tb.md-padding-40px-tb.xs-padding-30px-tb
+        .container
+          .row
+            .col-lg-3.col-sm-6.sm-margin-30px-bottom
+              %img.width-70.margin-30px-bottom.xs-margin-20px-bottom{:alt => "", :src => "img/logos/logo.png"}/
+              %address.width-70.no-margin-bottom 74 Guild Street 542B, Great North Town MT.
+            .col-lg-3.col-sm-6.sm-margin-30px-bottom
+              %h3.footer-title-style1 Reservation
+              %ul.list-style-1.no-margin
+                %li
+                  %span
+                    %strong Email:
+                    addyour@emailhere
+                %li
+                  %span
+                    %strong Tel:
+                    (+44) 123 456 789
+            .col-lg-3.col-sm-6.mobile-margin-30px-bottom
+              %h3.footer-title-style1 Useful Links
+              %ul.list-style-1.no-margin-bottom
+                %li
+                  %a{:href => "#!"} Location
+                %li
+                  %a{:href => "#!"} Terms & Conditions
+                %li
+                  %a{:href => "#!"} About Us
+            .col-lg-3.col-sm-6
+              %h3.footer-title-style1 Social Links
+              %ul.social-icon-style.no-margin
+                %li
+                  %a{:href => "javascript:void(0)"}
+                    %i.fab.fa-facebook-f
+                %li
+                  %a{:href => "javascript:void(0)"}
+                    %i.fab.fa-twitter
+                %li
+                  %a{:href => "javascript:void(0)"}
+                    %i.fab.fa-instagram
+                %li
+                  %a{:href => "javascript:void(0)"}
+                    %i.fab.fa-linkedin-in
+      .footer-bar.xs-padding-15px-tb
+        .container
+          .text-center
+            %p © 2020 Fivestar is Powered by Chitrakoot Web
+    / end footer section
+  / end main-wrapper section
+  / start scroll to top
+  %a.scroll-to-top{:href => "javascript:void(0)"}
+    %i.fas.fa-angle-up{"aria-hidden" => "true"}
+  / end scroll to top
+  / all js include start
+  / jQuery
+  %script{:src => "js/jquery.min.js"}
+  / modernizr js
+  %script{:src => "js/modernizr.js"}
+  / bootstrap
+  %script{:src => "js/bootstrap.min.js"}
+  / Serch
+  %script{:src => "search/search.js"}
+  / navigation
+  %script{:src => "js/nav-menu.js"}
+  / tab
+  %script{:src => "js/easy.responsive.tabs.js"}
+  / owl carousel
+  %script{:src => "js/owl.carousel.js"}
+  / jquery.counterup.min
+  %script{:src => "js/jquery.counterup.min.js"}
+  / stellar js
+  %script{:src => "js/jquery.stellar.min.js"}
+  / waypoints js
+  %script{:src => "js/waypoints.min.js"}
+  / countdown js
+  %script{:src => "js/countdown.js"}
+  / jquery.magnific-popup js
+  %script{:src => "js/jquery.magnific-popup.min.js"}
+  / datepicker js
+  %script{:src => "js/datepicker.min.js"}
+  / isotope.pkgd.min js
+  %script{:src => "js/isotope.pkgd.min.js"}
+  / custom scripts
+  %script{:src => "js/main.js"}
+  / all js include end
