@@ -1,0 +1,108 @@
+/ start booking-form section
+%section
+  .container
+    .row
+      .col-lg-8.sm-margin-50px-bottom
+        %h4.text-uppercase.letter-spacing-1.margin-30px-bottom.font-size24 Booking Form
+        %form{:method => "post"}
+          .row
+            .col-md-6
+              .form-group
+                %label{:for => "name"} Your Name:
+                %input#name{:name => "name", :placeholder => "Name", :type => "text"}/
+            .col-md-6
+              .form-group
+                %label{:for => "email"} Your Email:
+                %input#email{:name => "email", :placeholder => "Email", :type => "text"}/
+            .col-md-6
+              .form-group
+                %label{:for => "phone"} Phone Number:
+                %input#phone{:name => "phone", :placeholder => "Phone Number", :type => "text"}/
+            .col-md-6
+              .form-group
+                %label{:for => "country"} Your Country:
+                %input#country{:name => "country", :placeholder => "country", :type => "text"}/
+            #datepairExample.col-lg-12.col-sm-12
+              .row
+                .form-group.col-lg-6.col-sm-6
+                  %label Arrival Date
+                  %input{"data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker", :name => "date", :placeholder => "MM/DD/YYYY", :type => "text"}/
+                .form-group.col-lg-6.col-sm-6
+                  %label Departure Date
+                  %input{"data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker", :name => "date1", :placeholder => "MM/DD/YYYY", :type => "text"}/
+            .col-md-6
+              .form-group
+                %label No of Rooms:
+                %div
+                  %input{:max => "50", :min => "1", :step => "1", :type => "number", :value => "1"}/
+            .col-md-6
+              .form-group
+                %label No of Guest:
+                %div
+                  %input{:max => "50", :min => "1", :step => "1", :type => "number", :value => "1"}/
+            .col-md-12
+              .form-group
+                %label Message:
+                %textarea{:name => "message", :placeholder => "Message", :rows => "5"}
+            .col-md-12
+              %button.butn{:type => "submit"} Booking Now
+      .col-lg-4.popular-things
+        .padding-30px-left.sm-no-padding-left
+          %h4.text-uppercase.letter-spacing-1.margin-30px-bottom.font-size24 Special Offers
+          .theme-shadow.border-radius-3.margin-30px-bottom
+            %img{:alt => "", :src => "img/content/01.jpg"}/
+            .border-bottom.padding-25px-all.d-flex.justify-content-between
+              %h5.font-size17.no-margin-bottom
+                %a.text-extra-dark-gray{:href => "single-room.html"} Single room
+              %ul.rate.no-margin-bottom
+                %li
+                  %a{:href => "#"}
+                    %i.fas.fa-star
+                %li
+                  %a{:href => "#"}
+                    %i.fas.fa-star
+                %li
+                  %a{:href => "#"}
+                    %i.fas.fa-star
+                %li
+                  %a{:href => "#"}
+                    %i.fas.fa-star
+                %li
+                  %a{:href => "#"}
+                    %i.fas.fa-star
+            %div
+              .row.align-items-center.text-center.padding-15px-tb
+                .col-6.border-right
+                  %a.butn.small{:href => "single-room.html"} book now
+                .col-6
+                  %span.display-block.font-size20.letter-spacing-2.text-extra-dark-gray $180.00
+                  %span Per night
+          .theme-shadow.border-radius-3
+            %img{:alt => "", :src => "img/content/02.jpg"}/
+            .border-bottom.padding-25px-all.d-flex.justify-content-between
+              %h5.font-size17.no-margin-bottom
+                %a.text-extra-dark-gray{:href => "single-room.html"} Double room
+              %ul.rate.no-margin-bottom
+                %li
+                  %a{:href => "#"}
+                    %i.fas.fa-star
+                %li
+                  %a{:href => "#"}
+                    %i.fas.fa-star
+                %li
+                  %a{:href => "#"}
+                    %i.fas.fa-star
+                %li
+                  %a{:href => "#"}
+                    %i.fas.fa-star
+                %li
+                  %a{:href => "#"}
+                    %i.fas.fa-star
+            %div
+              .row.align-items-center.text-center.padding-15px-tb
+                .col-6.border-right
+                  %a.butn.small{:href => "single-room.html"} book now
+                .col-6
+                  %span.display-block.font-size20.letter-spacing-2.text-extra-dark-gray $280.00
+                  %span Per night
+/ end booking-form section
