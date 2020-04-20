@@ -116,8 +116,8 @@
                 .row
                   .col-md-8
                     %ul.list-style-2
-                      %li Business Hour　営業時間　/　#{@shop.business_hour}
-                      %li Regular Closed　定休日　/　#{@shop.regular_closed}
+                      %li="Business Hour　営業時間　/　#{@shop.business_hour}"
+                      %li="Regular Closed　定休日　/　#{@shop.regular_closed}"
                       %li Note　備考　/　
                       -# %li Safe Deposit Box
               %div
@@ -228,47 +228,51 @@
 %section
   .container
     .row
-      .col-lg-8.sm-margin-50px-bottom
+      .col-lg-12.sm-margin-50px-bottom
         %h4.text-uppercase.letter-spacing-1.margin-30px-bottom.font-size24 Booking Form
-        %form{:method => "post"}
+        -# %form{:method => "post"}
+        =bootstrap_form_with model: @inquery, local: true do |f|
           .row
             .col-md-6
-              .form-group
-                %label{:for => "name"} Your Name:
-                %input#name{:name => "name", :placeholder => "Name", :type => "text"}/
+              =f.text_field :name, placeholder: "Name"
+              -# %label{:for => "name"} Your Name:
+              -# %input#name{:name => "name", :placeholder => "Name", :type => "text"}/
+            .col-md-6
+              =f.email_field :email, placeholder: "email"
             .col-md-6
               .form-group
-                %label{:for => "email"} Your Email:
-                %input#email{:name => "email", :placeholder => "Email", :type => "text"}/
-            .col-md-6
-              .form-group
-                %label{:for => "phone"} Phone Number:
-                %input#phone{:name => "phone", :placeholder => "Phone Number", :type => "text"}/
-            .col-md-6
-              .form-group
-                %label{:for => "country"} Your Country:
-                %input#country{:name => "country", :placeholder => "country", :type => "text"}/
-            #datepairExample.col-lg-12.col-sm-12
-              .row
-                .form-group.col-lg-6.col-sm-6
-                  %label Arrival Date
-                  %input{"data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker", :name => "date", :placeholder => "MM/DD/YYYY", :type => "text"}/
-                .form-group.col-lg-6.col-sm-6
-                  %label Departure Date
-                  %input{"data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker", :name => "date1", :placeholder => "MM/DD/YYYY", :type => "text"}/
-            .col-md-6
-              .form-group
-                %label No of Rooms:
-                %div
-                  %input{:max => "50", :min => "1", :step => "1", :type => "number", :value => "1"}/
-            .col-md-6
-              .form-group
-                %label No of Guest:
-                %div
-                  %input{:max => "50", :min => "1", :step => "1", :type => "number", :value => "1"}/
+                =f.label "Telephone"
+                =f.text_field_without_bootstrap :tel, placeholder: "tel"
+            -# .col-md-6
+            -#   .form-group
+            -#     %label{:for => "phone"} Phone Number:
+            -#     %input#phone{:name => "phone", :placeholder => "Phone Number", :type => "text"}/
+            -# .col-md-6
+            -#   .form-group
+            -#     %label{:for => "country"} Your Country:
+            -#     %input#country{:name => "country", :placeholder => "country", :type => "text"}/
+            -# #datepairExample.col-lg-12.col-sm-12
+            -#   .row
+            -#     .form-group.col-lg-6.col-sm-6
+            -#       %label Arrival Date
+            -#       %input{"data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker", :name => "date", :placeholder => "MM/DD/YYYY", :type => "text"}/
+            -#     .form-group.col-lg-6.col-sm-6
+            -#       %label Departure Date
+            -#       %input{"data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker", :name => "date1", :placeholder => "MM/DD/YYYY", :type => "text"}/
+            -# .col-md-6
+            -#   .form-group
+            -#     %label No of Rooms:
+            -#     %div
+            -#       %input{:max => "50", :min => "1", :step => "1", :type => "number", :value => "1"}/
+            -# .col-md-6
+            -#   .form-group
+            -#     %label No of Guest:
+            -#     %div
+            -#       %input{:max => "50", :min => "1", :step => "1", :type => "number", :value => "1"}/
+            -# .col-md-12
+            -#   .form-group
+            -#     %label Message:
+            -#     %textarea{:name => "message", :placeholder => "Message", :rows => "5"}
             .col-md-12
-              .form-group
-                %label Message:
-                %textarea{:name => "message", :placeholder => "Message", :rows => "5"}
-            .col-md-12
-              %button.butn{:type => "submit"} Booking Now
+              -# %button.butn{:type => "submit"} Booking Now
+              =f.submit 'Booking Now', class: 'butn'
