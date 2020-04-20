@@ -86,12 +86,12 @@
                   .col-md-6.xs-margin-50px-bottom
                     .padding-20px-right.xs-no-padding-right
                       -@shop.menus.each do |menu|
-                        .d-flex.justify-content-between.margin-30px-bottom
+                        .d-flex.justify-content-between.margin-10px-bottom
                           %div
-                            %p.no-margin-bottom.font-size20.xs-font-size18=menu.menu
+                            %p.no-margin-bottom=menu.menu
                             -# %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
                           %div
-                            %p.no-margin-bottom.font-size18=menu.price
+                            %p.no-margin-bottom=menu.price
                         -# .d-flex.justify-content-between.margin-30px-bottom
                         -#   %div
                         -#     %h4.no-margin-bottom.font-size20.xs-font-size18 Imported Oysters Grill (5 Pieces)

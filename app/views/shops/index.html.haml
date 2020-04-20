@@ -1,12 +1,14 @@
 / start page title section
-%section.page-title-section.bg-img.cover-background{"data-background" => "img/banner/bg-01.jpg", "data-overlay-dark" => "4"}
+%section.page-title-section.bg-img.cover-background{"data-background" => "img/top/nailtop.jpg", "data-overlay-dark" => "1"}
   .container
-    %h1 Hair Salon
+    %h1 Nails & Eyelash
     %ul
       %li
-        %a{:href => "index.html"} Home
+        =link_to "TOP", tops_path
+        -# %a{:href => "index.html"} Home
       %li
-        %a{:href => "#!"} Single Room
+        =link_to "Salon", shops_path
+        -# %a{:href => "#!"} Single Room
 / end page title section
 / start our rooms section
 %section
@@ -18,7 +20,7 @@
       / start links
       .filtering.col-sm-12.text-center
         %span.active{"data-filter" => "*"} All
-        %span{"data-filter" => ".food"} Neils
+        %span{"data-filter" => ".food"} Nails
         %span{"data-filter" => ".relaxation"} Eyelash Extention
         %span{"data-filter" => ".vacation"} Others
       / end links
@@ -26,7 +28,7 @@
         .col-md-6.col-lg-4.margin-30px-bottom
           .border
             =link_to shop_path(shop) do
-              =image_tag shop.image_top_url(:index)
+              =image_tag shop.image_top_url(:shop_index)
               -# %img{:alt => "", :src => "/img/content/room-5.jpg"}/
               .padding-25px-all
                 -# %a{:href => "single-room.html"}

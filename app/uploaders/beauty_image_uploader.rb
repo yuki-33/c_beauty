@@ -29,9 +29,6 @@ class BeautyImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :thumb do
-    process resize_to_fill: [575, 400, "Center"]
-  end
 
   version :shop_image do
     process resize_and_pad: [1000, 650]
@@ -45,8 +42,16 @@ class BeautyImageUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [70, 70, "Center"]
   end
 
-  version :index do
+  version :shop_index do
     process resize_to_fill: [575, 400, "Center"]
+  end
+
+  version :top_middle do
+    process resize_to_fill: [490, 550, "Center"]
+  end
+  
+  version :top_info do
+    process resize_to_fill: [515, 485, "Center"]
   end
 
 
