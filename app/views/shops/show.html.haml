@@ -118,7 +118,7 @@
                     %ul.list-style-2
                       %li="Business Hour　営業時間　/　#{@shop.business_hour}"
                       %li="Regular Closed　定休日　/　#{@shop.regular_closed}"
-                      %li Note　備考　/　
+                      %li Note　備考　/
                       -# %li Safe Deposit Box
               %div
                 %h4.font-size28.xs-font-size24 Location
@@ -238,11 +238,29 @@
               -# %label{:for => "name"} Your Name:
               -# %input#name{:name => "name", :placeholder => "Name", :type => "text"}/
             .col-md-6
-              =f.email_field :email, placeholder: "email"
+              =f.email_field :email, placeholder: "Email"
+            .col-md-6
+              =f.text_field :tel, placeholder: "Tel"
+          .row
             .col-md-6
               .form-group
-                =f.label "Telephone"
-                =f.text_field_without_bootstrap :tel, placeholder: "tel"
+                =f.label "The 1st Choice"
+                =f.text_field_without_bootstrap :datetime_1, placeholder: "Date & Time"
+            .col-md-6
+              .form-group
+                =f.label "The 2nd Choice"
+                =f.text_field_without_bootstrap :datetime_1, placeholder: "Date & Time"
+            .col-md-6
+              .form-group
+                =f.label "The 3rd Choice"
+                =f.text_field_without_bootstrap :datetime_1, placeholder: "Date & Time"
+          -# .row
+          -#   .col-md-6
+          -#     =f.collection_select :shop.menu, Menu.all, :id, :menu, include_blank: true, class: 'form-control'
+
+
+
+
             -# .col-md-6
             -#   .form-group
             -#     %label{:for => "phone"} Phone Number:
@@ -273,6 +291,6 @@
             -#   .form-group
             -#     %label Message:
             -#     %textarea{:name => "message", :placeholder => "Message", :rows => "5"}
-            .col-md-12
-              -# %button.butn{:type => "submit"} Booking Now
-              =f.submit 'Booking Now', class: 'butn'
+          .col-md-12
+            -# %button.butn{:type => "submit"} Booking Now
+            =f.submit 'Booking Now', class: 'butn'
