@@ -1,11 +1,12 @@
 class ShopsController < ApplicationController
-  before_action :set_shop, only: [:show, :edit, :update, :destroy]
+  before_action :set_shop, only: [:show, :edit, :update, :destroy, :inquiry]
 
   def index
     @shops = Shop.all
   end
 
   def show
+    @inquiry = @shop.inquiries.build
   end
 
   def create
@@ -38,6 +39,15 @@ class ShopsController < ApplicationController
   def destroy
     @shop.destroy
     redirect_to shops_path
+  end
+
+  def inquiry
+    @inquiry = @shop.inquiries.build(inquiry_params)
+    if @inquiry.save
+      redirect_to shop_path(@shop)
+    else
+      render "show"
+    end
   end
 
   private
@@ -83,4 +93,15 @@ class ShopsController < ApplicationController
     )
   end
 
+  def inquiry_params
+    params[:inquiry].permit(
+      :name,
+      :email,
+      :tel,
+      :datetime_1,
+      :datetime_2,
+      :datetime_3,
+      :menu_id
+    )
+  end
 end

@@ -231,7 +231,7 @@
       .col-lg-12.sm-margin-50px-bottom
         %h4.text-uppercase.letter-spacing-1.margin-30px-bottom.font-size24 Booking Form
         -# %form{:method => "post"}
-        =bootstrap_form_with model: @inquery, local: true do |f|
+        =bootstrap_form_with url: inquiry_shop_path(@shop), local: true do |f|
           .row
             .col-md-6
               =f.text_field :name, placeholder: "Name"
@@ -245,21 +245,24 @@
             .col-md-6
               .form-group
                 =f.label "The 1st Choice"
-                =f.text_field_without_bootstrap :datetime_1, placeholder: "Date & Time"
+                =f.text_field_without_bootstrap :datetime_1, placeholder: "Date & Time", "data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker"
             .col-md-6
               .form-group
                 =f.label "The 2nd Choice"
-                =f.text_field_without_bootstrap :datetime_1, placeholder: "Date & Time"
+                =f.text_field_without_bootstrap :datetime_2, placeholder: "Date & Time"
             .col-md-6
               .form-group
                 =f.label "The 3rd Choice"
-                =f.text_field_without_bootstrap :datetime_1, placeholder: "Date & Time"
-          -# .row
-          -#   .col-md-6
-          -#     =f.collection_select :shop.menu, Menu.all, :id, :menu, include_blank: true, class: 'form-control'
+                =f.text_field_without_bootstrap :datetime_3, placeholder: "Date & Time"
+          .row
+            .col-md-6
+              =f.collection_select :menu_id, Menu.where(shop_id: @shop.id), :id, :menu, include_blank: true, class: 'form-control'
 
 
 
+          .col-md-12
+            -# %button.butn{:type => "submit"} Booking Now
+            =f.submit 'Booking Now', class: 'butn'
 
             -# .col-md-6
             -#   .form-group
@@ -270,13 +273,13 @@
             -#     %label{:for => "country"} Your Country:
             -#     %input#country{:name => "country", :placeholder => "country", :type => "text"}/
             -# #datepairExample.col-lg-12.col-sm-12
-            -#   .row
-            -#     .form-group.col-lg-6.col-sm-6
-            -#       %label Arrival Date
-            -#       %input{"data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker", :name => "date", :placeholder => "MM/DD/YYYY", :type => "text"}/
-            -#     .form-group.col-lg-6.col-sm-6
-            -#       %label Departure Date
-            -#       %input{"data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker", :name => "date1", :placeholder => "MM/DD/YYYY", :type => "text"}/
+            -# .row
+            -#   .form-group.col-lg-6.col-sm-6
+            -#     %label Arrival Date
+            -#     %input{"data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker", :name => "date", :placeholder => "MM/DD/YYYY", :type => "text"}/
+            -#   .form-group.col-lg-6.col-sm-6
+            -#     %label Departure Date
+            -#     %input{"data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker", :name => "date1", :placeholder => "MM/DD/YYYY", :type => "text"}/
             -# .col-md-6
             -#   .form-group
             -#     %label No of Rooms:
@@ -291,6 +294,3 @@
             -#   .form-group
             -#     %label Message:
             -#     %textarea{:name => "message", :placeholder => "Message", :rows => "5"}
-          .col-md-12
-            -# %button.butn{:type => "submit"} Booking Now
-            =f.submit 'Booking Now', class: 'butn'

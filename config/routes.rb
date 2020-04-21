@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   root to: 'tops#index'
-  resources :shops
+  resources :shops do
+    post 'inquiry' => 'shops#inquiry', on: :member
+  end
   resources :areas
   resources :categories
   resources :tops
