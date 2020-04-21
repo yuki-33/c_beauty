@@ -246,15 +246,15 @@
             .col-md-6
               .form-group
                 =f.label "The 1st Choice"
-                =f.text_field_without_bootstrap :datetime_1, placeholder: "Date & Time", "data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker"
+                =f.text_field_without_bootstrap :datetime_1, placeholder: "Date & Time", class: 'js-flatpickr'
             .col-md-6
               .form-group
                 =f.label "The 2nd Choice"
-                =f.text_field_without_bootstrap :datetime_2, placeholder: "Date & Time"
+                =f.text_field_without_bootstrap :datetime_2, placeholder: "Date & Time", class: 'js-flatpickr'
             .col-md-6
               .form-group
                 =f.label "The 3rd Choice"
-                =f.text_field_without_bootstrap :datetime_3, placeholder: "Date & Time"
+                =f.text_field_without_bootstrap :datetime_3, placeholder: "Date & Time", class: 'js-flatpickr'
           .row
             .col-md-6
               =f.collection_select :menu_id, Menu.where(shop_id: @shop.id), :id, :menu, include_blank: true, class: 'form-control'

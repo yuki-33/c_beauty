@@ -13,4 +13,6 @@
 //= require datepicker.min
 //= require isotope.pkgd.min
 //= require main
+//= require flatpickr/flatpickr
+//= require flatpickr/ja
 //= require common

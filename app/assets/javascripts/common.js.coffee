@@ -19,3 +19,9 @@
         s.attr 'for', RegExp.leftContext + (i + 1) + RegExp.rightContext
       return
     )
+
+  $('.js-flatpickr').flatpickr({
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    time_24hr: true
+  })

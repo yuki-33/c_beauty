@@ -26,11 +26,11 @@
     .main-wrapper
       =render 'header'
       -if notice.present?
-        .container
+        .container.margin-30px-top
           %p.notice.alert.alert-success{:role => "alert"}
             =notice
       -if alert.present?
-        .container
+        .container.margin-30px-top
           %p.alert.alert-danger{:role => "alert"}
             =alert
       = yield
