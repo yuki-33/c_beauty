@@ -27,7 +27,7 @@
       -@shops.each do |shop|
         .col-md-6.col-lg-4.margin-30px-bottom
           .border
-            =link_to shop_path(shop) do
+            =link_to shop_path(category_key: @category.category_key, id: shop) do
               =image_tag shop.image_top_url(:shop_index)
               -# %img{:alt => "", :src => "/img/content/room-5.jpg"}/
               .padding-25px-all

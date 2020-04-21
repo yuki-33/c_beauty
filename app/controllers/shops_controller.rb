@@ -3,7 +3,7 @@ class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy, :inquiry]
 
   def index
-    @shops = Shop.where.(title: "test")
+    @shops = @category.shops
   end
 
   def show
