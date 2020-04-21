@@ -44,7 +44,7 @@ class ShopsController < ApplicationController
   def inquiry
     @inquiry = @shop.inquiries.build(inquiry_params)
     if @inquiry.save
-      redirect_to shop_path(@shop)
+      redirect_to shop_path(@shop), notice: 'Your booking has been sent.'
     else
       render "show"
     end
