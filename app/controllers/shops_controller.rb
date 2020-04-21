@@ -1,8 +1,9 @@
 class ShopsController < ApplicationController
+  before_action :set_category, only: [:show, :index]
   before_action :set_shop, only: [:show, :edit, :update, :destroy, :inquiry]
 
   def index
-    @shops = Shop.all
+    @shops = Shop.where.(title: "test")
   end
 
   def show
@@ -51,6 +52,10 @@ class ShopsController < ApplicationController
   end
 
   private
+
+  def set_category
+    @category = Category.find_by(category_key: params[:category_key])
+  end
 
   def set_shop
     @shop = Shop.find(params[:id])
@@ -104,4 +109,6 @@ class ShopsController < ApplicationController
       :menu_id
     )
   end
+
+
 end
