@@ -1,0 +1,62 @@
+%h2 Sign up
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .field
+    = f.label :password
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+    %br/
+    = f.password_field :password, autocomplete: "new-password"
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .actions
+    = f.submit "Sign up"
+= render "devise/shared/links"
+
+
+/ start registration section
+.d-flex.align-items-center.position-relative.min-vh-100
+  / start left content
+  .col-sm-8.center-col.col-md-7.col-xl-4.d-lg-flex.align-items-center.px-0
+    .w-100.padding-50px-all.sm-padding-30px-all.xs-padding-20px-all
+      %h3 Registration
+      -# %form{:action => "#!", :method => "post"}
+      =bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .row
+          .col-md-12
+            =f.email_field_without_bootstrap :email, placeholder: "Email"
+              -# %input#username{:maxlength => "70", :name => "username", :placeholder => "User Name", :type => "text"}/
+          -# .col-md-12
+          -#   .form-group
+          -#     %input#email{:maxlength => "70", :name => "email", :placeholder => "Email", :type => "text"}/
+          .col-12
+            = f.password_field_without_bootstrap :password, placeholder: "Password"
+              -# %input#password1{:maxlength => "70", :name => "password", :placeholder => "Password", :type => "password"}/
+          .col-12
+            = f.password_field_without_bootstrap :password_confirmation, placeholder: "Confirm Passwor"
+
+              -# %input#password2{:maxlength => "70", :name => "password", :placeholder => "Confirm Password", :type => "password"}/
+          -# .col-md-12
+          -#   .custom-control.custom-checkbox
+          -#     %input#terms-condition.custom-control-input{:type => "checkbox"}/
+          -#     %label.custom-control-label{:for => "terms-condition"}
+          -#       I agree to the
+          -#       %a.text-theme-color{:href => "#!"} Terms & Conditions
+          .col-md-12.margin-25px-top
+            -# %button.butn.btn-block{:type => "button"} Register
+            = f.submit "Sign up", class: "butn btn-block"
+      = render "devise/shared/links"
+        .col-md-12.text-center.margin-25px-top
+          %span
+            Already have an account?
+            %a{:href => "login.html"} Login
+  / end left content
+  .container-fluid.bg-img.height-100vh.xs-display-none{"data-background" => "/img/content/login-register.jpg"}

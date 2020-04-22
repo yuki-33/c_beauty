@@ -35,6 +35,7 @@ gem 'jquery-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'coffee-rails', '~> 4.2'
+gem 'devise'
 
 
 group :development, :test do

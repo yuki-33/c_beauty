@@ -45,12 +45,22 @@
                   -# %a{:href => "about.html"} Spa & Facial
                   =link_to "Spa & Facial", shops_path(category_key: "spa")
                 %li
-                  %a{:href => "#"} Sign In
+                  %a{:href => "#"} My Page
                   %ul
-                    %li
-                      %a{:href => "our-rooms.html"} Sign In
-                    %li
-                      %a{:href => "single-room.html"} Login
+                    -if user_signed_in?
+                      %li
+                        %a{:href => "our-rooms.html"} Show My page
+                      %li
+                        -# %a{:href => "single-room.html"} Sign out
+                        =link_to "Sign out", destroy_user_session_path
+
+                    -else
+                      %li
+                        -# %a{:href => "our-rooms.html"} Sign in
+                        =link_to "Sign in", new_user_session_path
+                      %li
+                        -# %a{:href => "single-room.html"} Create My page
+                        =link_to "Create My page", new_user_registration_path
                 %li
                   %a{:href => "about.html"} About us
                 %li
