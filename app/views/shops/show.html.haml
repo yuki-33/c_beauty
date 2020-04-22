@@ -27,7 +27,7 @@
       %li
         =link_to 'home', root_path
       %li
-        =link_to @shop.name, shop_path(category_key: @category.category_key, id: @shop)
+        =link_to @shop.name, shop_path(@shop)
 %section.padding_0px
   .container
     .row.align-items-center

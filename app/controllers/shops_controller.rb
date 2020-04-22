@@ -13,7 +13,7 @@ class ShopsController < ApplicationController
   def create
     @shop = Shop.new(shop_params)
     if @shop.save
-      redirect_to shop_path(category_key: @category.category_key, id: @shop)
+      redirect_to shop_path(@shop)
     else
       render "new"
     end
@@ -31,7 +31,7 @@ class ShopsController < ApplicationController
 
   def update
     if @shop.update(shop_params)
-      redirect_to shop_path(category_key: @category.category_key, id: @shop)
+      redirect_to shop_path(@shop)
     else
       render "edit"
     end
@@ -45,7 +45,7 @@ class ShopsController < ApplicationController
   def inquiry
     @inquiry = @shop.inquiries.build(inquiry_params)
     if @inquiry.save
-      redirect_to shop_path(category_key: @category.category_key, id: @shop), notice: 'Your booking has been sent.'
+      redirect_to shop_path(@shop), notice: 'Your booking has been sent.'
     else
       render "show"
     end

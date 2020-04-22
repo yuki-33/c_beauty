@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root to: 'shops#index'
+  root to: 'tops#index'
   get '/:category_key/' => 'shops#index', constraints: { category_key: /hair_salon|nail|eyelash|spa/ }, as: 'shops'
-  get '/:category_key/:id' => 'shops#show', constraints: { category_key: /hair_salon|nail|eyelash|spa/ }, as: 'shop'
-  resources :shops do
+  resources :shops, except: :index do
     post 'inquiry' => 'shops#inquiry', on: :member
   end
+
   resources :areas
   resources :categories
   resources :tops
