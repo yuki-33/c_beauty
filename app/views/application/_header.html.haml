@@ -37,13 +37,13 @@
                   =link_to "TOP", tops_path
                 %li
                   -# %a{:href => "about.html"} Hair Salon
-                  =link_to "HAIR", shops_path
+                  =link_to "HAIR", shops_path(category_key: "hair_salon")
                 %li
-                  %a{:href => "about.html"} Nails & Eyelash
-                  -# =link_to "HAIR SALON", shop_path(@shop)
+                  -# %a{:href => "about.html"} Nails & Eyelash
+                  =link_to "Nails & Eyelash", shops_path(category_key: "nail")
                 %li
-                  %a{:href => "about.html"} Spa & Facial
-                  -# =link_to "HAIR SALON", shop_path(@shop)
+                  -# %a{:href => "about.html"} Spa & Facial
+                  =link_to "Spa & Facial", shops_path(category_key: "spa")
                 %li
                   %a{:href => "#"} Sign In
                   %ul

@@ -94,7 +94,7 @@
     .row
       -@shops.each do |shop|
         .col-lg-6.sm-margin-30px-bottom
-          =link_to shop_path(shop) do
+          =link_to shop_path(category_key: @category.category_key, id: shop) do
             .row.padding-15px-all.border.margin-30px-bottom.no-gutters.align-items-center
               .col-md-4.xs-margin-20px-bottom
                 .agent-image.overflow-hidden
