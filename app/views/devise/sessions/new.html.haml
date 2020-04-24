@@ -1,0 +1,79 @@
+-# %h2 Log in
+-# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     %br/
+-#     = f.password_field :password, autocomplete: "current-password"
+-#   - if devise_mapping.rememberable?
+-#     .field
+-#       = f.check_box :remember_me
+-#       = f.label :remember_me
+-#   .actions
+-#     = f.submit "Log in"
+-# = render "devise/shared/links"
+-#
+
+/ start login section
+.d-flex.align-items-center.position-relative.min-vh-100
+  .col-sm-8.center-col.col-md-7.col-xl-4.d-lg-flex.align-items-center.px-0
+    .w-100.padding-50px-all.sm-padding-30px-all.xs-padding-20px-all
+      %h3 Login
+      =bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        =f.form_group :email do
+          .col-md-12
+            =f.email_field_without_bootstrap :email, placeholder: "Email"
+        =f.form_group :password do
+          .col-md-12
+            = f.password_field_without_bootstrap :password, placeholder: "Password"
+        .row
+          - if devise_mapping.rememberable?
+            .col-sm-6.mb-2
+              .custom-control.custom-checkbox
+                = f.check_box_without_bootstrap :remember_me, class: 'custom-control-input'
+                = f.label :remember_me, 'Keep me signed in', class: 'custom-control-label'
+          .col-sm-6.text-left.text-sm-right
+            =link_to 'Forgot password?', new_password_path(resource_name), class: 'm-link-muted'
+            -# %a.m-link-muted{:href => "#!"} Forgot password?
+        -# .row
+        -#   .col-sm-6.mb-2
+        -#     .custom-control.custom-checkbox
+        -#       %input#login-remember.custom-control-input{:type => "checkbox"}/
+        -#       %label.custom-control-label{:for => "login-remember"} Keep me signed in
+        -#   .col-sm-6.text-left.text-sm-right
+        -#     %a.m-link-muted{:href => "#!"} Forgot password?
+        -#
+        .actions
+          = f.submit 'LOGIN', class: 'butn btn-block'
+
+
+      -# %form{:action => "#!", :method => "post"}
+      -#   -# .row
+      -#   -#   .col-md-12
+      -#   -#     .form-group
+      -#   -#       %input#username{:maxlength => "70", :name => "username", :placeholder => "User Name", :required => "required", :type => "text"}/
+      -#   -#   .col-12
+      -#   -#     .form-group
+      -#   -#       %input#password{:maxlength => "70", :name => "password", :placeholder => "Password", :required => "required", :type => "password"}/
+      -#   .row
+      -#     .col-sm-6.mb-2
+      -#       .custom-control.custom-checkbox
+      -#         %input#login-remember.custom-control-input{:type => "checkbox"}/
+      -#         %label.custom-control-label{:for => "login-remember"} Keep me signed in
+      -#     .col-sm-6.text-left.text-sm-right
+      -#       %a.m-link-muted{:href => "#!"} Forgot password?
+      -#   .col-md-12.margin-25px-top
+      -#     %button.butn.btn-block{:type => "button"} Login
+      -#
+      -#   .col-md-12.text-center.margin-25px-top
+      -#     %span
+      -#       Don't have an account yet?
+      -#       %a{:href => "registration.html"} Register
+  / end left content
+  / start right content
+  .container-fluid.bg-img.height-100vh.xs-display-none{"data-background" => "/img/content/login-register.jpg"}
+  / end right content
+/ end login section
