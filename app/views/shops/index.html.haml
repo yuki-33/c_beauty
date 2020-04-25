@@ -89,3 +89,69 @@
   -#               Room Details
   -#               %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
   -# / end our rooms section
+      -#             -# %a{:href => "single-room.html"}
+      -#             %h5.margin-5px-bottom.font-size28.xs-font-size24=shop.name
+      -#             -# .font-size12.text-uppercase.text-extra-dark-gray.font-weight-700.margin-20px-bottom.letter-spacing-2 Start from $250/night
+      -#             %p.margin-nine-bottom.sm-margin-seven-bottom.xs-margin-four-bottom=shop.introduction
+      -#             .font-weight-600.text-theme-color
+      -#               Shop Details
+      -#               %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
+
+
+      -# .row
+      -#   / start links
+      -#   .filtering.col-sm-12.text-center
+      -#     %span.active{"data-filter" => "*"} All
+      -#     %span{"data-filter" => ".food"} Nails
+      -#     %span{"data-filter" => ".relaxation"} Eyelash Extention
+      -#     %span{"data-filter" => ".vacation"} Others
+      -#   / end links
+-when "nail"
+  %section.page-title-section.bg-img.cover-background{"data-background" => "/img/top/nail_top2.jpg", "data-overlay-dark" => "1"}
+    .container
+      %h1 Nail & Eyelash
+      %ul
+        %li
+          =link_to "TOP", tops_path
+          -# %a{:href => "index.html"} Home
+        %li
+          =link_to "Salon", shops_path(category_key: "nail")
+          -# %a{:href => "#!"} Single Room
+  / start our rooms section
+  %section
+    .container
+      .text-center.margin-50px-bottom.xs-margin-30px-bottom
+        %h3.margin-10px-bottom Nail & Eyelash Salons
+        %p.no-margin-bottom ネイルサロン、まつげサロン、自宅でサロンをご紹介
+      .row
+        .filtering.col-sm-12.text-center
+          %span.active{"data-filter" => "*"} All
+          %span{"data-filter" => ".food"} Nails
+          %span{"data-filter" => ".relaxation"} Eyelash Extention
+          %span{"data-filter" => ".vacation"} Others
+      =render 'index_footer'
+-when "spa"
+  %section.page-title-section.bg-img.cover-background{"data-background" => "/img/top/facial.jpg", "data-overlay-dark" => "1"}
+    .container
+      %h1 Spa & Other salons
+      %ul
+        %li
+          =link_to "TOP", tops_path
+          -# %a{:href => "index.html"} Homez
+        %li
+          =link_to "Salon", shops_path(category_key: "spa")
+          -# %a{:href => "#!"} Single Room
+  / start our rooms section
+  %section
+    .container
+      .text-center.margin-50px-bottom.xs-margin-30px-bottom
+        %h3.margin-10px-bottom Spa, other salons
+        %p.no-margin-bottom フェイシャル、マッサージなどのエステサロンをご紹介
+      .row
+        / start links
+        .filtering.col-sm-12.text-center
+          %span.active{"data-filter" => "*"} All
+          %span{"data-filter" => ".food"} Nails
+          %span{"data-filter" => ".relaxation"} Eyelash Extention
+          %span{"data-filter" => ".vacation"} Others
+      =render 'index_footer'

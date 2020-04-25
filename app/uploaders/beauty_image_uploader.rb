@@ -46,10 +46,14 @@ class BeautyImageUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [575, 400, "Center"]
   end
 
+  version :top_seconde do
+    process resize_to_fill: [535, 595, "Center"]
+  end
+
   version :top_middle do
     process resize_to_fill: [490, 550, "Center"]
   end
-  
+
   version :top_info do
     process resize_to_fill: [515, 485, "Center"]
   end
