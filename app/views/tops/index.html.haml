@@ -115,20 +115,6 @@
                     Read More
                     %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
 
-      -#
-      -#   .row.padding-15px-all.border.no-gutters.align-items-center
-      -#     .col-md-4.xs-margin-20px-bottom
-      -#       .agent-image.overflow-hidden
-      -#         %a{:href => "blog-details.html"}
-      -#           %img{:alt => "", :src => "img/blog/blog-07.jpg"}/
-      -#     .col-md-8
-      -#       .padding-30px-left.xs-no-padding-lr.padding-20px-right
-      -#         %span.text-uppercase.font-size12.text-theme-color.font-weight-600.letter-spacing-1 Dec. 20, 2019
-      -#         %h5.font-size20.margin-10px-top
-      -#           %a.text-extra-dark-gray{:href => "#"} Great pleasure to care hunger of different customers
-      -#         %a.font-weight-600{:href => "blog-details.html"}
-      -#           Read More
-      -#           %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
       -# .col-lg-6
       -#   .row.padding-15px-all.border.margin-30px-bottom.no-gutters.align-items-center
       -#     .col-md-4.xs-margin-20px-bottom
@@ -157,28 +143,46 @@
       -#           Read More
       -#           %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
 / end blog section
+/ start subscribe section
+%section.bg-img.cover-background{"data-background" => "/img/top/beauty_to_top.jpg", "data-overlay-dark" => "5"}
+  .container
+    %div
+      .row.align-items-center.center
+        .col-lg-12.sm-text-center.sm-margin-20px-bottom
+          =link_to new_user_registration_path do
+            %h4.margin-10px-bottom.text-white Sign up and Get Your Own Beauty!
+            %p.no-margin-bottom.text-white.font-size18.sm-font-size16.sm-display-none My page をつくる方は こちら
+        -# .col-lg-6
+-#           %form{:action => "#!", :method => "post"}
+-#             .email-box
+-#               .input
+-#                 %input{:placeholder => "Enter your email", :type => "email"}/
+-#                 %a.butn{:href => "javascript:void(0)"}
+-#                   %span Subscribe
+-# / end subscribe section
+
 %section
   .container
     .row.align-items-center
       .col-md-4.xs-margin-30px-bottom
         -# %button.butn{:type => "submit"} Create New Shop
         =link_to 'Create New Shop', new_shop_path, class: 'butn'
-/ start gallery section
-%section.no-padding
-  .container-fluid.no-padding
-    #portfolio.owl-carousel.owl-theme
-      %div
-        %img{:alt => "", :src => "img/portfolio/4.jpg"}/
-      %div
-        %img{:alt => "", :src => "img/portfolio/6.jpg"}/
-      %div
-        %img{:alt => "", :src => "img/portfolio/7.jpg"}/
-      %div
-        %img{:alt => "", :src => "img/portfolio/5.jpg"}/
-      %div
-        %img{:alt => "", :src => "img/portfolio/8.jpg"}/
-      %div
-        %img{:alt => "", :src => "img/portfolio/9.jpg"}/
-      %div
-        %img{:alt => "", :src => "img/portfolio/10.jpg"}/
-  / end gallery section
+-# / start gallery section
+-# %section.no-padding
+-#   .container-fluid.no-padding
+-#     #portfolio.owl-carousel.owl-theme
+-#       %div
+-#         %img{:alt => "", :src => "img/portfolio/4.jpg"}/
+-#       %div
+-#         %img{:alt => "", :src => "img/portfolio/6.jpg"}/
+-#       %div
+-#         %img{:alt => "", :src => "img/portfolio/7.jpg"}/
+-#       %div
+-#         %img{:alt => "", :src => "img/portfolio/5.jpg"}/
+-#       %div
+-#         %img{:alt => "", :src => "img/portfolio/8.jpg"}/
+-#       %div
+-#         %img{:alt => "", :src => "img/portfolio/9.jpg"}/
+-#       %div
+-#         %img{:alt => "", :src => "img/portfolio/10.jpg"}/
+-#   / end gallery section

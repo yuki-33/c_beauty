@@ -1,0 +1,520 @@
+!!!
+%html{:lang => "en"}
+  %head
+    / metas
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "Chitrakoot Web", :name => "author"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
+    %meta{:content => "Septosha Hotel Booking Bootstrap Template", :name => "keywords"}/
+    %meta{:content => "Fivestar - Hotel Booking Bootstrap Template", :name => "description"}/
+    / title
+    %title Fivestar - Hotel Booking Bootstrap Template
+    / favicon
+    %link{:href => "img/logos/favicon.png", :rel => "shortcut icon"}/
+    %link{:href => "img/logos/apple-touch-icon-57x57.png", :rel => "apple-touch-icon"}/
+    %link{:href => "img/logos/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
+    %link{:href => "img/logos/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
+    / plugins
+    %link{:href => "css/plugins.css", :rel => "stylesheet"}/
+    / search css
+    %link{:href => "search/search.css", :rel => "stylesheet"}/
+    / core style css
+    %link{:href => "css/styles.css", :rel => "stylesheet"}/
+  %body
+    / start page loading
+    #preloader
+      .row.loader
+        .loader-icon
+    / end page loading
+    / start main-wrapper section
+    .main-wrapper
+      / start header section
+      %header.header-style-1
+        #top-bar.top-bar-style2
+          .container.border-bottom.padding-25px-bottom.xs-padding-10px-bottom
+            .d-flex.align-items-center.justify-content-center.justify-content-md-between
+              .xs-display-none
+                .top-bar-info
+                  %ul
+                    %li
+                      %i.fas.fa-mobile-alt>
+                      (+123) 456 7890
+              %div
+                .xs-text-center
+                  %a.navbar-brand.xs-no-margin-right{:href => "index.html"}
+                    %img#logo{:alt => "logo", :src => "img/logos/logo.png"}/
+              .xs-display-none
+                %a.butn{:href => "#"} Book now
+        .navbar-default
+          / start top search
+          .top-search.bg-black
+            .container
+              %form.search-form{"accept-charset" => "utf-8", :action => "search.html", :method => "GET"}
+                .input-group
+                  %span.input-group-addon.cursor-pointer
+                    %button.search-form_submit.fas.fa-search.font-size18.text-white{:type => "submit"}
+                  %input.search-form_input.form-control{:autocomplete => "off", :name => "s", :placeholder => "Type & hit enter...", :type => "text"}/
+                  %span.input-group-addon.close-search
+                    %i.fas.fa-times.font-size18.line-height-28.margin-5px-top
+          / end top search
+          .container
+            .row.align-items-center
+              .col-12.col-lg-12
+                .menu_area.alt-font
+                  %nav.navbar.navbar-expand-lg.navbar-light.no-padding.sm-padding-15px-tb
+                    .navbar-toggler
+                    / start menu area
+                    %ul#nav.navbar-nav.ml-auto.mr-auto{:style => "display: none;"}
+                      %li
+                        %a{:href => "#"} Home
+                        %ul
+                          %li
+                            %a{:href => "demo-1.html"} Demo-1
+                          %li
+                            %a{:href => "demo-2.html"} Demo-2
+                          %li
+                            %a{:href => "demo-3.html"} Demo-3
+                      %li
+                        %a{:href => "about.html"} About Us
+                      %li
+                        %a{:href => "#"} Pages
+                        %ul
+                          %li
+                            %a{:href => "testimonial.html"} Testimonial
+                          %li
+                            %a{:href => "offer-packages.html"} Offre Packages
+                          %li
+                            %a{:href => "my-booking.html"} My Booking
+                          %li
+                            %a{:href => "restaurant.html"} Restaurant
+                          %li
+                            %a{:href => "#"} Other
+                            %ul
+                              %li
+                                %a{:href => "login.html"} Login
+                              %li
+                                %a{:href => "registration.html"} Registration
+                              %li
+                                %a{:href => "coming-soon.html"} Coming Soon
+                              %li
+                                %a{:href => "404-page.html"} 404 Page
+                      %li
+                        %a{:href => "#"} Rooms
+                        %ul
+                          %li
+                            %a{:href => "our-rooms.html"} Our Rooms
+                          %li
+                            %a{:href => "single-room.html"} Single Rooms
+                      %li
+                        %a{:href => "#"} Gallery
+                        %ul
+                          %li
+                            %a{:href => "gallery-style1.html"} Gallery style1
+                          %li
+                            %a{:href => "gallery-style2.html"} Gallery style2
+                          %li
+                            %a{:href => "gallery-masonry.html"} Gallery Masonry
+                          %li
+                            %a{:href => "single-gallery.html"} Single Gallery
+                      %li
+                        %a{:href => "#"} Blog
+                        %ul
+                          %li
+                            %a{:href => "blog-grid.html"} Blog Grid
+                          %li
+                            %a{:href => "blog-details.html"} Blog Detail
+                          %li
+                            %a{:href => "blog-masonry.html"} Blog Masonry
+                      %li
+                        %a{:href => "contact-us.html"} Contact
+                    / end menu area
+                    / start atribute navigation
+                    .attr-nav
+                      %ul.no-margin-top
+                        %li.search
+                          %a{:href => "#"}
+                            %i.fas.fa-search
+                    / end atribute navigation
+      / end header section
+      / start banner
+      %section.bg-img.screen-height.cover-background.line-banner{"data-background" => "img/banner/bg-03.jpg", "data-overlay-dark" => "0"}
+        / start banner text
+        .container.h-100
+          .header-text.display-table.h-100
+            .display-table-cell.vertical-align-bottom
+              .bg-white-opacity.padding-40px-top.padding-35px-bottom.padding-20px-lr.border-radius-3
+                %form{:action => "#!", :method => "post"}
+                  .row.align-items-center.justify-content-center
+                    .col-md-6.col-lg-2
+                      .form-group
+                        %label Arrival Date
+                        %input{"data-provide" => "datepicker", :name => "date", :placeholder => "Date:", :type => "text"}/
+                    .col-md-6.col-lg-2
+                      .form-group
+                        %label Departure Date
+                        %input{"data-provide" => "datepicker", :name => "date", :placeholder => "Date:", :type => "text"}/
+                    .col-md-6.col-lg-2
+                      .form-group
+                        .select-option
+                          %label Adults
+                          %select
+                            %option{:value => "0"} 0
+                            %option{:value => "1"} 1
+                            %option{:value => "2"} 2
+                            %option{:value => "3"} 3
+                    .col-md-6.col-lg-2
+                      .form-group
+                        .select-option
+                          %label Children
+                          %select
+                            %option{:value => "0"} 0
+                            %option{:value => "1"} 1
+                            %option{:value => "2"} 2
+                            %option{:value => "3"} 3
+                    .col-lg-3.margin-15px-top
+                      %button.butn.no-margin-bottom{:type => "submit"} Check Availability
+        / end banner text
+      / end banner
+      / start services section
+      %section
+        .container
+          .text-center.margin-70px-bottom.xs-margin-30px-bottom
+            %h3.margin-10px-bottom Hotel Services
+            %p.no-margin-bottom Lorem Ipsum is simply dummy printing
+          .row
+            .col-md-6.col-lg-4.margin-40px-bottom
+              .d-flex
+                %div
+                  %span.font-size40.xs-font-size34.text-theme-color.display-inline-block
+                    %i.ti-anchor
+                .margin-20px-left
+                  %h3.font-size20.margin-20px-bottom.sm-margin-10px-bottom 24-hour reception
+                  %p.no-margin-bottom It is a long established fact that a reader will be distracted by the readable content.
+            .col-md-6.col-lg-4.margin-40px-bottom
+              .d-flex
+                %div
+                  %span.font-size40.xs-font-size34.text-theme-color.display-inline-block
+                    %i.ti-bolt-alt
+                .margin-20px-left
+                  %h3.font-size20.margin-20px-bottom.sm-margin-10px-bottom Room service
+                  %p.no-margin-bottom It is a long established fact that a reader will be distracted by the readable content.
+            .col-md-6.col-lg-4.margin-40px-bottom
+              .d-flex
+                %div
+                  %span.font-size40.xs-font-size34.text-theme-color.display-inline-block
+                    %i.ti-bookmark
+                .margin-20px-left
+                  %h3.font-size20.margin-20px-bottom.sm-margin-10px-bottom Travel Fast
+                  %p.no-margin-bottom It is a long established fact that a reader will be distracted by the readable content.
+            .col-md-6.col-lg-4.sm-margin-40px-bottom
+              .d-flex
+                %div
+                  %span.font-size40.xs-font-size34.text-theme-color.display-inline-block
+                    %i.ti-pulse
+                .margin-20px-left
+                  %h3.font-size20.margin-20px-bottom.sm-margin-10px-bottom Restaurant & Bar
+                  %p.no-margin-bottom It is a long established fact that a reader will be distracted by the readable content.
+            .col-md-6.col-lg-4.xs-margin-40px-bottom
+              .d-flex
+                %div
+                  %span.font-size40.xs-font-size34.text-theme-color.display-inline-block
+                    %i.ti-ticket
+                .margin-20px-left
+                  %h3.font-size20.margin-20px-bottom.sm-margin-10px-bottom Swimming Pool
+                  %p.no-margin-bottom It is a long established fact that a reader will be distracted by the readable content.
+            .col-md-6.col-lg-4
+              .d-flex
+                %div
+                  %span.font-size40.xs-font-size34.text-theme-color.display-inline-block
+                    %i.ti-eraser
+                .margin-20px-left
+                  %h3.font-size20.margin-20px-bottom.sm-margin-10px-bottom Free Wi-Fi
+                  %p.no-margin-bottom It is a long established fact that a reader will be distracted by the readable content.
+      / end services section
+      / start about us section
+      %section
+        .container
+          .row.align-items-center
+            .col-md-6.xs-margin-30px-bottom
+              %img{:alt => "", :src => "img/content/about.jpg"}/
+            .col-md-6
+              .about-us.padding-40px-left.sm-no-padding-left
+                %span.font-size16.xs-font-size14.text-uppercase.text-theme-color.letter-spacing-2.xs-letter-spacing-1.font-weight-700 Welcome to Our Hotel
+                %h2.margin-fourteen-bottom.sm-margin-seven-bottom.xs-margin-four-bottom.margin-20px-top.sm-margin-10px-top Create Your Sweet Memory With Us!
+                %p.margin-nine-bottom.xs-margin-four-bottom Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic.
+                %a.font-weight-600{:href => "about.html"}
+                  View More
+                  %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
+      / end  about us section
+      / start popular things section
+      %section
+        .container
+          .text-center.margin-40px-bottom
+            %h3.margin-10px-bottom Popular Things Near You
+            %p.no-margin-bottom Lorem Ipsum is simply dummy printing
+          .row.popular-things
+            .col-lg-4.sm-margin-30px-bottom
+              .theme-shadow.border-radius-3
+                %img{:alt => "", :src => "img/content/01.jpg"}/
+                .border-bottom.padding-25px-all.d-flex.justify-content-between
+                  %h5.font-size17.no-margin-bottom
+                    %a.text-extra-dark-gray{:href => "single-room.html"} Single room
+                  %ul.rate.no-margin-bottom
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                %div
+                  .row.align-items-center.text-center.padding-15px-tb
+                    .col-6.border-right
+                      %a.butn.small{:href => "single-room.html"} book now
+                    .col-6
+                      %span.display-block.font-size20.letter-spacing-2.text-extra-dark-gray $180.00
+                      %span Per night
+            .col-lg-4.sm-margin-30px-bottom
+              .theme-shadow.border-radius-3
+                %img{:alt => "", :src => "img/content/02.jpg"}/
+                .border-bottom.padding-25px-all.d-flex.justify-content-between
+                  %h5.font-size17.no-margin-bottom
+                    %a.text-extra-dark-gray{:href => "single-room.html"} Double room
+                  %ul.rate.no-margin-bottom
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                %div
+                  .row.align-items-center.text-center.padding-15px-tb
+                    .col-6.border-right
+                      %a.butn.small{:href => "single-room.html"} book now
+                    .col-6
+                      %span.display-block.font-size20.letter-spacing-2.text-extra-dark-gray $280.00
+                      %span Per night
+            .col-lg-4
+              .theme-shadow.border-radius-3
+                %img{:alt => "", :src => "img/content/03.jpg"}/
+                .border-bottom.padding-25px-all.d-flex.justify-content-between
+                  %h5.font-size17.no-margin-bottom
+                    %a.text-extra-dark-gray{:href => "single-room.html"} Family apartment
+                  %ul.rate.no-margin-bottom
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                    %li
+                      %a{:href => "#"}
+                        %i.fas.fa-star
+                %div
+                  .row.align-items-center.text-center.padding-15px-tb
+                    .col-6.border-right
+                      %a.butn.small{:href => "single-room.html"} book now
+                    .col-6
+                      %span.display-block.font-size20.letter-spacing-2.text-extra-dark-gray $380.00
+                      %span Per night
+      / end popular things section
+      / start extra parallax section
+      %section.parallax.cover-background{"data-background" => "img/content/demo1-parallax.jpg", "data-overlay-dark" => "6"}
+        .container
+          .text-center.extra-parallax
+            %h3.text-uppercase.padding-20px-bottom.margin-20px-bottom.text-white.letter-spacing-1.font-size38.sm-font-size30.xs-font-size26.position-relative Enjoy your lovely holidays
+            %p.text-white.width-65.sm-width-90.xs-width-100.center-col.margin-30px-bottom Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took.
+            %a.butn{:href => "#"} book now
+      / end extra parallax section
+      / start testimonial section
+      %section
+        .container
+          .text-center.margin-50px-bottom
+            %h3.margin-10px-bottom Testimonial
+            %p.no-margin-bottom Lorem Ipsum is simply dummy printing
+          .row
+            .col-md-6.xs-margin-40px-bottom
+              .theme-shadow.padding-50px-all.sm-padding-40px-all.testimonial
+                %p.line-height-35.sm-line-height-35.font-size18.sm-font-size16.text-extra-dark-gray.margin-30px-bottom It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that.
+                .d-flex.align-items-center
+                  .margin-15px-right
+                    %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "img/testmonials/t-1.jpg"}/
+                  %div
+                    %h6.font-size18.no-margin-bottom Isabel Rowla
+                    %small Customer
+            .col-md-6
+              .theme-shadow.padding-50px-all.sm-padding-40px-all.testimonial
+                %p.line-height-35.sm-line-height-35.font-size18.sm-font-size16.text-extra-dark-gray.margin-30px-bottom Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still.
+                .d-flex.align-items-center
+                  .margin-15px-right
+                    %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "img/testmonials/t-2.jpg"}/
+                  %div
+                    %h6.font-size18.no-margin-bottom James Martin
+                    %small Customer
+      / end testimonial section
+      / start blog section
+      %section
+        .container
+          .text-center.margin-50px-bottom.xs-margin-30px-bottom
+            %h3.margin-10px-bottom Our Blog
+            %p.no-margin-bottom Lorem Ipsum is simply dummy printing
+          .row.justify-content-center
+            .col-xl-6.col-lg-7.col-md-12.sm-margin-30px-bottom
+              %a.row.no-gutters.margin-30px-bottom.theme-shadow.align-items-center{:href => "blog-details.html"}
+                .col-md-4
+                  %img{:alt => "", :src => "img/blog/blog-01.jpg"}/
+                .col-md-8
+                  .padding-15px-lr.xs-padding-30px-all
+                    %h5.no-margin-bottom.font-size20 Best oriental hotel channel on youTube for our clients.
+              %a.row.no-gutters.theme-shadow.align-items-center{:href => "blog-details.html"}
+                .col-md-4
+                  %img{:alt => "", :src => "img/blog/blog-02.jpg"}/
+                .col-md-8
+                  .padding-15px-lr.xs-padding-30px-all
+                    %h5.no-margin-bottom.font-size20 Featured Enrolling new members into the hotel.
+            .col-md-12.col-lg-4
+              .height-100.theme-shadow.blog-block
+                %a.d-flex.align-items-center{:href => "blog-details.html"}
+                  .d-flex.align-items-center
+                    .padding-20px-lr.padding-10px-tb.text-center
+                      %span.d-block.font-size18 11
+                      %span.text-small April
+                    %span.h6.text-theme-color We give you the greatest hotel business
+                %a.d-flex.align-items-center{:href => "blog-details.html"}
+                  .d-flex.align-items-center
+                    .padding-20px-lr.padding-10px-tb.text-center
+                      %span.d-block.font-size18 16
+                      %span.text-small April
+                    %span.h6.text-theme-color Recommended enhancing life around great food.
+                %a.d-flex.align-items-center{:href => "blog-details.html"}
+                  .d-flex.align-items-center
+                    .padding-20px-lr.padding-10px-tb.text-center
+                      %span.d-block.font-size18 18
+                      %span.text-small April
+                    %span.h6.text-theme-color Great pleasure to care hunger of different customers
+      / end blog section
+      / start subscribe section
+      %section.bg-img.cover-background{"data-background" => "img/content/subscribe.jpg", "data-overlay-dark" => "6"}
+        .container
+          %div
+            .row.align-items-center
+              .col-lg-6.sm-text-center.sm-margin-20px-bottom
+                %h4.margin-10px-bottom.text-white Stay up to date, with our newsletter
+                %p.no-margin-bottom.text-white.font-size18.sm-font-size16.sm-display-none The latest news and stories in your inbox.
+              .col-lg-6
+                %form{:action => "#!", :method => "post"}
+                  .email-box
+                    .input
+                      %input{:placeholder => "Enter your email", :type => "email"}/
+                      %a.butn{:href => "javascript:void(0)"}
+                        %span Subscribe
+      / end subscribe section
+      / start footer section
+      %footer
+        .footer-area.padding-70px-tb.md-padding-40px-tb.xs-padding-30px-tb
+          .container
+            .row
+              .col-lg-3.col-sm-6.sm-margin-30px-bottom
+                %img.width-70.margin-30px-bottom.xs-margin-20px-bottom{:alt => "", :src => "img/logos/logo.png"}/
+                %address.width-70.no-margin-bottom 74 Guild Street 542B, Great North Town MT.
+              .col-lg-3.col-sm-6.sm-margin-30px-bottom
+                %h3.footer-title-style1 Reservation
+                %ul.list-style-1.no-margin
+                  %li
+                    %span
+                      %strong Email:
+                      addyour@emailhere
+                  %li
+                    %span
+                      %strong Tel:
+                      (+44) 123 456 789
+              .col-lg-3.col-sm-6.mobile-margin-30px-bottom
+                %h3.footer-title-style1 Useful Links
+                %ul.list-style-1.no-margin-bottom
+                  %li
+                    %a{:href => "#!"} Location
+                  %li
+                    %a{:href => "#!"} Terms & Conditions
+                  %li
+                    %a{:href => "#!"} About Us
+              .col-lg-3.col-sm-6
+                %h3.footer-title-style1 Social Links
+                %ul.social-icon-style.no-margin
+                  %li
+                    %a{:href => "javascript:void(0)"}
+                      %i.fab.fa-facebook-f
+                  %li
+                    %a{:href => "javascript:void(0)"}
+                      %i.fab.fa-twitter
+                  %li
+                    %a{:href => "javascript:void(0)"}
+                      %i.fab.fa-instagram
+                  %li
+                    %a{:href => "javascript:void(0)"}
+                      %i.fab.fa-linkedin-in
+        .footer-bar.xs-padding-15px-tb
+          .container
+            .text-center
+              %p © 2020 Fivestar is Powered by Chitrakoot Web
+      / end footer section
+    / end main-wrapper section
+    / start scroll to top
+    %a.scroll-to-top{:href => "javascript:void(0)"}
+      %i.fas.fa-angle-up{"aria-hidden" => "true"}
+    / end scroll to top
+    / all js include start
+    / jQuery
+    %script{:src => "js/jquery.min.js"}
+    / modernizr js
+    %script{:src => "js/modernizr.js"}
+    / bootstrap
+    %script{:src => "js/bootstrap.min.js"}
+    / Serch
+    %script{:src => "search/search.js"}
+    / navigation
+    %script{:src => "js/nav-menu.js"}
+    / tab
+    %script{:src => "js/easy.responsive.tabs.js"}
+    / owl carousel
+    %script{:src => "js/owl.carousel.js"}
+    / jquery.counterup.min
+    %script{:src => "js/jquery.counterup.min.js"}
+    / stellar js
+    %script{:src => "js/jquery.stellar.min.js"}
+    / waypoints js
+    %script{:src => "js/waypoints.min.js"}
+    / countdown js
+    %script{:src => "js/countdown.js"}
+    / jquery.magnific-popup js
+    %script{:src => "js/jquery.magnific-popup.min.js"}
+    / datepicker js
+    %script{:src => "js/datepicker.min.js"}
+    / isotope.pkgd.min js
+    %script{:src => "js/isotope.pkgd.min.js"}
+    / custom scripts
+    %script{:src => "js/main.js"}
+    / all js include end

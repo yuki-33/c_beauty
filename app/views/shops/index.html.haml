@@ -1,94 +1,31 @@
-/ start page title section
-%section.page-title-section.bg-img.cover-background{"data-background" => "img/top/nailtop.jpg", "data-overlay-dark" => "1"}
-  .container
-    %h1 Nails & Eyelash
-    %ul
-      %li
-        =link_to "TOP", tops_path
-        -# %a{:href => "index.html"} Home
-      %li
-        =link_to "Salon", shops_path
-        -# %a{:href => "#!"} Single Room
-/ end page title section
-/ start our rooms section
-%section
-  .container
-    .text-center.margin-50px-bottom.xs-margin-30px-bottom
-      %h3.margin-10px-bottom Nails & Eyelash
-      %p.no-margin-bottom ネイルサロン、まつげサロン、自宅でサロンをご紹介💅
-    .row
-      / start links
-      .filtering.col-sm-12.text-center
-        %span.active{"data-filter" => "*"} All
-        %span{"data-filter" => ".food"} Nails
-        %span{"data-filter" => ".relaxation"} Eyelash Extention
-        %span{"data-filter" => ".vacation"} Others
-      / end links
-      -@shops.each do |shop|
-        .col-md-6.col-lg-4.margin-30px-bottom
-          .border
-            =link_to shop_path(shop) do
-              =image_tag shop.image_top_url(:shop_index)
-              -# %img{:alt => "", :src => "/img/content/room-5.jpg"}/
-              .padding-25px-all
-                -# %a{:href => "single-room.html"}
-                %h5.margin-5px-bottom.font-size28.xs-font-size24=shop.name
-                -# .font-size12.text-uppercase.text-extra-dark-gray.font-weight-700.margin-20px-bottom.letter-spacing-2 Start from $250/night
-                %p.margin-nine-bottom.sm-margin-seven-bottom.xs-margin-four-bottom=shop.introduction
-                .font-weight-600.text-theme-color
-                  Shop Details
-                  %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
-  -#       .col-md-6.col-lg-4.margin-30px-bottom
-  -#         .border
-  -#           %img{:alt => "", :src => "/img/content/room-6.jpg"}/
-  -#           .padding-25px-all
-  -#             %a{:href => "single-room.html"}
-  -#               %h5.margin-5px-bottom.font-size28.xs-font-size24 Family Room
-  -#             .font-size12.text-uppercase.text-extra-dark-gray.font-weight-700.margin-20px-bottom.letter-spacing-2 Start from $550/night
-  -#             %a.font-weight-600.text-theme-color{:href => "single-room.html"}
-  -#               Room Details
-  -#               %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
-  -#       .col-md-6.col-lg-4.margin-30px-bottom
-  -#         .border
-  -#           %img{:alt => "", :src => "/img/content/room-7.jpg"}/
-  -#           .padding-25px-all
-  -#             %a{:href => "single-room.html"}
-  -#               %h5.margin-5px-bottom.font-size28.xs-font-size24 Classic Room
-  -#             .font-size12.text-uppercase.text-extra-dark-gray.font-weight-700.margin-20px-bottom.letter-spacing-2 Start from $340/night
-  -#             %a.font-weight-600.text-theme-color{:href => "single-room.html"}
-  -#               Room Details
-  -#               %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
-  -#       .col-md-6.col-lg-4.sm-margin-30px-bottom
-  -#         .border
-  -#           %img{:alt => "", :src => "/img/content/room-8.jpg"}/
-  -#           .padding-25px-all
-  -#             %a{:href => "single-room.html"}
-  -#               %h5.margin-5px-bottom.font-size28.xs-font-size24 Luxury Room
-  -#             .font-size12.text-uppercase.text-extra-dark-gray.font-weight-700.margin-20px-bottom.letter-spacing-2 Start from $700/night
-  -#             %a.font-weight-600.text-theme-color{:href => "single-room.html"}
-  -#               Room Details
-  -#               %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
-  -#       .col-md-6.col-lg-4.xs-margin-30px-bottom
-  -#         .border
-  -#           %img{:alt => "", :src => "/img/content/room-9.jpg"}/
-  -#           .padding-25px-all
-  -#             %a{:href => "single-room.html"}
-  -#               %h5.margin-5px-bottom.font-size28.xs-font-size24 Couple Room
-  -#             .font-size12.text-uppercase.text-extra-dark-gray.font-weight-700.margin-20px-bottom.letter-spacing-2 Start from $400/night
-  -#             %a.font-weight-600.text-theme-color{:href => "single-room.html"}
-  -#               Room Details
-  -#               %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
-  -#       .col-md-6.col-lg-4
-  -#         .border
-  -#           %img{:alt => "", :src => "/img/content/room-10.jpg"}/
-  -#           .padding-25px-all
-  -#             %a{:href => "single-room.html"}
-  -#               %h5.margin-5px-bottom.font-size28.xs-font-size24 Superior Room
-  -#             .font-size12.text-uppercase.text-extra-dark-gray.font-weight-700.margin-20px-bottom.letter-spacing-2 Start from $350/night
-  -#             %a.font-weight-600.text-theme-color{:href => "single-room.html"}
-  -#               Room Details
-  -#               %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
-  -# / end our rooms section
+-case params[:category_key]
+-when "hair_salon"
+  %section.page-title-section.bg-img.cover-background{"data-background" => "/img/top/hair_top2.jpg", "data-overlay-dark" => "1"}
+    .container
+      %h1 Hair Salon
+      %ul
+        %li
+          =link_to "TOP", tops_path
+          -# %a{:href => "index.html"} Home
+        %li
+          =link_to "Salon", shops_path(category_key: "hair_salon")
+          -# %a{:href => "#!"} Single Room
+  / end page title section
+  / start our rooms section
+  %section
+    .container
+      .text-center.margin-50px-bottom.xs-margin-30px-bottom
+        %h3.margin-10px-bottom Hair Salons
+        %p.margin-30px-bottom トロントの素敵なヘアサロンをご紹介
+      =render 'index_footer'
+      -# .row
+      -#   -@shops.each do |shop|
+      -#     .col-md-6.col-lg-4.margin-30px-bottom
+      -#       .border
+      -#         =link_to shop_path(shop) do
+      -#           =image_tag shop.image_top_url(:shop_index)
+      -#           -# %img{:alt => "", :src => "/img/content/room-5.jpg"}/
+      -#           .padding-25px-all
       -#             -# %a{:href => "single-room.html"}
       -#             %h5.margin-5px-bottom.font-size28.xs-font-size24=shop.name
       -#             -# .font-size12.text-uppercase.text-extra-dark-gray.font-weight-700.margin-20px-bottom.letter-spacing-2 Start from $250/night

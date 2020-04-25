@@ -106,7 +106,8 @@ class ShopsController < ApplicationController
       :datetime_1,
       :datetime_2,
       :datetime_3,
-      :menu_id
+      :menu_id,
+      :note
     )
   end
 

@@ -31,6 +31,12 @@
 %section.padding_0px
   .container
     .row.align-items-center
+      -@shop.categories.each do |category|
+        =link_to category.name, category_path(category), class: "badge badge-secondary"
+
+%section.padding_0px
+  .container
+    .row.align-items-center
       .col-md-4.xs-margin-30px-bottom
         .row
           .col-sm-12.mobile-display-none
@@ -118,7 +124,7 @@
                     %ul.list-style-2
                       %li="Business Hour　営業時間　/　#{@shop.business_hour}"
                       %li="Regular Closed　定休日　/　#{@shop.regular_closed}"
-                      %li Note　備考　/
+                      %li Note　備考　/　
                       -# %li Safe Deposit Box
               %div
                 %h4.font-size28.xs-font-size24 Location
