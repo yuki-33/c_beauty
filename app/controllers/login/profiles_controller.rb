@@ -1,6 +1,9 @@
 class Login::ProfilesController < Login::ApplicationController
   before_action :set_profile, only: [:edit, :update]
 
+  def show
+  end
+
   def edit
   end
 
