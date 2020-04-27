@@ -1,5 +1,5 @@
 class Login::ProfilesController < Login::ApplicationController
-  before_action :set_profile, only: [:edit, :update]
+  before_action :set_profile, only: [:show, :edit, :update]
 
   def show
   end
