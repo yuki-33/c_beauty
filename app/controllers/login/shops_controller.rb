@@ -1,5 +1,4 @@
 class Login::ShopsController < Login::ApplicationController
-  before_action :set_category, only: [:create, :update, :inauiry]
   before_action :set_shop, only: [:edit, :update, :destroy, :inquiry]
 
   def create
@@ -92,16 +91,4 @@ class Login::ShopsController < Login::ApplicationController
     )
   end
 
-  def inquiry_params
-    params[:inquiry].permit(
-      :name,
-      :email,
-      :tel,
-      :datetime_1,
-      :datetime_2,
-      :datetime_3,
-      :menu_id,
-      :note
-    )
-  end
 end

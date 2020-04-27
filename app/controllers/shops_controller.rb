@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-  before_action :set_category, only: [:show, :index]
+  before_action :set_category, only: [:index]
   before_action :set_shop, only: [:show]
 
   def index
