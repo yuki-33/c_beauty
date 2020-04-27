@@ -1,0 +1,25 @@
+%section
+  .container
+    .row
+      .col-lg-12.sm-margin-50px-bottom
+        %h4.text-uppercase.letter-spacing-1.margin-30px-bottom.font-size24 Booking Form
+        -# %form{:method => "post"}
+        -# =bootstrap_form_with url: inquiry_shop_path(@shop), local: true do |f|
+        =bootstrap_form_with model: @inquiry, url: {controller: "shops", action: "inquiry" }, method: :post, local: true do |f|
+          .row
+            .col-md-6
+              =f.text_field :first_name, placeholder: "First name"
+              -# %label{:for => "name"} Your Name:
+              -# %input#name{:name => "name", :placeholder => "Name", :type => "text"}/
+            .col-md-6
+              =f.text_field :last_name, placeholder: "Last name"
+            .col-md-6
+              =f.email_field :email, placeholder: "Email"
+            .col-md-6
+              =f.text_field :tel, placeholder: "Tel / カナダで連絡がつく番号"
+            .col-md-6
+              =f.collection_select :status_id, Status.all, :id, :name, include_blank: true, class: 'form-control'
+
+          .col-md-12
+            -# %button.butn{:type => "submit"} Booking Now
+            =f.submit 'Registration / 登録', class: 'butn'

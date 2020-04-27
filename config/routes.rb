@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   resources :areas
   resources :categories
   resources :tops
+  namespace :login do
+    resources :shops, only: [:new, :create, :edit, :update, :destroy]
+    resource :profile, only: [:show, :create, :edit, :update]
+  end
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

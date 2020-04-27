@@ -1,430 +1,206 @@
-!!!
-%html{:lang => "en"}
-  %head
-    / metas
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "Chitrakoot Web", :name => "author"}/
-    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
-    %meta{:content => "Septosha Hotel Booking Bootstrap Template", :name => "keywords"}/
-    %meta{:content => "Fivestar - Hotel Booking Bootstrap Template", :name => "description"}/
-    / title
-    %title Fivestar - Hotel Booking Bootstrap Template
-    / favicon
-    %link{:href => "img/logos/favicon.png", :rel => "shortcut icon"}/
-    %link{:href => "img/logos/apple-touch-icon-57x57.png", :rel => "apple-touch-icon"}/
-    %link{:href => "img/logos/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
-    %link{:href => "img/logos/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
-    / plugins
-    %link{:href => "css/plugins.css", :rel => "stylesheet"}/
-    / search css
-    %link{:href => "search/search.css", :rel => "stylesheet"}/
-    / core style css
-    %link{:href => "css/styles.css", :rel => "stylesheet"}/
-  %body
-    / start page loading
-    #preloader
-      .row.loader
-        .loader-icon
-    / end page loading
-    / start main-wrapper section
-    .main-wrapper
-      / start header section
-      %header
-        .navbar-default
-          / start top search
-          .top-search.bg-black
-            .container
-              %form.search-form{"accept-charset" => "utf-8", :action => "search.html", :method => "GET"}
-                .input-group
-                  %span.input-group-addon.cursor-pointer
-                    %button.search-form_submit.fas.fa-search.font-size18.text-white{:type => "submit"}
-                  %input.search-form_input.form-control{:autocomplete => "off", :name => "s", :placeholder => "Type & hit enter...", :type => "text"}/
-                  %span.input-group-addon.close-search
-                    %i.fas.fa-times.font-size18.line-height-28.margin-5px-top
-          / end top search
-          .container
-            .row.align-items-center
-              .col-12.col-lg-12
-                .menu_area.alt-font.sm-padding-10px-tb
-                  %nav.navbar.navbar-expand-lg.navbar-light.no-padding
-                    .navbar-header.navbar-header-custom
-                      / start logo
-                      %a.navbar-brand.logo4{:href => "index.html"}
-                        %img#logo{:alt => "logo", :src => "img/logos/logo.png"}/
-                      / end logo
-                    .navbar-toggler
-                    / start menu area
-                    %ul#nav.navbar-nav.ml-auto{:style => "display: none;"}
-                      %li
-                        %a{:href => "#"} Home
-                        %ul
-                          %li
-                            %a{:href => "demo-1.html"} Demo-1
-                          %li
-                            %a{:href => "demo-2.html"} Demo-2
-                          %li
-                            %a{:href => "demo-3.html"} Demo-3
-                      %li
-                        %a{:href => "about.html"} About Us
-                      %li
-                        %a{:href => "#"} Pages
-                        %ul
-                          %li
-                            %a{:href => "testimonial.html"} Testimonial
-                          %li
-                            %a{:href => "offer-packages.html"} Offre Packages
-                          %li
-                            %a{:href => "my-booking.html"} My Booking
-                          %li
-                            %a{:href => "restaurant.html"} Restaurant
-                          %li
-                            %a{:href => "#"} Other
-                            %ul
-                              %li
-                                %a{:href => "login.html"} Login
-                              %li
-                                %a{:href => "registration.html"} Registration
-                              %li
-                                %a{:href => "coming-soon.html"} Coming Soon
-                              %li
-                                %a{:href => "404-page.html"} 404 Page
-                      %li
-                        %a{:href => "#"} Rooms
-                        %ul
-                          %li
-                            %a{:href => "our-rooms.html"} Our Rooms
-                          %li
-                            %a{:href => "single-room.html"} Single Rooms
-                      %li
-                        %a{:href => "#"} Gallery
-                        %ul
-                          %li
-                            %a{:href => "gallery-style1.html"} Gallery style1
-                          %li
-                            %a{:href => "gallery-style2.html"} Gallery style2
-                          %li
-                            %a{:href => "gallery-masonry.html"} Gallery Masonry
-                          %li
-                            %a{:href => "single-gallery.html"} Single Gallery
-                      %li
-                        %a{:href => "#"} Blog
-                        %ul
-                          %li
-                            %a{:href => "blog-grid.html"} Blog Grid
-                          %li
-                            %a{:href => "blog-details.html"} Blog Detail
-                          %li
-                            %a{:href => "blog-masonry.html"} Blog Masonry
-                      %li
-                        %a{:href => "contact-us.html"} Contact
-                    / end menu area
-                    / start atribute navigation
-                    .attr-nav.sm-no-margin.sm-margin-65px-right.xs-margin-50px-right
-                      %ul.no-margin-top
-                        %li.search
-                          %a{:href => "#"}
-                            %i.fas.fa-search
-                    / end atribute navigation
-      / end header section
-      / start page title section
-      %section.page-title-section.bg-img.cover-background{"data-background" => "img/banner/bg-01.jpg", "data-overlay-dark" => "4"}
-        .container
-          %h1 Blog Details
-          %ul
-            %li
-              %a{:href => "index.html"} Home
-            %li
-              %a{:href => "#!"} Blog Details
-      / end page title section
-      / start blog detail section
-      %section.blogs
-        .container
-          .row
-            / start blog left
-            .col-lg-9.col-md-12.sm-margin-50px-bottom
-              .posts.padding-30px-right.sm-no-padding-right
-                / start post
-                .post
-                  .post-img
-                    %img{:alt => "", :src => "img/blog/blog-04.jpg"}/
-                  .content
-                    .blog-list-simple-text.post-meta.margin-20px-bottom
-                      .post-title
-                        %h5 Food, wine with all things permissive.
-                    .margin-30px-bottom
-                      %p.margin-30px-bottom Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci phaedrum complectitur et, eam ut veri omnium fabulas. Mel et duis dicat prodesset ei, ius ne lorem veritus repudiandae, quidam ocurreret elaboraret te sit. Eos eu nisl nonumy. Has alum iisque mentitum id, tale partem ei mei cibo mundi ea duo, vim exerci phaedrum complectitur et. Saepe veniam nostrud usu at, ullum dolores comprehensam est in, mazim imperdiet sea id.
-                      %p.text-extra-dark-gray.font-weight-500.blog-blockquote.position-relative.padding-40px-left.font-italic.margin-30px-bottom It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.
-                      %p There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.
-                    %p Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci phaedrum complectitur et, eam ut veri omnium fabulas. Mel duis dicat prodesset ei, ius ne lorem veritus repudiandae, quidam ocurreret elaboraret te sit. Eos eu nisl nonumy. Has iisque mentitum id, tale partem ei mei. Saepe veniam nostrud.
-                    .share-post
-                      %span Share Post
-                      %ul.no-margin-bottom
-                        %li
-                          %a{:href => "javascript:void(0);"}
-                            %i.fab.fa-facebook-f
-                        %li
-                          %a{:href => "javascript:void(0);"}
-                            %i.fab.fa-twitter
-                        %li
-                          %a{:href => "javascript:void(0);"}
-                            %i.fab.fa-instagram
-                        %li
-                          %a{:href => "javascript:void(0);"}
-                            %i.fab.fa-youtube
-                        %li
-                          %a{:href => "javascript:void(0);"}
-                            %i.fab.fa-linkedin-in
-                / start post
-                / start pager
-                .text-center.margin-30px-bottom
-                  .pagination.text-small.text-uppercase.text-extra-dark-gray
-                    %ul
-                      %li.active
-                        %a{:href => "javascript:void(0);"} Prev
-                      %li
-                        %a{:href => "#!"} Next
-                / end pager
-                / start comment
-                .comments-area
-                  .title-g.margin-30px-bottom
-                    %h3 Comments
-                  .comment-box
-                    .author-thumb
-                      %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/01.png"}/
-                    .comment-info
-                      %h6
-                        %a{:href => "javascript:void(0);"} Alex Joyrina
-                      %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                      .reply
-                        %a{:href => "javascript:void(0);"}
-                          %i.fa.fa-reply{"aria-hidden" => "true"}
-                          Reply
-                  .comment-box
-                    .author-thumb
-                      %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/02.png"}/
-                    .comment-info
-                      %h6
-                        %a{:href => "javascript:void(0);"} Jama Karleny
-                      %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                      .reply
-                        %a{:href => "javascript:void(0);"}
-                          %i.fa.fa-reply{"aria-hidden" => "true"}
-                          Reply
-                  .comment-box
-                    .author-thumb
-                      %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/03.png"}/
-                    .comment-info
-                      %h6
-                        %a{:href => "javascript:void(0);"} Ivonne Drennen
-                      %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                      .reply
-                        %a{:href => "javascript:void(0);"}
-                          %i.fa.fa-reply{"aria-hidden" => "true"}
-                          Reply
-                / end comment
-                / start form
-                .comment-form
-                  %div
-                    %h4.font-size28.xs-font-size24 Post a Comment
-                  %form{:action => "#!", :method => "post"}
-                    .row
-                      .col-md-6
-                        .form-group
-                          %input#form_name{:name => "name", :placeholder => "Name", :type => "text"}/
-                      .col-md-6
-                        .form-group
-                          %input#form_email{:name => "email", :placeholder => "Email", :type => "email"}/
-                      .col-md-12
-                        .form-group
-                          %textarea#form_message{:name => "message", :placeholder => "Message", :rows => "4"}
-                      .col-md-12
-                        %button.butn{:type => "submit"}
-                          %span Send Message
-                / end form
-            / end blog left
-            / start blog right
-            .col-lg-3.col-md-12
-              .side-bar
-                .widget.search
-                  .input-group.mb-3
-                    %input.form-control{"aria-describedby" => "button-addon2", "aria-label" => "Recipient's username", :placeholder => "Type here...", :type => "text"}/
-                    .input-group-append
-                      %button#button-addon2.butn{:type => "button"}
-                        %span.ti-search
-                .widget
-                  .text-center
-                    %h5.card-title.font-size20.margin-30px-bottom About Author
-                    %img.border-radius-50.margin-20px-bottom{:alt => "", :src => "img/testmonials/t-3.jpg"}/
-                    %div
-                      %h6.font-italic.font-size18 Joe Shepard
-                      %p.card-text.border-bottom.padding-20px-bottom Excepteur enim aute dolor culpa aliqua nulla.
-                      %ul.social-listing.no-margin-bottom
-                        %li
-                          %a{:href => "javascript:void(0);"}
-                            %i.fab.fa-facebook-f
-                        %li
-                          %a{:href => "javascript:void(0);"}
-                            %i.fab.fa-twitter
-                        %li
-                          %a{:href => "javascript:void(0);"}
-                            %i.fab.fa-instagram
-                        %li
-                          %a{:href => "javascript:void(0);"}
-                            %i.fab.fa-youtube
-                        %li
-                          %a{:href => "javascript:void(0);"}
-                            %i.fab.fa-linkedin-in
-                .widget
-                  .widget-title.margin-35px-bottom
-                    %h3 Categories
-                  %ul.widget-list
-                    %li
-                      %a{:href => "#"}
-                        Restaurants
-                    %li
-                      %a{:href => "#"}
-                        Destinations
-                    %li
-                      %a{:href => "#"}
-                        Beauty & Spa
-                    %li
-                      %a{:href => "#"}
-                        Shopping
-                    %li
-                      %a{:href => "#"}
-                        Entertainment
-                    %li
-                      %a{:href => "#"}
-                        Health & Care
-                .widget
-                  .widget-title.margin-35px-bottom
-                    %h3 Recent Posts
-                  .media.margin-20px-bottom
-                    %img.mr-3.border-radius-4{:alt => "", :src => "img/blog/blog-15.jpg"}/
-                    .media-body
-                      %h5.no-margin-top.margin-5px-bottom.font-size17
-                        %a.text-extra-dark-gray{:href => "#"} Nice interior
-                      %span.font-size14.text-theme-color 20 Jan, 2020
-                  .media.margin-20px-bottom
-                    %img.mr-3.border-radius-4{:alt => "", :src => "img/blog/blog-16.jpg"}/
-                    .media-body
-                      %h5.no-margin-top.margin-5px-bottom.font-size17
-                        %a.text-extra-dark-gray{:href => "#"} Recipes
-                      %span.font-size14.text-theme-color 12 Feb, 2020
-                  .media
-                    %img.mr-3.border-radius-4{:alt => "", :src => "img/blog/blog-14.jpg"}/
-                    .media-body
-                      %h5.no-margin-top.margin-5px-bottom.font-size17
-                        %a.text-extra-dark-gray{:href => "#"} New rooms
-                      %span.font-size14.text-theme-color 17 Feb, 2020
-                .widget
-                  .widget-title.margin-35px-bottom
-                    %h3 Tags
-                  %div
-                    %ul.tags
-                      %li
-                        %a{:href => "#"} Beauty
-                      %li
-                        %a{:href => "#"} Decoration
-                      %li
-                        %a{:href => "#"} Delicius
-                      %li
-                        %a{:href => "#"} Design
-                      %li
-                        %a{:href => "#"} Fun
-                      %li
-                        %a{:href => "#"} Holiday
-                      %li
-                        %a{:href => "#"} Ideas
-                      %li
-                        %a{:href => "#"} Pleasure
-                      %li
-                        %a{:href => "#"} Vacation
-            / end blog right
-      / end blog detail section
-      / start footer section
-      %footer
-        .footer-area.padding-70px-tb.md-padding-40px-tb.xs-padding-30px-tb
-          .container
-            .row
-              .col-lg-3.col-sm-6.sm-margin-30px-bottom
-                %img.width-70.margin-30px-bottom.xs-margin-20px-bottom{:alt => "", :src => "img/logos/logo.png"}/
-                %address.width-70.no-margin-bottom 74 Guild Street 542B, Great North Town MT.
-              .col-lg-3.col-sm-6.sm-margin-30px-bottom
-                %h3.footer-title-style1 Reservation
-                %ul.list-style-1.no-margin
+/ start blog detail section
+%section.blogs
+  .container
+    .row
+      -# / start blog left
+      -# .col-lg-9.col-md-12.sm-margin-50px-bottom
+      -#   .posts.padding-30px-right.sm-no-padding-right
+      -#     / start post
+      -#     .post
+      -#       .post-img
+      -#         %img{:alt => "", :src => "img/blog/blog-04.jpg"}/
+      -#       .content
+      -#         .blog-list-simple-text.post-meta.margin-20px-bottom
+      -#           .post-title
+      -#             %h5 Food, wine with all things permissive.
+      -#         .margin-30px-bottom
+      -#           %p.margin-30px-bottom Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci phaedrum complectitur et, eam ut veri omnium fabulas. Mel et duis dicat prodesset ei, ius ne lorem veritus repudiandae, quidam ocurreret elaboraret te sit. Eos eu nisl nonumy. Has alum iisque mentitum id, tale partem ei mei cibo mundi ea duo, vim exerci phaedrum complectitur et. Saepe veniam nostrud usu at, ullum dolores comprehensam est in, mazim imperdiet sea id.
+      -#           %p.text-extra-dark-gray.font-weight-500.blog-blockquote.position-relative.padding-40px-left.font-italic.margin-30px-bottom It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.
+      -#           %p There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.
+      -#         %p Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci phaedrum complectitur et, eam ut veri omnium fabulas. Mel duis dicat prodesset ei, ius ne lorem veritus repudiandae, quidam ocurreret elaboraret te sit. Eos eu nisl nonumy. Has iisque mentitum id, tale partem ei mei. Saepe veniam nostrud.
+      -#         .share-post
+      -#           %span Share Post
+      -#           %ul.no-margin-bottom
+      -#             %li
+      -#               %a{:href => "javascript:void(0);"}
+      -#                 %i.fab.fa-facebook-f
+      -#             %li
+      -#               %a{:href => "javascript:void(0);"}
+      -#                 %i.fab.fa-twitter
+      -#             %li
+      -#               %a{:href => "javascript:void(0);"}
+      -#                 %i.fab.fa-instagram
+      -#             %li
+      -#               %a{:href => "javascript:void(0);"}
+      -#                 %i.fab.fa-youtube
+      -#             %li
+      -#               %a{:href => "javascript:void(0);"}
+      -#                 %i.fab.fa-linkedin-in
+      -#     / start post
+      -#     / start pager
+      -#     .text-center.margin-30px-bottom
+      -#       .pagination.text-small.text-uppercase.text-extra-dark-gray
+      -#         %ul
+      -#           %li.active
+      -#             %a{:href => "javascript:void(0);"} Prev
+      -#           %li
+      -#             %a{:href => "#!"} Next
+      -#     / end pager
+      -#     / start comment
+      -#     .comments-area
+      -#       .title-g.margin-30px-bottom
+      -#         %h3 Comments
+      -#       .comment-box
+      -#         .author-thumb
+      -#           %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/01.png"}/
+      -#         .comment-info
+      -#           %h6
+      -#             %a{:href => "javascript:void(0);"} Alex Joyrina
+      -#           %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      -#           .reply
+      -#             %a{:href => "javascript:void(0);"}
+      -#               %i.fa.fa-reply{"aria-hidden" => "true"}
+      -#               Reply
+      -#       .comment-box
+      -#         .author-thumb
+      -#           %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/02.png"}/
+      -#         .comment-info
+      -#           %h6
+      -#             %a{:href => "javascript:void(0);"} Jama Karleny
+      -#           %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      -#           .reply
+      -#             %a{:href => "javascript:void(0);"}
+      -#               %i.fa.fa-reply{"aria-hidden" => "true"}
+      -#               Reply
+      -#       .comment-box
+      -#         .author-thumb
+      -#           %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/03.png"}/
+      -#         .comment-info
+      -#           %h6
+      -#             %a{:href => "javascript:void(0);"} Ivonne Drennen
+      -#           %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      -#           .reply
+      -#             %a{:href => "javascript:void(0);"}
+      -#               %i.fa.fa-reply{"aria-hidden" => "true"}
+      -#               Reply
+      -#     / end comment
+      -#     / start form
+      -#     .comment-form
+      -#       %div
+      -#         %h4.font-size28.xs-font-size24 Post a Comment
+      -#       %form{:action => "#!", :method => "post"}
+      -#         .row
+      -#           .col-md-6
+      -#             .form-group
+      -#               %input#form_name{:name => "name", :placeholder => "Name", :type => "text"}/
+      -#           .col-md-6
+      -#             .form-group
+      -#               %input#form_email{:name => "email", :placeholder => "Email", :type => "email"}/
+      -#           .col-md-12
+      -#             .form-group
+      -#               %textarea#form_message{:name => "message", :placeholder => "Message", :rows => "4"}
+      -#           .col-md-12
+      -#             %button.butn{:type => "submit"}
+      -#               %span Send Message
+      -#     / end form
+      -# / end blog left
+      / start blog right
+      .col-lg-3.col-md-12
+        .side-bar
+          .widget.search
+            .input-group.mb-3
+              %input.form-control{"aria-describedby" => "button-addon2", "aria-label" => "Recipient's username", :placeholder => "Type here...", :type => "text"}/
+              .input-group-append
+                %button#button-addon2.butn{:type => "button"}
+                  %span.ti-search
+          .widget
+            .text-center
+              %h5.card-title.font-size20.margin-30px-bottom About Author
+              %img.border-radius-50.margin-20px-bottom{:alt => "", :src => "img/testmonials/t-3.jpg"}/
+              %div
+                %h6.font-italic.font-size18 Joe Shepard
+                %p.card-text.border-bottom.padding-20px-bottom Excepteur enim aute dolor culpa aliqua nulla.
+                %ul.social-listing.no-margin-bottom
                   %li
-                    %span
-                      %strong Email:
-                      addyour@emailhere
-                  %li
-                    %span
-                      %strong Tel:
-                      (+44) 123 456 789
-              .col-lg-3.col-sm-6.mobile-margin-30px-bottom
-                %h3.footer-title-style1 Useful Links
-                %ul.list-style-1.no-margin-bottom
-                  %li
-                    %a{:href => "#!"} Location
-                  %li
-                    %a{:href => "#!"} Terms & Conditions
-                  %li
-                    %a{:href => "#!"} About Us
-              .col-lg-3.col-sm-6
-                %h3.footer-title-style1 Social Links
-                %ul.social-icon-style.no-margin
-                  %li
-                    %a{:href => "javascript:void(0)"}
+                    %a{:href => "javascript:void(0);"}
                       %i.fab.fa-facebook-f
                   %li
-                    %a{:href => "javascript:void(0)"}
+                    %a{:href => "javascript:void(0);"}
                       %i.fab.fa-twitter
                   %li
-                    %a{:href => "javascript:void(0)"}
+                    %a{:href => "javascript:void(0);"}
                       %i.fab.fa-instagram
                   %li
-                    %a{:href => "javascript:void(0)"}
+                    %a{:href => "javascript:void(0);"}
+                      %i.fab.fa-youtube
+                  %li
+                    %a{:href => "javascript:void(0);"}
                       %i.fab.fa-linkedin-in
-        .footer-bar.xs-padding-15px-tb
-          .container
-            .text-center
-              %p © 2020 Fivestar is Powered by Chitrakoot Web
-      / end footer section
-    / end main-wrapper section
-    / start scroll to top
-    %a.scroll-to-top{:href => "javascript:void(0)"}
-      %i.fas.fa-angle-up{"aria-hidden" => "true"}
-    / end scroll to top
-    / all js include start
-    / jQuery
-    %script{:src => "js/jquery.min.js"}
-    / modernizr js
-    %script{:src => "js/modernizr.js"}
-    / bootstrap
-    %script{:src => "js/bootstrap.min.js"}
-    / Serch
-    %script{:src => "search/search.js"}
-    / navigation
-    %script{:src => "js/nav-menu.js"}
-    / tab
-    %script{:src => "js/easy.responsive.tabs.js"}
-    / owl carousel
-    %script{:src => "js/owl.carousel.js"}
-    / jquery.counterup.min
-    %script{:src => "js/jquery.counterup.min.js"}
-    / stellar js
-    %script{:src => "js/jquery.stellar.min.js"}
-    / waypoints js
-    %script{:src => "js/waypoints.min.js"}
-    / countdown js
-    %script{:src => "js/countdown.js"}
-    / jquery.magnific-popup js
-    %script{:src => "js/jquery.magnific-popup.min.js"}
-    / datepicker js
-    %script{:src => "js/datepicker.min.js"}
-    / isotope.pkgd.min js
-    %script{:src => "js/isotope.pkgd.min.js"}
-    / custom scripts
-    %script{:src => "js/main.js"}
-    / all js include end
+          .widget
+            .widget-title.margin-35px-bottom
+              %h3 Categories
+            %ul.widget-list
+              %li
+                %a{:href => "#"}
+                  Restaurants
+              %li
+                %a{:href => "#"}
+                  Destinations
+              %li
+                %a{:href => "#"}
+                  Beauty & Spa
+              %li
+                %a{:href => "#"}
+                  Shopping
+              %li
+                %a{:href => "#"}
+                  Entertainment
+              %li
+                %a{:href => "#"}
+                  Health & Care
+          .widget
+            .widget-title.margin-35px-bottom
+              %h3 Recent Posts
+            .media.margin-20px-bottom
+              %img.mr-3.border-radius-4{:alt => "", :src => "img/blog/blog-15.jpg"}/
+              .media-body
+                %h5.no-margin-top.margin-5px-bottom.font-size17
+                  %a.text-extra-dark-gray{:href => "#"} Nice interior
+                %span.font-size14.text-theme-color 20 Jan, 2020
+            .media.margin-20px-bottom
+              %img.mr-3.border-radius-4{:alt => "", :src => "img/blog/blog-16.jpg"}/
+              .media-body
+                %h5.no-margin-top.margin-5px-bottom.font-size17
+                  %a.text-extra-dark-gray{:href => "#"} Recipes
+                %span.font-size14.text-theme-color 12 Feb, 2020
+            .media
+              %img.mr-3.border-radius-4{:alt => "", :src => "img/blog/blog-14.jpg"}/
+              .media-body
+                %h5.no-margin-top.margin-5px-bottom.font-size17
+                  %a.text-extra-dark-gray{:href => "#"} New rooms
+                %span.font-size14.text-theme-color 17 Feb, 2020
+          .widget
+            .widget-title.margin-35px-bottom
+              %h3 Tags
+            %div
+              %ul.tags
+                %li
+                  %a{:href => "#"} Beauty
+                %li
+                  %a{:href => "#"} Decoration
+                %li
+                  %a{:href => "#"} Delicius
+                %li
+                  %a{:href => "#"} Design
+                %li
+                  %a{:href => "#"} Fun
+                %li
+                  %a{:href => "#"} Holiday
+                %li
+                  %a{:href => "#"} Ideas
+                %li
+                  %a{:href => "#"} Pleasure
+                %li
+                  %a{:href => "#"} Vacation
+      / end blog right
+/ end blog detail section

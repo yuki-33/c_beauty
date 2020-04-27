@@ -1,14 +1,48 @@
-class ShopsController < ApplicationController
-  before_action :set_category, only: [:show, :index]
-  before_action :set_shop, only: [:show]
+class Login::ShopsController < Login::ApplicationController
+  before_action :set_category, only: [:create, :update, :inauiry]
+  before_action :set_shop, only: [:edit, :update, :destroy, :inquiry]
 
-  def index
-    @shops = @category.shops
+  def create
+    @shop = Shop.new(shop_params)
+    if @shop.save
+      redirect_to shop_path(@shop)
+    else
+      render "new"
+    end
   end
 
-  def show
-    @inquiry = @shop.inquiries.build
+  def new
+    @shop = Shop.new
+    @shop.menus.build
+    # @work.director_id = params[:director_id] if params[:director_id].present?
   end
+
+  def edit
+    @shop.menus.build if @shop.menus.blank?
+  end
+
+  def update
+    if @shop.update(shop_params)
+      redirect_to shop_path(@shop)
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @shop.destroy
+    redirect_to shops_path
+  end
+
+  def inquiry
+    @inquiry = @shop.inquiries.build(inquiry_params)
+    if @inquiry.save
+      redirect_to shop_path(@shop), notice: 'Your booking has been sent.'
+    else
+      render "show"
+    end
+  end
+
 
   private
 

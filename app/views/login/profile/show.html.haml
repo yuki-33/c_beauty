@@ -1,0 +1,100 @@
+%section.blogs
+  .container
+    .row
+      .side-bar
+        .widget.search
+          .input-group.mb-3
+            %input.form-control{"aria-describedby" => "button-addon2", "aria-label" => "Recipient's username", :placeholder => "Type here...", :type => "text"}/
+            .input-group-append
+              %button#button-addon2.butn{:type => "button"}
+                %span.ti-search
+        .widget
+          .text-center
+            %h5.card-title.font-size20.margin-30px-bottom About Author
+            %img.border-radius-50.margin-20px-bottom{:alt => "", :src => "img/testmonials/t-3.jpg"}/
+            %div
+              %h6.font-italic.font-size18 Joe Shepard
+              %p.card-text.border-bottom.padding-20px-bottom Excepteur enim aute dolor culpa aliqua nulla.
+              %ul.social-listing.no-margin-bottom
+                %li
+                  %a{:href => "javascript:void(0);"}
+                    %i.fab.fa-facebook-f
+                %li
+                  %a{:href => "javascript:void(0);"}
+                    %i.fab.fa-twitter
+                %li
+                  %a{:href => "javascript:void(0);"}
+                    %i.fab.fa-instagram
+                %li
+                  %a{:href => "javascript:void(0);"}
+                    %i.fab.fa-youtube
+                %li
+                  %a{:href => "javascript:void(0);"}
+                    %i.fab.fa-linkedin-in
+        .widget
+          .widget-title.margin-35px-bottom
+            %h3 Categories
+          %ul.widget-list
+            %li
+              %a{:href => "#"}
+                Restaurants
+            %li
+              %a{:href => "#"}
+                Destinations
+            %li
+              %a{:href => "#"}
+                Beauty & Spa
+            %li
+              %a{:href => "#"}
+                Shopping
+            %li
+              %a{:href => "#"}
+                Entertainment
+            %li
+              %a{:href => "#"}
+                Health & Care
+        .widget
+          .widget-title.margin-35px-bottom
+            %h3 Recent Posts
+          .media.margin-20px-bottom
+            %img.mr-3.border-radius-4{:alt => "", :src => "img/blog/blog-15.jpg"}/
+            .media-body
+              %h5.no-margin-top.margin-5px-bottom.font-size17
+                %a.text-extra-dark-gray{:href => "#"} Nice interior
+              %span.font-size14.text-theme-color 20 Jan, 2020
+          .media.margin-20px-bottom
+            %img.mr-3.border-radius-4{:alt => "", :src => "img/blog/blog-16.jpg"}/
+            .media-body
+              %h5.no-margin-top.margin-5px-bottom.font-size17
+                %a.text-extra-dark-gray{:href => "#"} Recipes
+              %span.font-size14.text-theme-color 12 Feb, 2020
+          .media
+            %img.mr-3.border-radius-4{:alt => "", :src => "img/blog/blog-14.jpg"}/
+            .media-body
+              %h5.no-margin-top.margin-5px-bottom.font-size17
+                %a.text-extra-dark-gray{:href => "#"} New rooms
+              %span.font-size14.text-theme-color 17 Feb, 2020
+        .widget
+          .widget-title.margin-35px-bottom
+            %h3 Tags
+          %div
+            %ul.tags
+              %li
+                %a{:href => "#"} Beauty
+              %li
+                %a{:href => "#"} Decoration
+              %li
+                %a{:href => "#"} Delicius
+              %li
+                %a{:href => "#"} Design
+              %li
+                %a{:href => "#"} Fun
+              %li
+                %a{:href => "#"} Holiday
+              %li
+                %a{:href => "#"} Ideas
+              %li
+                %a{:href => "#"} Pleasure
+              %li
+                %a{:href => "#"} Vacation
+    / end blog right

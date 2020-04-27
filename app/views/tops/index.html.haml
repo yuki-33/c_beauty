@@ -159,14 +159,14 @@
 -#                 %input{:placeholder => "Enter your email", :type => "email"}/
 -#                 %a.butn{:href => "javascript:void(0)"}
 -#                   %span Subscribe
--# / end subscribe section
-
-%section
-  .container
-    .row.align-items-center
-      .col-md-4.xs-margin-30px-bottom
-        -# %button.butn{:type => "submit"} Create New Shop
-        =link_to 'Create New Shop', new_shop_path, class: 'butn'
+-# / end subscribe sect
+-if user_signed_in?
+  %section
+    .container
+      .row.align-items-center
+        .col-md-4.xs-margin-30px-bottom
+          -# %button.butn{:type => "submit"} Create New Shop
+          =link_to 'Create New Shop', new_login_shop_path, class: 'butn'
 -# / start gallery section
 -# %section.no-padding
 -#   .container-fluid.no-padding

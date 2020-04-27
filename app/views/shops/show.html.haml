@@ -31,9 +31,16 @@
 %section.padding_0px
   .container
     .row.align-items-center
-      -@shop.categories.each do |category|
-        =link_to category.name, category_path(category), class: "badge badge-secondary"
-
+      %div
+        %ul.tags
+          %li
+            -@shop.categories.each do |category|
+              =link_to category.name, category_path(category)
+      -#
+      -#       %a{:href => "#"} Beauty
+      -#
+      -# -@shop.categories.each do |category|
+      -#   =link_to category.name, category_path(category), class: "badge badge-secondary"
 %section.padding_0px
   .container
     .row.align-items-center
