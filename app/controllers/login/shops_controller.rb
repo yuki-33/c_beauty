@@ -30,7 +30,7 @@ class Login::ShopsController < Login::ApplicationController
 
   def destroy
     @shop.destroy
-    redirect_to shops_path
+    redirect_to shops_category_path
   end
 
   def inquiry
@@ -88,6 +88,19 @@ class Login::ShopsController < Login::ApplicationController
         :menu,
         :price
       ]
+    )
+  end
+
+  def inquiry_params
+    params[:inquiry].permit(
+      :name,
+      :email,
+      :tel,
+      :datetime_1,
+      :datetime_2,
+      :datetime_3,
+      :menu_id,
+      :note
     )
   end
 

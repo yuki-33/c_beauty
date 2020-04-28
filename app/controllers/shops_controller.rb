@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
   before_action :set_category, only: [:index]
-  before_action :set_shop, only: [:show]
+  before_action :set_shop, only: [:show, :inquiry]
 
   def index
     @shops = @category.shops
@@ -8,6 +8,15 @@ class ShopsController < ApplicationController
 
   def show
     @inquiry = @shop.inquiries.build
+  end
+
+  def inquiry
+    @inquiry = @shop.inquiries.build(inquiry_params)
+    if @inquiry.save
+      redirect_to shop_path(@shop), notice: 'Your booking has been sent.'
+    else
+      render "show"
+    end
   end
 
   private

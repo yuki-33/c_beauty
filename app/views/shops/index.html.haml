@@ -8,7 +8,7 @@
           =link_to "TOP", tops_path
           -# %a{:href => "index.html"} Home
         %li
-          =link_to "Salon", shops_path(category_key: "hair_salon")
+          =link_to "Salon", shops_category_path(category_key: "hair_salon")
           -# %a{:href => "#!"} Single Room
   / end page title section
   / start our rooms section
@@ -52,7 +52,7 @@
           =link_to "TOP", tops_path
           -# %a{:href => "index.html"} Home
         %li
-          =link_to "Salon", shops_path(category_key: "nail")
+          =link_to "Salon", shops_category_path(category_key: "nail")
           -# %a{:href => "#!"} Single Room
   / start our rooms section
   %section
@@ -76,7 +76,7 @@
           =link_to "TOP", tops_path
           -# %a{:href => "index.html"} Homez
         %li
-          =link_to "Salon", shops_path(category_key: "spa")
+          =link_to "Salon", shops_category_path(category_key: "spa")
           -# %a{:href => "#!"} Single Room
   / start our rooms section
   %section
