@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_161713) do
+ActiveRecord::Schema.define(version: 2020_04_29_133718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(version: 2020_04_28_161713) do
     t.text "about_employee"
     t.string "image_top"
     t.text "note"
+    t.integer "admin_id"
   end
 
   create_table "statuses", force: :cascade do |t|

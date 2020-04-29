@@ -1,0 +1,315 @@
+-# =@shop.name
+-# -# = link_to "#{@work.director.name}", director_path(@work.director)
+-# %br
+-# =@shop.adress
+-# %br
+-# =@shop.tel
+-# %br
+-# ="#{@shop.business_hour} / #{@shop.regular_closed}"
+-# %br
+-# =@shop.introduction
+-# %br
+-# =image_tag @shop.image_url, class: 'img-fluid'
+-# %hr
+-# =link_to "Edit", edit_shop_path(@shop)
+-# %hr
+-# =link_to "Delete", shop_path(@shop), method: :delete, data: {confirm: "Are you sure?"}
+-#
+-# %br
+-# =link_to "Back to the list", shops_category_path
+-#
+
+
+%section.page-title-section.bg-img.cover-background{"data-background" => "#{@shop.image_top_url}", "data-overlay-dark" => "1"}
+  .container
+    %h1=@shop.name
+    %ul
+      %li
+        =link_to 'home', root_path
+      %li
+        =link_to @shop.name, shop_path(@shop)
+%section.padding_0px
+  .container
+    .row.align-items-center
+      %div
+        %ul.tags
+          %li
+            -@shop.categories.each do |category|
+              =link_to category.name, category_path(category)
+      -#
+      -#       %a{:href => "#"} Beauty
+      -#
+      -# -@shop.categories.each do |category|
+      -#   =link_to category.name, category_path(category), class: "badge badge-secondary"
+%section.padding_0px
+  .container
+    .row.align-items-center
+      .col-md-4.xs-margin-30px-bottom
+        .row
+          .col-sm-12.mobile-display-none
+            =image_tag @shop.image_url(:shop_small)
+          -# .col-sm-6.mobile-display-none
+          -#   %img{:alt => "", :src => "/img/content/09.jpg"}/
+      .col-md-8.align-self-center
+        .row.justify-content-center
+          .col-lg-10
+            %h4.margin-10px-bottom.sm-margin-15px-bottom.font-size34.sm-font-size30.text-center.sm-text-left=@shop.name
+            .margin-20px-bottom.sm-margin-5px-bottom.text-center.sm-text-left.text-uppercase.letter-spacing-2 〈#{@shop.shop_name_katakana}〉
+            %p.no-margin-bottom.text-center=@shop.introduction
+/ end about section
+-# %section
+-#   .container
+-#     .row.align-items-center
+-#       .col-md-6.xs-margin-30px-bottom
+-#         .row
+-#           .col-sm-6.mobile-display-none
+-#             %img{:alt => "", :src => "img/content/08.jpg"}/
+-#           .col-sm-6.mobile-display-none
+-#             %img{:alt => "", :src => "img/content/09.jpg"}/
+-#       .col-md-6.align-self-center
+-#         .row.justify-content-center
+-#           .col-lg-10
+-#             .margin-20px-bottom.sm-margin-5px-bottom.text-center.sm-text-left.text-uppercase.letter-spacing-2 hotel fivestar
+-#             %h4.margin-30px-bottom.sm-margin-15px-bottom.font-size34.sm-font-size30.text-center.sm-text-left Explore Our Restaurant
+-#             %p.no-margin-bottom.text-center It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+/ start single rooms section
+%section
+  .container
+    .row
+      .col-lg-10.center-col
+        #single-room.owl-carousel.owl-theme
+          -(2..4).each do |i|
+            %div
+              -# %img{:alt => "", :src => "#{@shop.image_2_url}"}/
+              =image_tag @shop.try("image_#{i}_url", :shop_image)
+        .margin-30px-top
+          .horizontaltab.tab-style1
+            %ul.resp-tabs-list.hor_1
+              %li Menu
+              %li Time
+              %li Location
+              -# %li Reviews
+            .resp-tabs-container.hor_1
+              %div
+                .border-bottom.margin-30px-bottom.padding-30px-bottom
+                  %h4.font-size28.xs-font-size24 About us
+                  %p.no-margin-bottom=@shop.about_us
+                %h4.font-size28.xs-font-size24 Menu
+                .row
+                  .col-md-6.xs-margin-50px-bottom
+                    .padding-20px-right.xs-no-padding-right
+                      -@shop.menus.each do |menu|
+                        .d-flex.justify-content-between.margin-10px-bottom
+                          %div
+                            %p.no-margin-bottom=menu.menu
+                            -# %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
+                          %div
+                            %p.no-margin-bottom=menu.price
+                        -# .d-flex.justify-content-between.margin-30px-bottom
+                        -#   %div
+                        -#     %h4.no-margin-bottom.font-size20.xs-font-size18 Imported Oysters Grill (5 Pieces)
+                        -#     %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
+                        -#   %div
+                        -#     %h6.no-margin-bottom.font-size18 $25.6
+                        -# .d-flex.justify-content-between.margin-30px-bottom
+                        -#   %div
+                        -#     %h4.no-margin-bottom.font-size20.xs-font-size18 Wild Mushroom Bucatini with Kale
+                        -#     %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
+                        -#   %div
+                        -#     %h6.no-margin-bottom.font-size18 $45.5
+                        -# .d-flex.justify-content-between
+                        -#   %div
+                        -#     %h4.no-margin-bottom.font-size20.xs-font-size18 Tuna Roast Source
+                        -#     %p.text-extra-dark-gray.no-margin-bottom.font-size14 Chicken / Rosemary / Lemon
+                        -#   %div
+                        -#     %h6.no-margin-bottom.font-size18 $72.5
+                    / end menu section
+              %div
+                %h4.font-size28.xs-font-size24 Time
+                .row
+                  .col-md-8
+                    %ul.list-style-2
+                      %li="Business Hour　営業時間　/　#{@shop.business_hour}"
+                      %li="Regular Closed　定休日　/　#{@shop.regular_closed}"
+                      %li="Note　備考　/　#{@shop.note}"
+                      -# %li Safe Deposit Box
+              %div
+                %h4.font-size28.xs-font-size24 Location
+                %iframe#gmap_canvas.map{:marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?q=london&t=&z=13&ie=UTF8&iwloc=&output=embed"}
+                .row.margin-40px-top
+                  .col-md-4.xs-margin-20px-bottom
+                    %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom City
+                    %p.no-margin-bottom=@shop.area.name
+                  .col-md-4.xs-margin-20px-bottom
+                    %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Contact
+                    %p.no-margin-bottom=@shop.tel
+                    %p.no-margin-bottom=@shop.email
+                    %p.no-margin-bottom=@shop.adress
+                  .col-md-4
+                    %h5.font-size22.xs-font-size20.xs-no-margin-bottom.margin-10px-bottom Website
+                    %p
+                      =link_to @shop.website, @shop.website, class: 'no-margin-bottom', target: '_blank'
+                    -# %p.no-margin-bottom=@shop.website
+              -# %div
+              -#   %h4.font-size28.xs-font-size24 Reviews
+              -#   .blogs
+              -#     .comments-area
+              -#       .comment-box
+              -#         .author-thumb
+              -#           %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/01.png"}/
+              -#         .comment-info
+              -#           %h6
+              -#             %a{:href => "javascript:void(0);"} Alex Joyrina
+              -#           %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              -#           .reply
+              -#             %a{:href => "javascript:void(0);"}
+              -#               %i.fa.fa-reply{"aria-hidden" => "true"}
+              -#               Reply
+              -#       .comment-box
+              -#         .author-thumb
+              -#           %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/02.png"}/
+              -#         .comment-info
+              -#           %h6
+              -#             %a{:href => "javascript:void(0);"} Jama Karleny
+              -#           %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              -#           .reply
+              -#             %a{:href => "javascript:void(0);"}
+              -#               %i.fa.fa-reply{"aria-hidden" => "true"}
+              -#               Reply
+              -#       .comment-box
+              -#         .author-thumb
+              -#           %img.rounded-circle.width-85.xs-width-100{:alt => "", :src => "img/blog/03.png"}/
+              -#         .comment-info
+              -#           %h6
+              -#             %a{:href => "javascript:void(0);"} Ivonne Drennen
+              -#           %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              -#           .reply
+              -#             %a{:href => "javascript:void(0);"}
+              -#               %i.fa.fa-reply{"aria-hidden" => "true"}
+              -#               Reply
+              -#     .comment-form
+              -#       %div
+              -#         %h4.font-size28.xs-font-size24 Post a Comment
+              -#       %form{:action => "#!", :method => "post"}
+              -#         .row
+              -#           .col-md-6
+              -#             .form-group
+              -#               %input#form_name{:name => "name", :placeholder => "Name", :type => "text"}/
+              -#           .col-md-6
+              -#             .form-group
+              -#               %input#form_email{:name => "email", :placeholder => "Email", :type => "email"}/
+              -#           .col-md-12
+              -#             .form-group
+              -#               %textarea#form_message{:name => "message", :placeholder => "Message", :rows => "4"}
+              -#           .col-md-12
+              -#             %button.butn{:type => "submit"}
+              -#               %span Send Message
+/ start testimonial style-1 section
+%section
+  .container
+    .text-center.margin-50px-bottom
+      %h3.margin-10px-bottom Hair Stylist
+      %p.no-margin-bottom #{@shop.name} のスタイリスト,スタッフ
+    .row
+      .xs-margin-40px-bottom{class: @shop.image_employee_url.present? ? 'col-md-6' : 'col-md-12'}
+        .theme-shadow.padding-50px-all.sm-padding-40px-all.testimonial
+          .d-flex.align-items-center
+            .margin-15px-right.margin-30px-bottom
+              =image_tag @shop.image_owner_url(:people), class: 'img-fluid rounded-circle width-60px'
+              -# %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "#{@shop.image_owner}"}/
+            %div
+              %h6.font-size18.no-margin-bottom=@shop.owner_name
+              %small=@shop.owner_name_katakana
+          %p.line-height-35.sm-line-height-35.font-size15.sm-font-size16.text-extra-dark-gray.margin-30px-bottom=@shop.about_owner
+      -if @shop.image_employee_url.present?
+        .col-md-6
+          .theme-shadow.padding-50px-all.sm-padding-40px-all.testimonial
+            .d-flex.align-items-center
+              .margin-15px-right.margin-30px-bottom
+                =image_tag @shop.image_employee_url(:people), class: 'img-fluid rounded-circle width-60px'
+                -# %img.img-fluid.rounded-circle.width-60px{:alt => "", :src => "#{@shop.image_employee}"}/
+              %div
+                %h6.font-size18.no-margin-bottom=@shop.employee_name
+                %small=@shop.employee_name_katakana
+            %p.line-height-35.sm-line-height-35.font-size15.sm-font-size16.text-extra-dark-gray.margin-30px-bottom=@shop.about_employee
+/ end testimonial style-1 section
+%section
+  .container
+    .row.align-items-center
+      .col-md-4.xs-margin-10px-bottom
+        -# %button.butn{:type => "submit"} Booking Now
+        =link_to "Edit", edit_shop_path(@shop), class: 'butn'
+-# %section
+-#   .container
+-#     .row
+-#       .col-lg-12.sm-margin-50px-bottom
+-#         %h4.text-uppercase.letter-spacing-1.margin-30px-bottom.font-size24 Booking Form
+-#         -# %form{:method => "post"}
+-#         -# =bootstrap_form_with url: inquiry_shop_path(@shop), local: true do |f|
+-#         =bootstrap_form_with model: @inquiry, url: {controller: "shops", action: "inquiry" }, method: :post, local: true do |f|
+-#           .row
+-#             .col-md-6
+-#               =f.text_field :name, placeholder: "Name"
+-#               -# %label{:for => "name"} Your Name:
+-#               -# %input#name{:name => "name", :placeholder => "Name", :type => "text"}/
+-#             .col-md-6
+-#               =f.email_field :email, placeholder: "Email"
+-#             .col-md-6
+-#               =f.text_field :tel, placeholder: "Tel / カナダで連絡がつく番号"
+-#           .row
+-#             .col-md-6
+-#               .form-group
+-#                 =f.label "The 1st Choice"
+-#                 =f.text_field_without_bootstrap :datetime_1, placeholder: "Date & Time", class: 'js-flatpickr'
+-#             .col-md-6
+-#               .form-group
+-#                 =f.label "The 2nd Choice"
+-#                 =f.text_field_without_bootstrap :datetime_2, placeholder: "Date & Time", class: 'js-flatpickr'
+-#             .col-md-6
+-#               .form-group
+-#                 =f.label "The 3rd Choice"
+-#                 =f.text_field_without_bootstrap :datetime_3, placeholder: "Date & Time", class: 'js-flatpickr'
+-#             .col-md-6
+-#               =f.collection_select :menu_id, Menu.where(shop_id: @shop.id), :id, :menu, include_blank: true, class: 'form-control'
+-#           .row
+-#             .col-md-12
+-#               .form-group
+-#                 =f.label "Note"
+-#                 =f.text_area_without_bootstrap :note, placeholder: "Note / 備考 "
+-#
+-#
+-#
+-#           .col-md-12
+-#             -# %button.butn{:type => "submit"} Booking Now
+-#             =f.submit 'Booking Now', data: {confirm: "Are you sure?"}, class: 'butn'
+
+            -# .col-md-6
+            -#   .form-group
+            -#     %label{:for => "phone"} Phone Number:
+            -#     %input#phone{:name => "phone", :placeholder => "Phone Number", :type => "text"}/
+            -# .col-md-6
+            -#   .form-group
+            -#     %label{:for => "country"} Your Country:
+            -#     %input#country{:name => "country", :placeholder => "country", :type => "text"}/
+            -# #datepairExample.col-lg-12.col-sm-12
+            -# .row
+            -#   .form-group.col-lg-6.col-sm-6
+            -#     %label Arrival Date
+            -#     %input{"data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker", :name => "date", :placeholder => "MM/DD/YYYY", :type => "text"}/
+            -#   .form-group.col-lg-6.col-sm-6
+            -#     %label Departure Date
+            -#     %input{"data-constraints" => "@Date @NotEmpty", "data-provide" => "datepicker", :name => "date1", :placeholder => "MM/DD/YYYY", :type => "text"}/
+            -# .col-md-6
+            -#   .form-group
+            -#     %label No of Rooms:
+            -#     %div
+            -#       %input{:max => "50", :min => "1", :step => "1", :type => "number", :value => "1"}/
+            -# .col-md-6
+            -#   .form-group
+            -#     %label No of Guest:
+            -#     %div
+            -#       %input{:max => "50", :min => "1", :step => "1", :type => "number", :value => "1"}/
+            -# .col-md-12
+            -#   .form-group
+            -#     %label Message:
+            -#     %textarea{:name => "message", :placeholder => "Message", :rows => "5"}

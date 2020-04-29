@@ -17,15 +17,18 @@
               %span
                 %strong Tel:
                 (+44) 123 456 789
-        -# .col-lg-3.col-sm-6.mobile-margin-30px-bottom
-        -#   %h3.footer-title-style1 Useful Links
-        -#   %ul.list-style-1.no-margin-bottom
-        -#     %li
-        -#       %a{:href => "#!"} Location
-        -#     %li
-        -#       %a{:href => "#!"} Terms & Conditions
-        -#     %li
-        -#       %a{:href => "#!"} About Us
+        .col-lg-3.col-sm-6.mobile-margin-30px-bottom
+          %h3.footer-title-style1 Useful Links
+          %ul.list-style-1.no-margin-bottom
+            %li
+              %a{:href => "#!"} Location
+            %li
+              %a{:href => "#!"} Terms & Conditions
+            %li
+              =link_to 'Salon Login', new_admin_session_path
+            %li
+              =link_to 'Salon Log out', destroy_admin_session_path
+              -# %a{:href => "#!"} Salon Login
         .col-lg-3.col-sm-6
           %h3.footer-title-style1 Social Links
           %ul.social-icon-style.no-margin

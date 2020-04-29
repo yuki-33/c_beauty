@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root to: 'tops#index'
+
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -10,7 +12,6 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
-  root to: 'tops#index'
 
   resources :shops, except: :index do
     post 'inquiry' => 'shops#inquiry', on: :member
@@ -23,7 +24,8 @@ Rails.application.routes.draw do
   namespace :login do
     resource :profile, only: [:show, :create, :edit, :update]
   end
-  namespace :admin do
+  namespace :business do
+    root to: 'shops#index'
     resources :shops
   end
 

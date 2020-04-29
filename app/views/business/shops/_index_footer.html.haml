@@ -1,0 +1,15 @@
+.row
+  -@shops.each do |shop|
+    .col-md-6.col-lg-4.margin-30px-bottom
+      .border
+        =link_to shop_path(shop) do
+          =image_tag shop.image_top_url(:shop_index)
+          -# %img{:alt => "", :src => "/img/content/room-5.jpg"}/
+          .padding-25px-all
+            -# %a{:href => "single-room.html"}
+            %h5.margin-5px-bottom.font-size28.xs-font-size24=shop.name
+            -# .font-size12.text-uppercase.text-extra-dark-gray.font-weight-700.margin-20px-bottom.letter-spacing-2 Start from $250/night
+            %p.margin-nine-bottom.sm-margin-seven-bottom.xs-margin-four-bottom=shop.introduction
+            .font-weight-600.text-theme-color
+              Shop Details
+              %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12

@@ -32,37 +32,48 @@
               .navbar-toggler
               / start menu area
               %ul#nav.navbar-nav.ml-auto{:style => "display: none;"}
-                %li
-                  -# %a{:href => "#"} Top
-                  =link_to "TOP", tops_path
-                %li
-                  -# %a{:href => "about.html"} Hair Salon
-                  =link_to "HAIR", shops_category_path(category_key: "hair_salon")
-                %li
-                  -# %a{:href => "about.html"} Nails & Eyelash
-                  =link_to "Nails & Eyelash", shops_category_path(category_key: "nail")
-                %li
-                  -# %a{:href => "about.html"} Spa & Facial
-                  =link_to "Spa & Facial", shops_category_path(category_key: "spa")
-                %li
-                  %a{:href => "#"} My Page
-                  %ul
-                    -if user_signed_in?
-                      %li
-                        =link_to "My page", login_profile_path
-                      %li
-                        -# %a{:href => "single-room.html"} Sign out
-                        =link_to "Sign out", destroy_user_session_path
+                -if admin_signed_in?
+                  %li
+                    -# %a{:href => "about.html"} Hair Salon
+                    =link_to "HAIR", shops_category_path(category_key: "hair_salon")
+                  %li
+                    -# %a{:href => "about.html"} Nails & Eyelash
+                    =link_to "Nails & Eyelash", shops_category_path(category_key: "nail")
+                  %li
+                    -# %a{:href => "about.html"} Spa & Facial
+                    =link_to "Spa & Facial", shops_category_path(category_key: "spa")
+                -else
+                  %li
+                    -# %a{:href => "#"} Top
+                    =link_to "TOP", tops_path
+                  %li
+                    -# %a{:href => "about.html"} Hair Salon
+                    =link_to "HAIR", shops_category_path(category_key: "hair_salon")
+                  %li
+                    -# %a{:href => "about.html"} Nails & Eyelash
+                    =link_to "Nails & Eyelash", shops_category_path(category_key: "nail")
+                  %li
+                    -# %a{:href => "about.html"} Spa & Facial
+                    =link_to "Spa & Facial", shops_category_path(category_key: "spa")
+                  %li
+                    %a{:href => "#"} My Page
+                    %ul
+                      -if user_signed_in?
+                        %li
+                          =link_to "My page", login_profile_path
+                        %li
+                          -# %a{:href => "single-room.html"} Sign out
+                          =link_to "Sign out", destroy_user_session_path
 
-                    -else
-                      %li
-                        -# %a{:href => "our-rooms.html"} Sign in
-                        =link_to "Login", new_user_session_path
-                      %li
-                        -# %a{:href => "single-room.html"} Create My page
-                        =link_to "Create My page", new_user_registration_path
-                %li
-                  %a{:href => "about.html"} About us
+                      -else
+                        %li
+                          -# %a{:href => "our-rooms.html"} Sign in
+                          =link_to "Login", new_user_session_path
+                        %li
+                          -# %a{:href => "single-room.html"} Create My page
+                          =link_to "Create My page", new_user_registration_path
+                  %li
+                    %a{:href => "about.html"} About us
                 -# %li
                 -#   %a{:href => "#"} Pages
                 -#   %ul

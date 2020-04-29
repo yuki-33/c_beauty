@@ -1,5 +1,15 @@
-class Admin::ShopsController < Admin::ApplicationController
-  before_action :set_shop, only: [:edit, :update, :destroy, :inquiry]
+class Business::ShopsController < Business::ApplicationController
+  before_action :set_category, only: [:index]
+  before_action :set_shop, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @shops = current_admin.shops
+    # @shops = @category.shops
+  end
+
+  def show
+    # @inquiry = @shop.inquiries.build
+  end
 
   def create
     @shop = Shop.new(shop_params)
@@ -82,17 +92,17 @@ class Admin::ShopsController < Admin::ApplicationController
     )
   end
 
-  def inquiry_params
-    params[:inquiry].permit(
-      :name,
-      :email,
-      :tel,
-      :datetime_1,
-      :datetime_2,
-      :datetime_3,
-      :menu_id,
-      :note
-    )
-  end
+  # def inquiry_params
+  #   params[:inquiry].permit(
+  #     :name,
+  #     :email,
+  #     :tel,
+  #     :datetime_1,
+  #     :datetime_2,
+  #     :datetime_3,
+  #     :menu_id,
+  #     :note
+  #   )
+  # end
 
 end
