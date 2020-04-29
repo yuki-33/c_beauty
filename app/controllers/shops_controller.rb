@@ -11,7 +11,7 @@ class ShopsController < ApplicationController
   end
 
   def inquiry
-    @inquiry = @shop.inquiries.build(inquiry_params)
+    @inquiry = @shop.inquiries.build(inquiry_params.merge(user_id: current_user.present? ? current_user.id : nil))
     if @inquiry.save
       redirect_to shop_path(@shop), notice: 'Your booking has been sent.'
     else

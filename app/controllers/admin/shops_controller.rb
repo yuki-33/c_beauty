@@ -1,4 +1,4 @@
-class Login::ShopsController < Login::ApplicationController
+class Admin::ShopsController < Admin::ApplicationController
   before_action :set_shop, only: [:edit, :update, :destroy, :inquiry]
 
   def create
@@ -31,15 +31,6 @@ class Login::ShopsController < Login::ApplicationController
   def destroy
     @shop.destroy
     redirect_to shops_category_path
-  end
-
-  def inquiry
-    @inquiry = @shop.inquiries.build(inquiry_params)
-    if @inquiry.save
-      redirect_to shop_path(@shop), notice: 'Your booking has been sent.'
-    else
-      render "show"
-    end
   end
 
 

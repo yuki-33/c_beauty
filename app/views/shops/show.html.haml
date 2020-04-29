@@ -280,7 +280,7 @@
 
           .col-md-12
             -# %button.butn{:type => "submit"} Booking Now
-            =f.submit 'Booking Now', class: 'butn'
+            =f.submit 'Booking Now', data: {confirm: "Are you sure?"}, class: 'butn'
 
             -# .col-md-6
             -#   .form-group
