@@ -7,14 +7,11 @@ class ShopsController < ApplicationController
   end
 
   def show
-    if @inquiry.name.present?
-      
-      @inquiry = @shop.inquiries.build
+    @inquiry = @shop.inquiries.build
   end
 
   def confirm
     @inquiry = @shop.inquiries.build(inquiry_params)
-    if edit
   end
 
   def inquiry
