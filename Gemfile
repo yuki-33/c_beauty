@@ -36,6 +36,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
+gem 'pry'
 
 
 group :development, :test do

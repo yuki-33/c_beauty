@@ -1,0 +1,36 @@
+-# %h2 Forgot your password?
+-# = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+-#   = render "login/shared/error_messages", resource: resource
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .actions
+-#     = f.submit "Send me reset password instructions"
+-# = render "login/shared/links"
+
+
+
+.d-flex.align-items-center.position-relative.min-vh-100
+  .col-sm-8.center-col.col-md-7.col-xl-4.d-lg-flex.align-items-center.px-0
+    .w-100.padding-50px-all.sm-padding-30px-all.xs-padding-20px-all
+      %h3 Forgot your password?
+      %p.margin-30px-bottom パスワードをお忘れの方
+      =bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name)) do |f|
+        = render "login/shared/error_messages", resource: resource
+        =f.form_group :email do
+          .col-md-12
+            =f.email_field_without_bootstrap :email, placeholder: "Email"
+        -# =f.form_group :password do
+        -#   .col-md-12
+        -#     = f.password_field_without_bootstrap :password, placeholder: "Password"
+        -# =f.form_group :password_confirmation do
+        -#   .col-md-12
+        -#     = f.password_field_without_bootstrap :password_confirmation, placeholder: "Confirm Passwor"
+        .col-md-12.margin-25px-top
+          = f.submit "Reset password instructions", class: "butn btn-block"
+        .col-md-12.text-center.margin-25px-top
+          %span
+            Already have an account?　
+            =link_to 'Login', new_session_path(resource_name)
+  .container-fluid.bg-img.height-100vh.xs-display-none{"data-background" => "/img/content/login-register.jpg"}

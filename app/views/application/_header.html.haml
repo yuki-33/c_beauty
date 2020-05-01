@@ -35,20 +35,19 @@
                 -if admin_signed_in?
                   %li
                     -# %a{:href => "about.html"} Hair Salon
-                    =link_to "HAIR", shops_category_path(category_key: "hair_salon")
+                    =link_to "Salon Top", business_shops_path
                   %li
-                    -# %a{:href => "about.html"} Nails & Eyelash
-                    =link_to "Nails & Eyelash", shops_category_path(category_key: "nail")
+                    =link_to 'Log out', destroy_admin_session_path
                   %li
-                    -# %a{:href => "about.html"} Spa & Facial
-                    =link_to "Spa & Facial", shops_category_path(category_key: "spa")
+                    -# %a{:href => "about.html"} Hair Salon
+                    =link_to "Contact us", tops_path
                 -else
                   %li
                     -# %a{:href => "#"} Top
                     =link_to "TOP", tops_path
                   %li
                     -# %a{:href => "about.html"} Hair Salon
-                    =link_to "HAIR", shops_category_path(category_key: "hair_salon")
+                    =link_to "Hair", shops_category_path(category_key: "hair_salon")
                   %li
                     -# %a{:href => "about.html"} Nails & Eyelash
                     =link_to "Nails & Eyelash", shops_category_path(category_key: "nail")

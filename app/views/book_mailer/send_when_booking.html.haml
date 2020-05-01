@@ -1,0 +1,48 @@
+="#{@inquiry.name} 様"
+%br
+%br
+%br
+ご予約ありがとうございます。お客様のご予約内容をサロンに送信いたしました。サロンから予約内容の確認の連絡が入りますので、お待ち下さい。
+%br
+ご予約内容のご変更やご質問は直接サロンへお問い合わせ下さい。
+%br
+%br
+以下、今回のご予約内容になります。
+%br
+%br
+【 予約内容 】
+%br
+%br
+="〈サロン名〉 #{@inquiry.shop.name}"
+%br
+="〈メニュー〉 #{Menu.find(@inquiry.menu_id).menu},  #{Menu.find(@inquiry.menu_id).price}"
+%br
+〈予約日時〉
+%br
+="・第１希望　#{@inquiry.datetime_1.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
+%br
+-if @inquiry.datetime_2.present?
+  ="・第２希望　#{@inquiry.datetime_2.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
+%br
+-if @inquiry.datetime_3.present?
+  ="・第３希望　#{@inquiry.datetime_3.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
+%br
+-if @inquiry.note.present?
+  ="〈備考〉 #{@inquiry.note}"
+%br
+%br
+ご予約したサロンの詳細はこちら
+=link_to shop_url(@inquiry.shop.id), shop_url(@inquiry.shop.id)
+%br
+%br
+ーーーーーーーーーーーーーーーーーーーーーーーーーーー
+%br
+%br
+『My page』をお持ちの方は、ご予約履歴やお気に入り(Bookmark)を登録することができます！また、次回からの予約を簡単に行うことができます！
+%br
+ご登録はサイト『Create My Page』より
+%br
+%br
+Maple Beauty Hunter
+%br
+=link_to root_url, root_url

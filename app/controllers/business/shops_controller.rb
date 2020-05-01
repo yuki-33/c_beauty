@@ -12,18 +12,17 @@ class Business::ShopsController < Business::ApplicationController
   end
 
   def create
-    @shop = Shop.new(shop_params)
+    @shop = current_admin.shops.build(shop_params)
     if @shop.save
-      redirect_to shop_path(@shop)
+      redirect_to business_shop_path(@shop)
     else
       render "new"
     end
   end
 
   def new
-    @shop = Shop.new
+    @shop = current_admin.shops.build
     @shop.menus.build
-    # @work.director_id = params[:director_id] if params[:director_id].present?
   end
 
   def edit
@@ -32,7 +31,7 @@ class Business::ShopsController < Business::ApplicationController
 
   def update
     if @shop.update(shop_params)
-      redirect_to shop_path(@shop)
+      redirect_to business_shop_path(@shop)
     else
       render "edit"
     end
@@ -40,7 +39,7 @@ class Business::ShopsController < Business::ApplicationController
 
   def destroy
     @shop.destroy
-    redirect_to shops_category_path
+    redirect_to business_shops_path
   end
 
 

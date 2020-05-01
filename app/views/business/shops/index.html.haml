@@ -14,12 +14,12 @@
   .container
     .text-center.margin-50px-bottom.xs-margin-30px-bottom
       %h3.margin-10px-bottom Salons
-      %p.margin-30px-bottom のサロン一覧
+      %p.margin-30px-bottom #{current_admin.name} のサロン一覧
     .row
       -@shops.each do |shop|
         .col-md-6.col-lg-4.margin-30px-bottom
           .border
-            =link_to shop_path(shop) do
+            =link_to business_shop_path(shop) do
               =image_tag shop.image_top_url(:shop_index)
               -# %img{:alt => "", :src => "/img/content/room-5.jpg"}/
               .padding-25px-all
@@ -30,5 +30,9 @@
                 .font-weight-600.text-theme-color
                   Shop Details
                   %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
-
-    -# =render 'index_footer'
+%section
+  .container
+    .row.align-items-center
+      .col-md-4.xs-margin-30px-bottom
+        -# %button.butn{:type => "submit"} Create New Shop
+        =link_to 'Create New Shop Page', new_business_shop_path, class: 'butn'

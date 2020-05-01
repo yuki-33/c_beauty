@@ -1,0 +1,47 @@
+="#{@inquiry.shop.name} 様"
+%br
+%br
+%br
+お客様より、ご予約希望のご連絡いたします。
+%br
+ご確認後、お客様へ予約内容の確認または確定の通知をよろしくお願いいたします。
+%br
+%br
+%br
+【 予約内容 】
+%br
+%br
+  ="〈Name〉 #{@inquiry.name}"
+%br
+  ="〈Email〉 #{@inquiry.email}"
+%br
+  ="〈Tel〉 #{@inquiry.tel}"
+%br
+="〈メニュー〉 #{Menu.find(@inquiry.menu_id).menu},  #{Menu.find(@inquiry.menu_id).price}"
+%br
+〈予約日時〉
+%br
+="・第１希望　#{@inquiry.datetime_1.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
+%br
+-if @inquiry.datetime_2.present?
+  ="・第２希望　#{@inquiry.datetime_2.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
+%br
+-if @inquiry.datetime_3.present?
+  ="・第３希望　#{@inquiry.datetime_3.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
+%br
+-if @inquiry.note.present?
+  ="〈備考〉 #{@inquiry.note}"
+%br
+%br
+%br
+%br
+サロン、ショップ情報の更新やご案内はこちらから！
+%br
+=link_to shop_url(@inquiry.shop.id), shop_url(@inquiry.shop.id)
+%br
+ーーーーーーーーーーーーーーーーーーーーーーーーーーー
+%br
+%br
+Maple Beauty Hunter
+%br
+=link_to root_url, root_url
