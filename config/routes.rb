@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   }
 
   resources :shops, except: :index do
+    post 'confirm' => 'shops#confirm', on: :member
     post 'inquiry' => 'shops#inquiry', on: :member
   end
   resources :areas

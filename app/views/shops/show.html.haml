@@ -73,7 +73,7 @@
 -#             %h4.margin-30px-bottom.sm-margin-15px-bottom.font-size34.sm-font-size30.text-center.sm-text-left Explore Our Restaurant
 -#             %p.no-margin-bottom.text-center It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
 / start single rooms section
-%section
+%section.padding_0px
   .container
     .row
       .col-lg-10.center-col
@@ -205,7 +205,7 @@
               -#             %button.butn{:type => "submit"}
               -#               %span Send Message
 / start testimonial style-1 section
-%section
+%section.padding_0px
   .container
     .text-center.margin-50px-bottom
       %h3.margin-10px-bottom Hair Stylist
@@ -238,14 +238,14 @@
 -#     .row.align-items-center
 -#       .col-md-4.xs-margin-10px-bottom
 -#         %button.butn{:type => "submit"} Booking Now
-%section
+%section#booking_form
   .container
     .row
       .col-lg-12.sm-margin-50px-bottom
         %h4.text-uppercase.letter-spacing-1.margin-30px-bottom.font-size24 Booking Form
         -# %form{:method => "post"}
         -# =bootstrap_form_with url: inquiry_shop_path(@shop), local: true do |f|
-        =bootstrap_form_with model: @inquiry, url: {controller: "shops", action: "inquiry" }, method: :post, local: true do |f|
+        =bootstrap_form_with model: @inquiry, url: {controller: "shops", action: "confirm" }, method: :post, local: true do |f|
           .row
             .col-md-6
               =f.text_field :name, placeholder: "Name"
@@ -270,17 +270,15 @@
                 =f.text_field_without_bootstrap :datetime_3, placeholder: "Date & Time", class: 'js-flatpickr'
             .col-md-6
               =f.collection_select :menu_id, Menu.where(shop_id: @shop.id), :id, :menu, include_blank: true, class: 'form-control'
-          .row
+          .row.margin-30px-bottom
             .col-md-12
               .form-group
                 =f.label "Note"
                 =f.text_area_without_bootstrap :note, placeholder: "Note / 備考 "
-
-
-
-          .col-md-12
-            -# %button.butn{:type => "submit"} Booking Now
-            =f.submit 'Booking Now', data: {confirm: "Are you sure that the details of your booking?"}, class: 'butn'
+          .row
+            .col-md-12
+              -# %button.butn{:type => "submit"} Booking Now
+              =f.submit 'Booking Now', data: {confirm: "Are you sure that the details of your booking?"}, class: 'butn'
 
             -# .col-md-6
             -#   .form-group

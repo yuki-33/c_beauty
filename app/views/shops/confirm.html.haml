@@ -1,0 +1,44 @@
+%section
+  .container
+    .row
+      .col-lg-12.sm-margin-50px-bottom
+        %h4.text-uppercase.letter-spacing-1.font-size24 Confirmation
+        %p.margin-30px-bottom ご予約内容の確認
+        -# %form{:method => "post"}
+        -# =bootstrap_form_with url: inquiry_shop_path(@shop), local: true do |f|
+        =bootstrap_form_with model: @inquiry, url: {controller: "shops", action: "inquiry" }, method: :post, local: true do |f|
+          .row
+            .col-md-6
+              =f.text_field :name, placeholder: "Name", readonly: 'readonly'
+              -# %label{:for => "name"} Your Name:
+              -# %input#name{:name => "name", :placeholder => "Name", :type => "text"}/
+            .col-md-6
+              =f.email_field :email, placeholder: "Email", readonly: 'readonly'
+            .col-md-6
+              =f.text_field :tel, placeholder: "Tel / カナダで連絡がつく番号", readonly: 'readonly'
+          .row
+            .col-md-6
+              .form-group
+                =f.label "The 1st Choice"
+                =f.text_field_without_bootstrap :datetime_1, placeholder: "Date & Time", readonly: 'readonly'
+            .col-md-6
+              .form-group
+                =f.label "The 2nd Choice"
+                =f.text_field_without_bootstrap :datetime_2, placeholder: "Date & Time", readonly: 'readonly'
+            .col-md-6
+              .form-group
+                =f.label "The 3rd Choice"
+                =f.text_field_without_bootstrap :datetime_3, placeholder: "Date & Time", readonly: 'readonly'
+            .col-md-6
+              =f.collection_select :menu_id, Menu.where(shop_id: @shop.id), :id, :menu, include_blank: true, class: 'form-control'
+          .row.margin-30px-bottom
+            .col-md-12
+              .form-group
+                =f.label "Note"
+                =f.text_area_without_bootstrap :note, placeholder: "Note / 備考 ", readonly: 'readonly'
+          .row
+            .col-md-6.sm-margin-30px-bottom
+              -# %button.butn{:type => "submit"} Booking Now
+              =link_to 'Back to booking form', shop_path(@shop, anchor: 'booking_form'), class: 'butn'
+            .col-md-6
+              =f.submit 'Booking Now', class: 'butn'

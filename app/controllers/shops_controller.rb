@@ -1,13 +1,20 @@
 class ShopsController < ApplicationController
   before_action :set_category, only: [:index]
-  before_action :set_shop, only: [:show, :inquiry]
+  before_action :set_shop, only: [:show, :confirm, :inquiry]
 
   def index
     @shops = @category.shops
   end
 
   def show
-    @inquiry = @shop.inquiries.build
+    if @inquiry.name.present?
+      
+      @inquiry = @shop.inquiries.build
+  end
+
+  def confirm
+    @inquiry = @shop.inquiries.build(inquiry_params)
+    if edit
   end
 
   def inquiry
