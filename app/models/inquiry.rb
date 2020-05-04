@@ -2,7 +2,6 @@ class Inquiry < ApplicationRecord
   belongs_to :shop
   belongs_to :user, optional: true
   has_one :menu
-  has_one :status
 
   validates :name, presence: true
   validates :email, presence: true

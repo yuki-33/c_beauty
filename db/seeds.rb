@@ -10,7 +10,8 @@ require 'csv'
 require 'nkf'
 POSTGRES_TABLES = [
   :categories,
-  :areas
+  :areas,
+  :statuses
 ]
 POSTGRES_TABLES.each do |table_name|
   next unless ActiveRecord::Base.connection.execute("select * from #{table_name};").num_tuples.zero?
