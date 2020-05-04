@@ -5,7 +5,7 @@
         %h4.text-uppercase.letter-spacing-1.margin-30px-bottom.font-size24 Booking Form
         -# %form{:method => "post"}
         -# =bootstrap_form_with url: inquiry_shop_path(@shop), local: true do |f|
-        =bootstrap_form_with model: @inquiry, url: {controller: "shops", action: "inquiry" }, method: :post, local: true do |f|
+        =bootstrap_form_with model: [:login, @profile], url: login_profile_path, local: true do |f|
           .row
             .col-md-6
               =f.text_field :first_name, placeholder: "First name"

@@ -14,8 +14,8 @@ class Shop < ApplicationRecord
   accepts_nested_attributes_for :menus
   belongs_to :area
   belongs_to :admin
-  has_many :user_shops, dependent: :destroy
-  has_many :users, through: :user_shops
+  has_many :favorites, dependent: :destroy
+  has_many :users, through: :favorites
 
 
 end

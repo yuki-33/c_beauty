@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_172207) do
+ActiveRecord::Schema.define(version: 2020_05_04_172941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(version: 2020_04_29_172207) do
     t.string "category_key"
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "shop_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "inquiries", force: :cascade do |t|
     t.integer "shop_id"
     t.integer "menu_id"
@@ -74,10 +81,10 @@ ActiveRecord::Schema.define(version: 2020_04_29_172207) do
     t.string "last_name"
     t.string "email"
     t.string "tel"
-    t.string "status"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status_id"
   end
 
   create_table "shop_categories", force: :cascade do |t|
@@ -122,18 +129,7 @@ ActiveRecord::Schema.define(version: 2020_04_29_172207) do
   end
 
   create_table "statuses", force: :cascade do |t|
-    t.string "visiter"
-    t.string "student"
-    t.string "worker"
-    t.string "resident"
-    t.string "other"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "user_shops", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "shop_id"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,7 +1,8 @@
 class Login::ProfilesController < Login::ApplicationController
-  before_action :set_profile, only: [:show, :edit, :update]
+  before_action :set_profile, only: [:edit, :update]
 
   def show
+    @profile = current_user.profile
   end
 
   def edit
@@ -10,7 +11,7 @@ class Login::ProfilesController < Login::ApplicationController
   def create
     @profile = current_user.build_profile(profile_params)
     if @profile.save
-      redirect_to edit_login_profile_path, notice: 'Your profile has been successfully saved.'
+      redirect_to login_profile_path, notice: 'Your profile has been successfully saved.'
     else
       render 'edit'
     end
@@ -18,7 +19,7 @@ class Login::ProfilesController < Login::ApplicationController
 
   def update
     if @profile.update(profile_params)
-     redirect_to edit_login_profile_path, notice: 'Your profile has been successfully saved.'
+     redirect_to login_profile_path, notice: 'Your profile has been successfully saved.'
    else
      render 'edit'
    end

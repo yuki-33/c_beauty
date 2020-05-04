@@ -1,4 +1,4 @@
 class Status < ApplicationRecord
-  belongs_to :profiles
+  belongs_to :profile
   has_one :inquiry
 end

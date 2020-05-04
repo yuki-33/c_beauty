@@ -13,4 +13,9 @@ class Profile < ApplicationRecord
     self.last_name = self.last_name.split.map(&:capitalize).join(' ')
   end
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+
 end

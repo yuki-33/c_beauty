@@ -31,16 +31,16 @@
 %section.padding_0px
   .container
     .row.align-items-center
-      %div
-        %ul.tags
-          %li
-            -@shop.categories.each do |category|
-              =link_to category.name, category_path(category)
-      -#
-      -#       %a{:href => "#"} Beauty
-      -#
-      -# -@shop.categories.each do |category|
-      -#   =link_to category.name, category_path(category), class: "badge badge-secondary"
+      .col-lg-9.col-md-8
+        %div
+          %ul.tags
+            %li
+              -@shop.categories.each do |category|
+                =link_to category.name, category_path(category)
+                -# =link_to category.name, shops_category_path(category_key: "#{category.name}")
+      .col-lg-3.col-md-4
+        %button.butn{:type => "favorite"} Favorite ♥
+
 %section.padding_0px
   .container
     .row.align-items-center
@@ -278,7 +278,7 @@
           .row
             .col-md-12
               -# %button.butn{:type => "submit"} Booking Now
-              =f.submit 'Booking Now', data: {confirm: "Are you sure that the details of your booking?"}, class: 'butn'
+              =f.submit 'Booking Now', class: 'butn'
 
             -# .col-md-6
             -#   .form-group

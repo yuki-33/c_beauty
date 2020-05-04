@@ -23,6 +23,17 @@ class ShopsController < ApplicationController
     else
       render "show"
     end
+
+    def favorite
+      case @favorite
+      when current_user.favorites.build(shop_id: params[:id])
+        @favorite.save
+        redirect_to shop_path(@shop), notice: 'Saved'
+      when Favorite.find_by(shop_id: params[:id], user_id: current_user.id)
+        @favirite.destroy
+        redirect_to shop_path(@shop), notice: 'delieted'
+    end
+
   end
 
   private

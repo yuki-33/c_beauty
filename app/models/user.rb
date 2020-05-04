@@ -4,8 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   has_one :profile
-  has_one :inquiry
-  has_many :user_shops, dependent: :destroy
-  has_many :shops, through: :user_shops
-
+  has_many :favorites, dependent: :destroy
+  has_many :shops, through: :favorites
+  has_many :inquiries
 end

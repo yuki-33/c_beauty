@@ -10,4 +10,6 @@ class Inquiry < ApplicationRecord
   validates :datetime_1, presence: true
   validates :menu_id, presence: true
 
+  scope :by_update, ->{ order(update_at: :asc) }
+
 end
