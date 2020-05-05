@@ -37,6 +37,7 @@ gem 'mini_magick'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'pry'
+gem 'ransack'
 
 
 group :development, :test do

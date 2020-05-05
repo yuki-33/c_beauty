@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   }
 
   resources :shops, except: :index do
+    get 'search' => 'shops#search', on: :collection
     post 'confirm' => 'shops#confirm', on: :member
     post 'inquiry' => 'shops#inquiry', on: :member
     get 'favorite' => 'shops#favorite', on: :member

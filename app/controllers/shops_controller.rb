@@ -1,9 +1,16 @@
 class ShopsController < ApplicationController
-  before_action :set_category, only: [:index]
+  before_action :set_category, only: [:index, :search]
   before_action :set_shop, only: [:show, :confirm, :inquiry, :favorite, :delete_favorite]
 
   def index
-    @shops = @category.shops
+    @q = @category.shops.ransack(params[:q])
+    @areas = Area.all
+    @shops = @q.result(distinct: true)
+  end
+
+  def search
+    @q = @category.shops.ransack(search_params)
+    @shops = @q.result(distinct: true)
   end
 
   def show
@@ -99,4 +106,9 @@ class ShopsController < ApplicationController
       :note
     )
   end
+
+  def search_params
+    params.riquire(:q).permit!
+  end
+
 end
