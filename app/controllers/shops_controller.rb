@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
   before_action :set_category, only: [:index]
-  before_action :set_shop, only: [:show, :confirm, :inquiry]
+  before_action :set_shop, only: [:show, :confirm, :inquiry, :favorite, :delete_favorite]
 
   def index
     @shops = @category.shops
@@ -23,18 +23,21 @@ class ShopsController < ApplicationController
     else
       render "show"
     end
-
-    def favorite
-      case @favorite
-      when current_user.favorites.build(shop_id: params[:id])
-        @favorite.save
-        redirect_to shop_path(@shop), notice: 'Saved'
-      when Favorite.find_by(shop_id: params[:id], user_id: current_user.id)
-        @favirite.destroy
-        redirect_to shop_path(@shop), notice: 'delieted'
-    end
-
   end
+
+  def favorite
+    @favorite = current_user.favorites.build(shop_id: params[:id])
+    @favorite.save
+    redirect_to shop_path(@shop), notice: 'Saved'
+  end
+
+  def delete_favorite
+    @favorite = current_user.favorites.find_by(shop_id: params[:id])
+    @favorite.destroy
+    redirect_to shop_path(@shop), notice: 'deleted'
+  end
+
+
 
   private
 

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     post 'confirm' => 'shops#confirm', on: :member
     post 'inquiry' => 'shops#inquiry', on: :member
     get 'favorite' => 'shops#favorite', on: :member
-    # delete 'favorite' => 'shops#favorite', on: :member
+    get 'delete_favorite' => 'shops#delete_favorite', on: :member
   end
   resources :areas
   resources :categories
