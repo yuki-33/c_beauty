@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root to: 'tops#index'
+  get 'about', to: "tops#about", as: 'about'
 
   devise_for :admins, controllers: {
     sessions:      'business/sessions',

@@ -1,5 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  belongs_to :status
 
   before_save :capitalize_name
   def capitalize_name

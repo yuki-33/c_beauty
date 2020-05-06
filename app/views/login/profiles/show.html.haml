@@ -19,91 +19,14 @@
                 %div
                   %h6.font-italic.font-size20=@profile.full_name
                   %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom=@profile.email
-                  %p.card-text.border-bottom.padding-20px-bottom=@profile.tel
-            -#       %ul.social-listing.no-margin-bottom
-            -#         %li
-            -#           %a{:href => "javascript:void(0);"}
-            -#             %i.fab.fa-facebook-f
-            -#         %li
-            -#           %a{:href => "javascript:void(0);"}
-            -#             %i.fab.fa-twitter
-            -#         %li
-            -#           %a{:href => "javascript:void(0);"}
-            -#             %i.fab.fa-instagram
-            -#         %li
-            -#           %a{:href => "javascript:void(0);"}
-            -#             %i.fab.fa-youtube
-            -#         %li
-            -#           %a{:href => "javascript:void(0);"}
-            -#             %i.fab.fa-linkedin-in
+                  %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom=@profile.tel
+                  %p.card-text.border-bottom.padding-20px-bottom=@profile.status
+            .widget
+              .text-center
+                =link_to('Favorite ♥', { anchor: 'favorite' }, class: 'no-margin-bottom sm-margin-seven-bottom xs-margin-four-bottom')
+                =link_to edit_login_profile_path do
+                  %p.card-text.border-bottom.padding-45px-bottom Profile の編集
 
-            -# .widget
-            -#   .widget-title.margin-35px-bottom
-            -#     %h3 Categories
-            -#   %ul.widget-list
-            -#     %li
-            -#       %a{:href => "#"}
-            -#         Restaurants
-            -#     %li
-            -#       %a{:href => "#"}
-            -#         Destinations
-            -#     %li
-            -#       %a{:href => "#"}
-            -#         Beauty & Spa
-            -#     %li
-            -#       %a{:href => "#"}
-            -#         Shopping
-            -#     %li
-            -#       %a{:href => "#"}
-            -#         Entertainment
-            -#     %li
-            -#       %a{:href => "#"}
-            -#         Health & Care
-            -# .widget
-            -#   .widget-title.margin-35px-bottom
-            -#     %h3 Recent Posts
-            -#   .media.margin-20px-bottom
-            -#     %img.mr-3.border-radius-4{:alt => "", :src => "img/blog/blog-15.jpg"}/
-            -#     .media-body
-            -#       %h5.no-margin-top.margin-5px-bottom.font-size17
-            -#         %a.text-extra-dark-gray{:href => "#"} Nice interior
-            -#       %span.font-size14.text-theme-color 20 Jan, 2020
-            -#   .media.margin-20px-bottom
-            -#     %img.mr-3.border-radius-4{:alt => "", :src => "img/blog/blog-16.jpg"}/
-            -#     .media-body
-            -#       %h5.no-margin-top.margin-5px-bottom.font-size17
-            -#         %a.text-extra-dark-gray{:href => "#"} Recipes
-            -#       %span.font-size14.text-theme-color 12 Feb, 2020
-            -#   .media
-            -#     %img.mr-3.border-radius-4{:alt => "", :src => "img/blog/blog-14.jpg"}/
-            -#     .media-body
-            -#       %h5.no-margin-top.margin-5px-bottom.font-size17
-            -#         %a.text-extra-dark-gray{:href => "#"} New rooms
-            -#       %span.font-size14.text-theme-color 17 Feb, 2020
-            -# .widget
-            -#   .widget-title.margin-35px-bottom
-            -#     %h3 Tags
-            -#   %div
-            -#     %ul.tags
-            -#       %li
-            -#         %a{:href => "#"} Beauty
-            -#       %li
-            -#         %a{:href => "#"} Decoration
-            -#       %li
-            -#         %a{:href => "#"} Delicius
-            -#       %li
-            -#         %a{:href => "#"} Design
-            -#       %li
-            -#         %a{:href => "#"} Fun
-            -#       %li
-            -#         %a{:href => "#"} Holiday
-            -#       %li
-            -#         %a{:href => "#"} Ideas
-            -#       %li
-            -#         %a{:href => "#"} Pleasure
-            -#       %li
-            -#         %a{:href => "#"} Vacation
-        / end blog right
       / start blog left
       .col-lg-9.col-md-12
         .posts.padding-30px-right.sm-no-padding-right
@@ -125,33 +48,39 @@
                       .padding-30px-left.xs-no-padding-lr.padding-20px-right
                         %span.text-uppercase.font-size12.text-theme-color.font-weight-600.letter-spacing-1=inquiry.updated_at.strftime("%F")
                         %h5.margin-5px-bottom.font-size28.xs-font-size24=inquiry.shop.name
-                        %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom="第1希望日　/　#{inquiry.datetime_1.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
+                        %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom="第1希望日 /　#{inquiry.datetime_1.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
                         -if inquiry.datetime_2.present?
-                          %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom="第2希望日　/　#{inquiry.datetime_2.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
+                          %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom="第2希望日 /　#{inquiry.datetime_2.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
                         -if inquiry.datetime_3.present?
-                          %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom="第3希望日　/　#{inquiry.datetime_3.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
+                          %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom="第3希望日 /　#{inquiry.datetime_3.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
                         -# %a.font-weight-600{:href => "blog-details.html"}
                         .font-weight-600.margin-nine-top
                           Salon detail
                           %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
+          =paginate @profile
 
-
-%section
+%section#favorite
   .container
     .text-center.margin-50px-bottom.xs-margin-30px-bottom
-      %h3.margin-10px-bottom Your bookmark
-      %p.no-margin-bottom お気に入り
-    .row
-      .widget
-        .row.justify-content-center
-          .col-xl-6.col-lg-7.col-md-12.sm-margin-30px-bottom
-            %a.row.no-gutters.margin-30px-bottom.theme-shadow.align-items-center{:href => "blog-details.html"}
+      %h3.margin-10px-bottom Favorites
+      %p.no-margin-bottom お気に入り ♥
+    .row.justify-content-center
+      -@profile.user.favorites.each do |favorite|
+        .col-xl-6.col-lg-6.col-md-12.sm-margin-30px-bottom
+          =link_to shop_path(favorite.shop) do
+            .row.no-gutters.margin-30px-bottom.theme-shadow.align-items-center
               .col-md-4
-                %img{:alt => "", :src => "/img/blog/blog-01.jpg"}/
+                -# %img{:alt => "", :src => "/img/blog/blog-01.jpg"}/
+                =image_tag favorite.shop.image_top_url(:top_info)
               .col-md-8
                 .padding-15px-lr.xs-padding-30px-all
-                  %h5.no-margin-bottom.font-size20 Best oriental hotel channel on youTube for our clients.
-            -# %a.row.no-gutters.theme-shadow.align-items-center{:href => "blog-details.html"}
+                  %h5.margin-5px-bottom.font-size24=favorite.shop.name
+                  %p.margin-nine-bottom.sm-margin-seven-bottom.xs-margin-four-bottom=favorite.shop.introduction
+                  .font-weight-600.text-theme-color
+                    Shop Details
+                    %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
+
+              -# %a.row.no-gutters.theme-shadow.align-items-center{:href => "blog-details.html"}
             -#   .col-md-4
             -#     %img{:alt => "", :src => "/img/blog/blog-02.jpg"}/
             -#   .col-md-8

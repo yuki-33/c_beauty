@@ -2,10 +2,7 @@ class Login::ProfilesController < Login::ApplicationController
   before_action :set_profile, only: [:edit, :update]
 
   def show
-    @profile = current_user.profile
-  end
-
-  def edit
+    @profile = current_user.profile.page(params[:page]).per(4)
   end
 
   def create
@@ -15,6 +12,9 @@ class Login::ProfilesController < Login::ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def edit
   end
 
   def update
@@ -37,7 +37,7 @@ class Login::ProfilesController < Login::ApplicationController
       :last_name,
       :email,
       :tel,
-      :status
+      :status_id
     )
   end
 end
