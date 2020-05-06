@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     passwords:     'login/passwords',
     registrations: 'login/registrations'
   }
+  resources :areas
+  resources :categories
+  resources :tops
+
+  get '/:category_key/' => 'shops#index', constraints: { category_key: /hair_salon|nail|eyelash|spa/ }, as: 'shops_category'
 
   resources :shops, except: :index do
     get 'search' => 'shops#search', on: :collection
@@ -21,11 +26,7 @@ Rails.application.routes.draw do
     get 'favorite' => 'shops#favorite', on: :member
     get 'delete_favorite' => 'shops#delete_favorite', on: :member
   end
-  resources :areas
-  resources :categories
-  resources :tops
-  get '/:category_key/' => 'shops#index', constraints: { category_key: /hair_salon|nail|eyelash|spa/ }, as: 'shops_category'
-
+  
   namespace :login do
     resource :profile, only: [:show, :create, :edit, :update]
   end
