@@ -2,7 +2,12 @@ class Login::ProfilesController < Login::ApplicationController
   before_action :set_profile, only: [:edit, :update]
 
   def show
-    @profile = current_user.profile.page(params[:page]).per(4)
+    @profile = current_user.profile
+    @inquiries = @profile.user.inquiries.page(params[:page]).per(4)
+  end
+
+  def new
+    @profile = current_user.build_profile
   end
 
   def create

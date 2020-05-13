@@ -18,17 +18,13 @@
 -#   =link_to "Registrarion", new_shop_path
 
 %section.bg-img.screen-height.cover-background.laxury-banner{"data-background" => "img/top/beauty_top2.jpg", "data-overlay-dark" => "1"}
-  / start banner text
   .container.h-100
     .header-text.text-center.display-table.h-100.w-100
       .display-table-cell.vertical-align-middle
         %p.font-size16.text-white.margin-20px-bottom.font-weight-400.text-uppercase Discover Beauty Salon & Spa
         %h1.text-uppercase Maple Beauty Hunter
-
-  / end banner text
-/ end banner
 / start about us section
-%section
+%section.padding_0px
   .container
     .row
       .col-md-6.align-self-center.xs-margin-30px-bottom
@@ -39,22 +35,18 @@
             %p.no-margin-bottom トロントで生活する学生，ビジター，すべての日本人に向けた美容院，美容サロン検索サイト．オシャレを我慢せず，気になるお店をチェックしてトロントで自分だけのオシャレを楽しもう♥
       .col-md-6
         %div
-          =image_tag "/img/top/top_seconde.jpg", class: 'img_fix'
+          =image_tag "/img/top/toppeople.jpg", class: 'img_fix'
           -# %img{:alt => "", :src => "img/top/top_seconde.jpg"}/
 / end about us section
 %section
   .container
     .text-center.margin-50px-bottom.xs-margin-30px-bottom
-      %h3.margin-10px-bottom Search Here
-      %p.no-margin-bottom 選んで検索
-
-/ start extra section
-%section
-  .container
+      %h3.margin-10px-bottom Pick a type you look for
+      %p.no-margin-bottom
     .row.align-items-center.margin-80px-bottom.xs-margin-40px-bottom
       .col-md-6.xs-text-center.xs-margin-30px-bottom
-        -# =image_tag "img/top/hair1.jgp(:index_middle)"
-        %img{:alt => "", :src => "img/top/hair1.jpg"}/
+        -# =image_tag "img/top/spa1.jgp"
+        %img{:alt => "", :src => "img/top/hairtop(1).jpg"}/
       .col-md-6
         .about-us.padding-40px-left.sm-padding-20px-left.xs-no-padding-left
           %span.font-size16.sm-font-size14.text-uppercase.text-theme-color.letter-spacing-2.font-weight-700 ヘア サロン
@@ -75,7 +67,7 @@
             Nails & Eyelash Top
             %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
       .col-md-6.text-right.xs-text-center.order-1.order-md-2.xs-margin-30px-bottom
-        %img{:alt => "", :src => "img/top/nail1.jpg"}/
+        %img{:alt => "", :src => "img/top/nailpink.jpg"}/
     .row.align-items-center.margin-80px-bottom.xs-margin-40px-bottom
       .col-md-6.xs-text-center.xs-margin-30px-bottom
         %img{:alt => "", :src => "img/top/spa1.jpg"}/
@@ -151,7 +143,7 @@
         .col-lg-12.sm-text-center.sm-margin-20px-bottom
           =link_to new_user_registration_path do
             %h4.margin-10px-bottom.text-white Sign up and Get Your Own Beauty!
-            %p.no-margin-bottom.text-white.font-size18.sm-font-size16.sm-display-none My page をつくる方は こちら
+            %p.no-margin-bottom.text-white.font-size18.sm-font-size16.sm-display-none My page をつくる方は こちら ↑
         -# .col-lg-6
 -#           %form{:action => "#!", :method => "post"}
 -#             .email-box

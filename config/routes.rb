@@ -26,9 +26,9 @@ Rails.application.routes.draw do
     get 'favorite' => 'shops#favorite', on: :member
     get 'delete_favorite' => 'shops#delete_favorite', on: :member
   end
-  
+
   namespace :login do
-    resource :profile, only: [:show, :create, :edit, :update]
+    resource :profile
   end
   namespace :business do
     root to: 'shops#index'

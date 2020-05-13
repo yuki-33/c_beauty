@@ -13,21 +13,23 @@ class ShopsController < ApplicationController
   end
 
   def show
-    @inquiry = @shop.inquiries.build
+    # @inquiry = @shop.inquiries.build
+    @inquiry = session[:inquiry].present? ? @shop.inquiries.build(session[:inquiry]) : @shop.inquiries.build
   end
 
   def confirm
     @inquiry = @shop.inquiries.build(inquiry_params)
+    session[:inquiry] = inquiry_params
   end
 
   def inquiry
-    @inquiry = @shop.inquiries.build(inquiry_params.merge(user_id: current_user.present? ? current_user.id : nil))
+    @inquiry = @shop.inquiries.build(session[:inquiry].merge(user_id: current_user.present? ? current_user.id : nil))
     if @inquiry.save
       BookMailer.send_when_booking(@inquiry).deliver
       AdminMailer.send_when_booking(@inquiry).deliver
       redirect_to shop_path(@shop), notice: 'Your booking has been sent.'
     else
-      render "show"
+      render "show", @inquiry
     end
   end
 

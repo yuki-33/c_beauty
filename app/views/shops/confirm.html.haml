@@ -39,6 +39,6 @@
           .row
             .col-md-6.sm-margin-30px-bottom
               -# %button.butn{:type => "submit"} Booking Now
-              =link_to 'Back to booking form', shop_path(@shop, anchor: 'booking_form'), name: @inquiry.name, class: 'butn'
+              =link_to 'Back to booking form', shop_path(@shop, anchor: 'booking_form'), class: 'butn'
             .col-md-6
               =f.submit 'Booking Now', class: 'butn'
