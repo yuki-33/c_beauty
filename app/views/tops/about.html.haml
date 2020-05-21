@@ -7,8 +7,437 @@
         =link_to 'home', root_path
       %li
         =link_to 'about us', about_path
+/ start contact section
+%section
+  .container
+    .row
+      .col-md-6
+        %span.font-size15.xs-font-size14.text-uppercase.text-theme-color.letter-spacing-1.font-weight-600 Get in touch
+        %h4.no-margin-bottom.xs-margin-10px-bottom.margin-20px-top.xs-margin-5px-top.font-size48.sm-font-size40.xs-font-size36 Contact  access
+      .col-md-6
+        %p.no-margin-bottom Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into.
+/ end contact section
+/ start map section
+%section.no-padding
+  .container
+    .row
+      .col-lg-12
+        %div
+          %iframe#gmap_canvas.map{:marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?q=london==13=UTF8==embed"}
+/ end map section
+/ start contact form
+%section
+  .container
+    .row
+      .col-md-4.xs-margin-30px-bottom
+        %div
+          %h3 Find Us There
+          .margin-30px-bottom.sm-margin-20px-bottom
+            %ul.list-style-1.no-margin
+              %li
+                %span.d-inline-block.vertical-align-top.font-size18
+                  %i.fas.fa-map-marker-alt.text-theme-color
+                %span.d-inline-block.width-65.sm-width-85.vertical-align-top.padding-10px-left 74 Guild Street 542B, Great North Town MT.
+              %li
+                %span.d-inline-block.vertical-align-top.font-size18
+                  %i.fas.fa-phone.text-theme-color
+                %span.d-inline-block.width-65.sm-width-85.vertical-align-top.padding-10px-left 4355 6567 789
+              %li
+                %span.d-inline-block.vertical-align-top.font-size18
+                  %i.fas.fa-envelope.text-theme-color
+                %span.d-inline-block.width-65.sm-width-85.vertical-align-top.padding-10px-left your@name.com
+          %ul.social-icon-style.sm-no-margin-bottom
+            %li
+              %a{:href => "javascript:void(0)"}
+                %i.fab.fa-facebook-f
+            %li
+              %a{:href => "javascript:void(0)"}
+                %i.fab.fa-twitter
+            %li
+              %a{:href => "javascript:void(0)"}
+                %i.fab.fa-instagram
+            %li
+              %a{:href => "javascript:void(0)"}
+                %i.fab.fa-linkedin-in
+      .col-md-8
+        %form{:action => "#!", :method => "post"}
+          .row
+            .col-md-6
+              .form-group
+                %label{:for => "name"} Your Name:
+                %input#name{:name => "name", :placeholder => "Name", :type => "text"}
+              .col-md-6
+                .form-group
+                  %label{:for => "email"} Your Email:
+                  %input#email{:name => "email", :placeholder => "Email", :type => "text"}
+                .col-md-6
+                  .form-group
+                    %label{:for => "phone"} Phone Number:
+                    %input#phone{:name => "phone", :placeholder => "Phone Number", :type => "text"}
+                  .col-md-6
+                    .form-group
+                      %label{:for => "subject"} Subject:
+                      %input#subject{:name => "subject", :placeholder => "subject", :type => "text"}
+                    .col-md-12
+                      .form-group
+                        %label Message:
+                        %textarea{:name => "message", :placeholder => "Message", :rows => "5"}
+                    .col-md-12
+                      %button.butn{:type => "submit"} Submit
+        / end contact form
 
 -# %section.padding_0px
 -#   .container
 -#     .row.align-items-center
 -#       %div
+
+
+
+-# .wrapper
+-#   .sidebar{"data-background-color" => "white", "data-color" => "purple", "data-image" => "../assets/img/sidebar-1.jpg"}
+-#     /
+-#       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+-#
+-#       Tip 2: you can also add an image using data-image tag
+-#     .logo
+-#       %a.simple-text.logo-normal{:href => "http://www.creative-tim.com"}
+-#         Creative Tim
+-#     .sidebar-wrapper
+-#       %ul.nav
+-#         %li.nav-item
+-#           %a.nav-link{:href => "./dashboard.html"}
+-#             %i.material-icons dashboard
+-#             %p Dashboard
+-#         %li.nav-item
+-#           %a.nav-link{:href => "./user.html"}
+-#             %i.material-icons person
+-#             %p User Profile
+-#         %li.nav-item.active
+-#           %a.nav-link{:href => "./tables.html"}
+-#             %i.material-icons content_paste
+-#             %p Table List
+-#         %li.nav-item
+-#           %a.nav-link{:href => "./typography.html"}
+-#             %i.material-icons library_books
+-#             %p Typography
+-#         %li.nav-item
+-#           %a.nav-link{:href => "./icons.html"}
+-#             %i.material-icons bubble_chart
+-#             %p Icons
+-#         %li.nav-item
+-#           %a.nav-link{:href => "./map.html"}
+-#             %i.material-icons location_ons
+-#             %p Maps
+-#         %li.nav-item
+-#           %a.nav-link{:href => "./notifications.html"}
+-#             %i.material-icons notifications
+-#             %p Notifications
+-#         %li.nav-item
+-#           %a.nav-link{:href => "./rtl.html"}
+-#             %i.material-icons language
+-#             %p RTL Support
+-#         %li.nav-item.active-pro
+-#           %a.nav-link{:href => "./upgrade.html"}
+-#             %i.material-icons unarchive
+-#             %p Upgrade to PRO
+-#   .main-panel
+-#     / Navbar
+-#     %nav.navbar.navbar-expand-lg.navbar-transparent.navbar-absolute.fixed-top
+-#       .container-fluid
+-#         .navbar-wrapper
+-#           %a.navbar-brand{:href => "javascript:;"} Table List
+-#         %button.navbar-toggler{"aria-controls" => "navigation-index", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-toggle" => "collapse", :type => "button"}
+-#           %span.sr-only Toggle navigation
+-#           %span.navbar-toggler-icon.icon-bar
+-#           %span.navbar-toggler-icon.icon-bar
+-#           %span.navbar-toggler-icon.icon-bar
+-#         .collapse.navbar-collapse.justify-content-end
+-#           %form.navbar-form
+-#             .input-group.no-border
+-#               %input.form-control{:placeholder => "Search...", :type => "text", :value => ""}/
+-#               %button.btn.btn-white.btn-round.btn-just-icon{:type => "submit"}
+-#                 %i.material-icons search
+-#                 .ripple-container
+-#           %ul.navbar-nav
+-#             %li.nav-item
+-#               %a.nav-link{:href => "javascript:;"}
+-#                 %i.material-icons dashboard
+-#                 %p.d-lg-none.d-md-block
+-#                   Stats
+-#             %li.nav-item.dropdown
+-#               %a#navbarDropdownMenuLink.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "http://example.com"}
+-#                 %i.material-icons notifications
+-#                 %span.notification 5
+-#                 %p.d-lg-none.d-md-block
+-#                   Some Actions
+-#               .dropdown-menu.dropdown-menu-right{"aria-labelledby" => "navbarDropdownMenuLink"}
+-#                 %a.dropdown-item{:href => "#"} Mike John responded to your email
+-#                 %a.dropdown-item{:href => "#"} You have 5 new tasks
+-#                 %a.dropdown-item{:href => "#"} You're now friend with Andrew
+-#                 %a.dropdown-item{:href => "#"} Another Notification
+-#                 %a.dropdown-item{:href => "#"} Another One
+-#             %li.nav-item.dropdown
+-#               %a#navbarDropdownProfile.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "javascript:;"}
+-#                 %i.material-icons person
+-#                 %p.d-lg-none.d-md-block
+-#                   Account
+-#               .dropdown-menu.dropdown-menu-right{"aria-labelledby" => "navbarDropdownProfile"}
+-#                 %a.dropdown-item{:href => "#"} Profile
+-#                 %a.dropdown-item{:href => "#"} Settings
+-#                 .dropdown-divider
+-#                 %a.dropdown-item{:href => "#"} Log out
+-#     / End Navbar
+-#     .content
+-#       .container-fluid
+-#         .row
+-#           .col-md-12
+-#             .card
+-#               .card-header.card-header-primary
+-#                 %h4.card-title Simple Table
+-#                 %p.card-category Here is a subtitle for this table
+-#               .card-body
+-#                 .table-responsive
+-#                   %table.table
+-#                     %thead.text-primary
+-#                       %th
+-#                         ID
+-#                       %th
+-#                         Name
+-#                       %th
+-#                         Country
+-#                       %th
+-#                         City
+-#                       %th
+-#                         Salary
+-#                     %tbody
+-#                       %tr
+-#                         %td
+-#                           1
+-#                         %td
+-#                           Dakota Rice
+-#                         %td
+-#                           Niger
+-#                         %td
+-#                           Oud-Turnhout
+-#                         %td.text-primary
+-#                           $36,738
+-#                       %tr
+-#                         %td
+-#                           2
+-#                         %td
+-#                           Minerva Hooper
+-#                         %td
+-#                           Curaçao
+-#                         %td
+-#                           Sinaai-Waas
+-#                         %td.text-primary
+-#                           $23,789
+-#                       %tr
+-#                         %td
+-#                           3
+-#                         %td
+-#                           Sage Rodriguez
+-#                         %td
+-#                           Netherlands
+-#                         %td
+-#                           Baileux
+-#                         %td.text-primary
+-#                           $56,142
+-#                       %tr
+-#                         %td
+-#                           4
+-#                         %td
+-#                           Philip Chaney
+-#                         %td
+-#                           Korea, South
+-#                         %td
+-#                           Overland Park
+-#                         %td.text-primary
+-#                           $38,735
+-#                       %tr
+-#                         %td
+-#                           5
+-#                         %td
+-#                           Doris Greene
+-#                         %td
+-#                           Malawi
+-#                         %td
+-#                           Feldkirchen in Kärnten
+-#                         %td.text-primary
+-#                           $63,542
+-#                       %tr
+-#                         %td
+-#                           6
+-#                         %td
+-#                           Mason Porter
+-#                         %td
+-#                           Chile
+-#                         %td
+-#                           Gloucester
+-#                         %td.text-primary
+-#                           $78,615
+-#           .col-md-12
+-#             .card.card-plain
+-#               .card-header.card-header-primary
+-#                 %h4.card-title.mt-0 Table on Plain Background
+-#                 %p.card-category Here is a subtitle for this table
+-#               .card-body
+-#                 .table-responsive
+-#                   %table.table.table-hover
+-#                     %thead
+-#                       %th
+-#                         ID
+-#                       %th
+-#                         Name
+-#                       %th
+-#                         Country
+-#                       %th
+-#                         City
+-#                       %th
+-#                         Salary
+-#                     %tbody
+-#                       %tr
+-#                         %td
+-#                           1
+-#                         %td
+-#                           Dakota Rice
+-#                         %td
+-#                           Niger
+-#                         %td
+-#                           Oud-Turnhout
+-#                         %td
+-#                           $36,738
+-#                       %tr
+-#                         %td
+-#                           2
+-#                         %td
+-#                           Minerva Hooper
+-#                         %td
+-#                           Curaçao
+-#                         %td
+-#                           Sinaai-Waas
+-#                         %td
+-#                           $23,789
+-#                       %tr
+-#                         %td
+-#                           3
+-#                         %td
+-#                           Sage Rodriguez
+-#                         %td
+-#                           Netherlands
+-#                         %td
+-#                           Baileux
+-#                         %td
+-#                           $56,142
+-#                       %tr
+-#                         %td
+-#                           4
+-#                         %td
+-#                           Philip Chaney
+-#                         %td
+-#                           Korea, South
+-#                         %td
+-#                           Overland Park
+-#                         %td
+-#                           $38,735
+-#                       %tr
+-#                         %td
+-#                           5
+-#                         %td
+-#                           Doris Greene
+-#                         %td
+-#                           Malawi
+-#                         %td
+-#                           Feldkirchen in Kärnten
+-#                         %td
+-#                           $63,542
+-#                       %tr
+-#                         %td
+-#                           6
+-#                         %td
+-#                           Mason Porter
+-#                         %td
+-#                           Chile
+-#                         %td
+-#                           Gloucester
+-#                         %td
+-#                           $78,615
+-#     %footer.footer
+-#       .container-fluid
+-#         %nav.float-left
+-#           %ul
+-#             %li
+-#               %a{:href => "https://www.creative-tim.com"}
+-#                 Creative Tim
+-#             %li
+-#               %a{:href => "https://creative-tim.com/presentation"}
+-#                 About Us
+-#             %li
+-#               %a{:href => "http://blog.creative-tim.com"}
+-#                 Blog
+-#             %li
+-#               %a{:href => "https://www.creative-tim.com/license"}
+-#                 Licenses
+-#         .copyright.float-right
+-#           ©
+-#           :javascript
+-#             document.write(new Date().getFullYear())
+-#           , made with
+-#           %i.material-icons favorite
+-#           by
+-#           %a{:href => "https://www.creative-tim.com", :target => "_blank"} Creative Tim
+-#           for a better web.
+-# .fixed-plugin
+-#   .dropdown.show-dropdown
+-#     %a{"data-toggle" => "dropdown", :href => "#"}
+-#       %i.fa.fa-cog.fa-2x
+-#     %ul.dropdown-menu
+-#       %li.header-title Sidebar Filters
+-#       %li.adjustments-line
+-#         %a.switch-trigger.active-color{:href => "javascript:void(0)"}
+-#           .badge-colors.ml-auto.mr-auto
+-#             %span.badge.filter.badge-purple{"data-color" => "purple"}
+-#             %span.badge.filter.badge-azure{"data-color" => "azure"}
+-#             %span.badge.filter.badge-green{"data-color" => "green"}
+-#             %span.badge.filter.badge-warning{"data-color" => "orange"}
+-#             %span.badge.filter.badge-danger{"data-color" => "danger"}
+-#             %span.badge.filter.badge-rose.active{"data-color" => "rose"}
+-#           .clearfix
+-#       %li.header-title Images
+-#       %li.active
+-#         %a.img-holder.switch-trigger{:href => "javascript:void(0)"}
+-#           %img{:alt => "", :src => "../assets/img/sidebar-1.jpg"}/
+-#       %li
+-#         %a.img-holder.switch-trigger{:href => "javascript:void(0)"}
+-#           %img{:alt => "", :src => "../assets/img/sidebar-2.jpg"}/
+-#       %li
+-#         %a.img-holder.switch-trigger{:href => "javascript:void(0)"}
+-#           %img{:alt => "", :src => "../assets/img/sidebar-3.jpg"}/
+-#       %li
+-#         %a.img-holder.switch-trigger{:href => "javascript:void(0)"}
+-#           %img{:alt => "", :src => "../assets/img/sidebar-4.jpg"}/
+-#       %li.button-container
+-#         %a.btn.btn-primary.btn-block{:href => "https://www.creative-tim.com/product/material-dashboard", :target => "_blank"} Free Download
+-#       /
+-#         <li class="header-title">Want more components?</li>
+-#         <li class="button-container">
+-#         <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
+-#         Get the pro version
+-#         </a>
+-#         </li>
+-#       %li.button-container
+-#         %a.btn.btn-default.btn-block{:href => "https://demos.creative-tim.com/material-dashboard/docs/2.1/getting-started/introduction.html", :target => "_blank"}
+-#           View Documentation
+-#       %li.button-container.github-star
+-#         %a.github-button{"aria-label" => "Star ntkme/github-buttons on GitHub", "data-icon" => "octicon-star", "data-show-count" => "true", "data-size" => "large", :href => "https://github.com/creativetimofficial/material-dashboard"} Star
+-#       %li.header-title Thank you for 95 shares!
+-#       %li.button-container.text-center
+-#         %button#twitter.btn.btn-round.btn-twitter
+-#           %i.fa.fa-twitter
+-#           · 45
+-#         %button#facebook.btn.btn-round.btn-facebook
+-#           %i.fa.fa-facebook-f
+-#           · 50
+-#         %br/
+-#         %br/
+-# / Core JS Files

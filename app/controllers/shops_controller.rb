@@ -14,7 +14,7 @@ class ShopsController < ApplicationController
 
   def show
     # @inquiry = @shop.inquiries.build
-    @inquiry = session[:inquiry].present? ? @shop.inquiries.build(session[:inquiry]) : @shop.inquiries.build
+    @inquiry = @shop.inquiries.build(session[:inquiry])
   end
 
   def confirm
@@ -29,12 +29,13 @@ class ShopsController < ApplicationController
       AdminMailer.send_when_booking(@inquiry).deliver
       redirect_to shop_path(@shop), notice: 'Your booking has been sent.'
     else
-      render "show", @inquiry
+      render "show"
     end
   end
 
   def favorite
-    @favorite = current_user.favorites.build(shop_id: params[:id])
+    # @favorite = current_user.favorites.build(shop_id: params[:id])
+    @favorite = current_user.favorites.find_or_initialize_by(shop_id: params[:id])
     @favorite.save
     redirect_to shop_path(@shop), notice: 'Saved'
   end
