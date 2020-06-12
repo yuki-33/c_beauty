@@ -47,7 +47,7 @@
 -when "nail"
   %section.page-title-section.bg-img.cover-background{"data-background" => "/img/top/naillove.jpg", "data-overlay-dark" => "1"}
     .container
-      %h1 Nail
+      %h1 Nail & Eyelash
       %ul
         %li
           =link_to "TOP", tops_path
@@ -59,14 +59,20 @@
   %section
     .container
       .text-center.margin-50px-bottom.xs-margin-30px-bottom
-        %h3.margin-10px-bottom Nail Salon
-        %p.no-margin-bottom ネイルサロン、自宅でサロンをご紹介
+        %h3.margin-10px-bottom Nail & Eyelash Salon
+        %p.no-margin-bottom ネイルサロン、まつげサロン、自宅でサロンをご紹介
+      .row
+        .filtering.col-sm-12.text-center
+          %span.active{"data-filter" => "*"} All
+          %span{"data-filter" => ".food"} Nails
+          %span{"data-filter" => ".relaxation"} Eyelash Extention
+          %span{"data-filter" => ".vacation"} Others
       =render 'search_form'
       =render 'index_footer'
 -when "eyelash"
-  %section.page-title-section.bg-img.cover-background{"data-background" => "/img/top/eyelash.jpg", "data-overlay-dark" => "1"}
+  %section.page-title-section.bg-img.cover-background{"data-background" => "/img/top/naillove.jpg", "data-overlay-dark" => "1"}
     .container
-      %h1 Eyelash
+      %h1 Nail & Eyelash
       %ul
         %li
           =link_to "TOP", tops_path
@@ -78,8 +84,14 @@
   %section
     .container
       .text-center.margin-50px-bottom.xs-margin-30px-bottom
-        %h3.margin-10px-bottom Eyelash Salon
-        %p.no-margin-bottom まつげサロン、自宅でサロンをご紹介
+        %h3.margin-10px-bottom Nail & Eyelash Salon
+        %p.no-margin-bottom ネイルサロン、まつげサロン、自宅でサロンをご紹介
+      .row
+        .filtering.col-sm-12.text-center
+          %span.active{"data-filter" => "*"} All
+          %span{"data-filter" => ".food"} Nails
+          %span{"data-filter" => ".relaxation"} Eyelash Extention
+          %span{"data-filter" => ".vacation"} Others
       =render 'search_form'
       =render 'index_footer'
 -when "spa"

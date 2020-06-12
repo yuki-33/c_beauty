@@ -49,11 +49,8 @@
                     -# %a{:href => "about.html"} Hair Salon
                     =link_to "Hair", shops_category_path(category_key: "hair_salon")
                   %li
-                    -# %a{:href => "about.html"} Hair Salon
-                    =link_to "Nail", shops_category_path(category_key: "nail")
-                  %li
                     -# %a{:href => "about.html"} Nails & Eyelash
-                    =link_to "Eyelash", shops_category_path(category_key: "eyelash")
+                    =link_to "Nails & Eyelash", shops_category_path(category_key: "nail")
                   %li
                     -# %a{:href => "about.html"} Spa & Facial
                     =link_to "Spa & Facial", shops_category_path(category_key: "spa")
@@ -75,7 +72,7 @@
                           -# %a{:href => "single-room.html"} Create My page
                           =link_to "Create My page", new_user_registration_path
                   %li
-                    =link_to "About us", about_path
+                    =link_to "About", about_path
                 -# %li
                 -#   %a{:href => "#"} Pages
                 -#   %ul
