@@ -12,3 +12,82 @@
 -#   .container
 -#     .row.align-items-center
 -#       %div
+
+/ start contact section
+%section
+  .container
+    .row
+      .col-md-6
+        %span.font-size14.xs-font-size12.text-uppercase.text-theme-color.letter-spacing-1.font-weight-600 サイトについて
+        %h4.no-margin-bottom.xs-margin-10px-bottom.margin-20px-top.xs-margin-5px-top.font-size40.sm-font-size36.xs-font-size30 Why did we make this website?
+      .col-md-6
+        %p.no-margin-bottom Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into.
+/ end contact section
+/ start map section
+%section.no-padding
+  .container
+    .row
+      .col-lg-12
+        %div
+          %iframe#gmap_canvas.map{:marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?q=london==13=UTF8==embed"}
+/ end map section
+/ start contact form
+%section
+  .container
+    .row
+      .col-md-4.xs-margin-30px-bottom
+        %div
+          %h3 Contact Us Here
+          .margin-30px-bottom.sm-margin-20px-bottom
+            %ul.list-style-1.no-margin
+              %li
+                %span.d-inline-block.vertical-align-top.font-size18
+                  %i.fas.fa-map-marker-alt.text-theme-color
+                %span.d-inline-block.width-65.sm-width-85.vertical-align-top.padding-10px-left 74 Guild Street 542B, Great North Town MT.
+              %li
+                %span.d-inline-block.vertical-align-top.font-size18
+                  %i.fas.fa-phone.text-theme-color
+                %span.d-inline-block.width-65.sm-width-85.vertical-align-top.padding-10px-left 4355 6567 789
+              %li
+                %span.d-inline-block.vertical-align-top.font-size18
+                  %i.fas.fa-envelope.text-theme-color
+                %span.d-inline-block.width-65.sm-width-85.vertical-align-top.padding-10px-left your@name.com
+          %ul.social-icon-style.sm-no-margin-bottom
+            %li
+              %a{:href => "javascript:void(0)"}
+                %i.fab.fa-facebook-f
+            %li
+              %a{:href => "javascript:void(0)"}
+                %i.fab.fa-twitter
+            %li
+              %a{:href => "javascript:void(0)"}
+                %i.fab.fa-instagram
+            %li
+              %a{:href => "javascript:void(0)"}
+                %i.fab.fa-linkedin-in
+      .col-md-8
+        %form{:action => "#!", :method => "post"}
+          .row
+            .col-md-6
+              .form-group
+                %label{:for => "name"} Your Name:
+                %input#name{:name => "name", :placeholder => "Name", :type => "text"}
+              .col-md-6
+                .form-group
+                  %label{:for => "email"} Your Email:
+                  %input#email{:name => "email", :placeholder => "Email", :type => "text"}
+                .col-md-6
+                  .form-group
+                    %label{:for => "phone"} Phone Number:
+                    %input#phone{:name => "phone", :placeholder => "Phone Number", :type => "text"}
+                  .col-md-6
+                    .form-group
+                      %label{:for => "subject"} Subject:
+                      %input#subject{:name => "subject", :placeholder => "subject", :type => "text"}
+                    .col-md-12
+                      .form-group
+                        %label Message:
+                        %textarea{:name => "message", :placeholder => "Message", :rows => "5"}
+                    .col-md-12
+                      %button.butn{:type => "submit"} Submit
+        / end contact form

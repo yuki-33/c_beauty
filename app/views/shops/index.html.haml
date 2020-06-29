@@ -59,7 +59,7 @@
   %section
     .container
       .text-center.margin-50px-bottom.xs-margin-30px-bottom
-        %h3.margin-10px-bottom Nail & Eyelash Salon
+        %h3.margin-10px-bottom Nail & Eyelash
         %p.no-margin-bottom ネイルサロン、まつげサロン、自宅でサロンをご紹介
       .row
         .filtering.col-sm-12.text-center
@@ -69,31 +69,7 @@
           %span{"data-filter" => ".vacation"} Others
       =render 'search_form'
       =render 'index_footer'
--when "eyelash"
-  %section.page-title-section.bg-img.cover-background{"data-background" => "/img/top/naillove.jpg", "data-overlay-dark" => "1"}
-    .container
-      %h1 Nail & Eyelash
-      %ul
-        %li
-          =link_to "TOP", tops_path
-          -# %a{:href => "index.html"} Home
-        %li
-          =link_to "Salon", shops_category_path(category_key: "eyelash")
-          -# %a{:href => "#!"} Single Room
-  / start our rooms section
-  %section
-    .container
-      .text-center.margin-50px-bottom.xs-margin-30px-bottom
-        %h3.margin-10px-bottom Nail & Eyelash Salon
-        %p.no-margin-bottom ネイルサロン、まつげサロン、自宅でサロンをご紹介
-      .row
-        .filtering.col-sm-12.text-center
-          %span.active{"data-filter" => "*"} All
-          %span{"data-filter" => ".food"} Nails
-          %span{"data-filter" => ".relaxation"} Eyelash Extention
-          %span{"data-filter" => ".vacation"} Others
-      =render 'search_form'
-      =render 'index_footer'
+
 -when "spa"
   %section.page-title-section.bg-img.cover-background{"data-background" => "/img/top/spatop2.jpg", "data-overlay-dark" => "1"}
     .container
