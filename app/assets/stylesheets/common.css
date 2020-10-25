@@ -3,5 +3,25 @@
 }
 
 .img_fix {
-    width: 535px; 
+    width: 535px;
 }
+
+
+/* #categories .top-title h3 {
+  position: relative;
+  font-weight: 700;
+  font-size: 32px;
+  z-index: 2;
+}
+
+#categories .top-title span {
+  position: absolute;
+  top: 30px;
+  color: #f4f4f4;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 0;
+} */

@@ -1,43 +1,41 @@
-
 %section.page-title-section.bg-img.cover-background{"data-background" => "img/top/aboutus.jpg", "data-overlay-dark" => "1"}
   .container
     %h1 About us
     %ul
       %li
-        =link_to 'home', root_path
+        =link_to 'TOP', root_path
       %li
-        =link_to 'about us', about_path
-
--# %section.padding_0px
--#   .container
--#     .row.align-items-center
--#       %div
-
-/ start contact section
-%section
+        =link_to 'ABOUT US', about_path
+%section.padding_0px
   .container
     .row
       .col-md-6
-        %span.font-size14.xs-font-size12.text-uppercase.text-theme-color.letter-spacing-1.font-weight-600 サイトについて
-        %h4.no-margin-bottom.xs-margin-10px-bottom.margin-20px-top.xs-margin-5px-top.font-size40.sm-font-size36.xs-font-size30 Why did we make this website?
+        %span.font-size14.xs-font-size12.text-uppercase.text-theme-color.letter-spacing-1.font-weight-600 このサイトが始めた理由
+        %h4.no-margin-bottom.xs-margin-10px-bottom.margin-20px-top.xs-margin-5px-top.font-size40.sm-font-size36.xs-font-size30 Why did we start this website?
       .col-md-6
-        %p.no-margin-bottom Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into.
-/ end contact section
-/ start map section
-%section.no-padding
-  .container
-    .row
-      .col-lg-12
-        %div
-          %iframe#gmap_canvas.map{:marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?q=london==13=UTF8==embed"}
-/ end map section
+        %p.margin-20px-top.xs-margin-5px-top.no-margin-bottom
+          　はじめまして、当サイトを訪れていただいてありがとうございます。このサイトを立ち上げたYUKIです。私はワーホリ中に出会ったカナディアンの彼と結婚し、現在トロントに住んでいます。
+          %br
+          　このサイトで行きたい美容院やサロンは見つかりましたか？＾＾★
+          %br
+          %br
+          　私がこのサイトを立ちあげたのは、トロントで生活していく中で、美容院やマツエクのサロンなどをとても見つけにくいと感じたからです。ワーキングホリデーで来たばかりの頃は、ヘアサロンが
+          なかなか見つからず、友達と何日も調べ回って行きました。
+          特にヘアサロンとなると、カラーの色など細かな伝えたいことを英語で話すのは難しく、日本語が通じるサロンを少ない情報の中から探すことは大変でした。
+          トロントには数多くのサロンがありますが、せっかく日本人の方が経営し、安心して日本語が通じるサロンもたくさんあるので、このサイトを通じてより簡単に見つけていただきたいと思い立ちあげました。
+          皆さんがよりトロントで生活しやすく、楽しめる手助けになればと思います！このサイトが多くの日本人の方を繋ぐきっかけになれば幸いです♥
 / start contact form
 %section
   .container
+    .text-center.margin-50px-bottom.xs-margin-30px-bottom
+      %h3.margin-10px-bottom Contact Us Here
+      %p.no-margin-bottom
     .row
+      -# .col-md-12.xs-margin-10px-bottom
+      -#   %h3 Contact Us Here
       .col-md-4.xs-margin-30px-bottom
         %div
-          %h3 Contact Us Here
+          %h3 Contact Yuki
           .margin-30px-bottom.sm-margin-20px-bottom
             %ul.list-style-1.no-margin
               %li
@@ -56,38 +54,38 @@
             %li
               %a{:href => "javascript:void(0)"}
                 %i.fab.fa-facebook-f
-            %li
-              %a{:href => "javascript:void(0)"}
-                %i.fab.fa-twitter
+            -# %li
+            -#   %a{:href => "javascript:void(0)"}
+            -#     %i.fab.fa-twitter
             %li
               %a{:href => "javascript:void(0)"}
                 %i.fab.fa-instagram
-            %li
-              %a{:href => "javascript:void(0)"}
-                %i.fab.fa-linkedin-in
+            -# %li
+            -#   %a{:href => "javascript:void(0)"}
+            -#     %i.fab.fa-linkedin-in
       .col-md-8
         %form{:action => "#!", :method => "post"}
           .row
             .col-md-6
               .form-group
-                %label{:for => "name"} Your Name:
+                -# %label{:for => "name"} Your Name:
                 %input#name{:name => "name", :placeholder => "Name", :type => "text"}
-              .col-md-6
-                .form-group
-                  %label{:for => "email"} Your Email:
-                  %input#email{:name => "email", :placeholder => "Email", :type => "text"}
-                .col-md-6
-                  .form-group
-                    %label{:for => "phone"} Phone Number:
-                    %input#phone{:name => "phone", :placeholder => "Phone Number", :type => "text"}
-                  .col-md-6
-                    .form-group
-                      %label{:for => "subject"} Subject:
-                      %input#subject{:name => "subject", :placeholder => "subject", :type => "text"}
-                    .col-md-12
-                      .form-group
-                        %label Message:
-                        %textarea{:name => "message", :placeholder => "Message", :rows => "5"}
-                    .col-md-12
-                      %button.butn{:type => "submit"} Submit
+            .col-md-6
+              .form-group
+                -# %label{:for => "email"} Your Email:
+                %input#email{:name => "email", :placeholder => "Email", :type => "text"}
+            -# .col-md-6
+            -#   .form-group
+            -#     %label{:for => "phone"} Phone Number:
+            -#     %input#phone{:name => "phone", :placeholder => "Phone Number", :type => "text"}
+            .col-md-12
+              .form-group
+                -# %label{:for => "subject"} Subject:
+                %input#subject{:name => "subject", :placeholder => "subject", :type => "text"}
+            .col-md-12
+              .form-group
+                -# %label Message:
+                %textarea{:name => "message", :placeholder => "Message", :rows => "5"}
+            .text-center.col-md-12
+              %button.butn{:type => "submit"} Submit 送信
         / end contact form

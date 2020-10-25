@@ -24,8 +24,8 @@
 
 ---------------------------------- */
 
-$PrimaryColor: #2196f3;
-$PrimaryRgbColor: rgb(33, 150, 243);
+$PrimaryColor: #DA70D6;
+$PrimaryRgbColor: rgb(218,112,214);
 
 $desk-lg-screen: 1200px;
 $desk-md-screen: 1199px;
@@ -809,7 +809,7 @@ input {
     Page title
 ====================================== */
 .page-title-section {
-  padding: 120px 0;
+  padding: 160px 0;
   text-align: center;
 
   h1 {
@@ -911,6 +911,28 @@ input {
 /* ===================================
     Others
 ====================================== */
+// About Category//
+// .top-title {
+//   h3 {
+//   position: relative;
+//   font-weight: 700;
+//   font-size: 32px;
+//   z-index: 2;
+//   }
+//
+//   span {
+//   position: absolute;
+//   top: 30px;
+//   color: #f4f4f4;
+//   left: 0;
+//   right: 0;
+//   z-index: 1;
+//   font-weight: 700;
+//   font-size: 40px;
+//   line-height: 0;
+//   }
+// }
+
 /* about us style-1 */
 .about h2 {
   font-size: 57px;
@@ -2917,7 +2939,9 @@ ul.countdown li {
     Footer
 ====================================== */
 footer {
-  border-top: 1px solid rgba(0,0,0,0.1);
+  // background: rgba(204, 204, 255, 0.8);
+  background: rgba(177,156,217,0.3);
+  // border-top: 1px solid rgba(0,0,0,0.1);
 }
 
 .footer-list-style {
@@ -2930,6 +2954,7 @@ footer {
 
     a {
       vertical-align: middle;
+      color: #fff;
     }
 
     span {

@@ -11,6 +11,11 @@ class Business::ShopsController < Business::ApplicationController
     # @inquiry = @shop.inquiries.build
   end
 
+  def new
+    @shop = current_admin.shops.build
+    @shop.menus.build
+  end
+
   def create
     @shop = current_admin.shops.build(shop_params)
     if @shop.save
@@ -18,11 +23,6 @@ class Business::ShopsController < Business::ApplicationController
     else
       render "new"
     end
-  end
-
-  def new
-    @shop = current_admin.shops.build
-    @shop.menus.build
   end
 
   def edit

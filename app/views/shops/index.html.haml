@@ -8,7 +8,7 @@
           =link_to "TOP", tops_path
           -# %a{:href => "index.html"} Home
         %li
-          =link_to "Salon", shops_category_path(category_key: "hair_salon")
+          =link_to "HAIR SALON", shops_category_path(category_key: "hair_salon")
           -# %a{:href => "#!"} Single Room
   / end page title section
   / start our rooms section
@@ -53,7 +53,7 @@
           =link_to "TOP", tops_path
           -# %a{:href => "index.html"} Home
         %li
-          =link_to "Salon", shops_category_path(category_key: "nail")
+          =link_to "NAIL & EYELASH", shops_category_path(category_key: "nail")
           -# %a{:href => "#!"} Single Room
   / start our rooms section
   %section
@@ -71,21 +71,21 @@
       =render 'index_footer'
 
 -when "spa"
-  %section.page-title-section.bg-img.cover-background{"data-background" => "/img/top/spatop2.jpg", "data-overlay-dark" => "1"}
+  %section.page-title-section.bg-img.cover-background{"data-background" => "/img/top/spa-top.jpg", "data-overlay-dark" => "1"}
     .container
-      %h1 Spa & Other salon
+      %h1 Spa & Other salons
       %ul
         %li
           =link_to "TOP", tops_path
           -# %a{:href => "index.html"} Homez
         %li
-          =link_to "Salon", shops_category_path(category_key: "spa")
+          =link_to "FACIAL & SPA", shops_category_path(category_key: "spa")
           -# %a{:href => "#!"} Single Room
   / start our rooms section
   %section
     .container
       .text-center.margin-50px-bottom.xs-margin-30px-bottom
-        %h3.margin-10px-bottom Spa, other salons
+        %h3.margin-10px-bottom Facial, Spa and other salons
         %p.no-margin-bottom フェイシャル、マッサージなどのエステサロンをご紹介
       .row
         / start links
