@@ -2951,7 +2951,7 @@ footer {
     display: inline-block;
     margin-right: 10px;
     padding: 2px 0;
-
+    text-align: center;
     a {
       vertical-align: middle;
       color: #fff;
@@ -2983,14 +2983,14 @@ footer {
     line-height: 1;
     position: relative;
 
-    &:after {
-      content: '';
-      display: block;
-      width: 36px;
-      height: 3px;
-      background: $PrimaryColor;
-      margin-top: 12px;
-    }
+    // &:after {
+    //   content: '';
+    //   display: block;
+    //   width: 36px;
+    //   height: 3px;
+    //   background: $PrimaryColor;
+    //   margin-top: 12px;
+    // }
   }
 }
 
@@ -3029,29 +3029,29 @@ footer {
   position: relative;
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
+  // padding-bottom: 20px;
 
-  &:before {
-    position: absolute;
-    content: '';
-    background: $PrimaryColor;
-    width: 40px;
-    height: 1px;
-    bottom: 0px;
-    left: 0;
-    top: 33px;
-  }
-
-  &:after {
-    position: absolute;
-    content: '';
-    background: $PrimaryColor;
-    width: 25px;
-    height: 1px;
-    left: 0px;
-    top: 25px;
-  }
+  // &:before {
+  //   position: absolute;
+  //   content: '';
+  //   background: $PrimaryColor;
+  //   width: 40px;
+  //   height: 1px;
+  //   bottom: 0px;
+  //   left: 0;
+  //   top: 33px;
+  // }
+  //
+  // &:after {
+  //   position: absolute;
+  //   content: '';
+  //   background: $PrimaryColor;
+  //   width: 25px;
+  //   height: 1px;
+  //   left: 0px;
+  //   top: 25px;
+  // }
 }
 
 @media screen and (max-width: $desk-md-screen) {

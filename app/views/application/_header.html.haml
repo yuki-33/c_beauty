@@ -15,7 +15,7 @@
             %nav.navbar.navbar-expand-lg.navbar-light.no-padding
               .navbar-header.navbar-header-custom
                 / start logo
-                %a.navbar-brand.logo4{:href => "index.html"}
+                %a.navbar-brand.logo4{:href => root_path}
                   %img#logo{:alt => "logo", :src => "/img/logos/logo.png"}/
                 / end logo
               .navbar-toggler
@@ -33,7 +33,7 @@
                 -else
                   %li
                     -# %a{:href => "#"} Top
-                    =link_to "TOP", tops_path
+                    =link_to "TOP", root_path
                   %li
                     -# %a{:href => "about.html"} Hair Salon
                     =link_to "Hair", shops_category_path(category_key: "hair_salon")

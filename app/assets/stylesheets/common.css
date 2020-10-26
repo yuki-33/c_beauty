@@ -25,3 +25,22 @@
   font-size: 40px;
   line-height: 0;
 } */
+
+.footer-site-map {
+  padding-left: 60px;
+}
+
+@media screen and (max-width: 992px) {
+  .footer-site-map {
+    padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-mobile-center {
+    text-align: center;
+  }
+  .footer-site-map {
+    padding-left: 15px;
+  }
+}
