@@ -2,17 +2,18 @@
   .container
     .row
       .col-lg-12.sm-margin-50px-bottom
-        %h4.text-uppercase.letter-spacing-1.margin-30px-bottom.font-size24 Booking Form
+        %h4.text-uppercase.letter-spacing-1.font-size24 create your account
+        %p.margin-30px-bottom - 基本情報を登録すると次回からスムーズに予約できるようになります -
         -# %form{:method => "post"}
         -# =bootstrap_form_with url: inquiry_shop_path(@shop), local: true do |f|
         =bootstrap_form_with model: [:login, @profile], url: login_profile_path, local: true do |f|
-          .row
+          .row.margin-30px-bottom
             .col-md-6
-              =f.text_field :first_name, placeholder: "First name"
+              =f.text_field :first_name, placeholder: "First name / 名前"
               -# %label{:for => "name"} Your Name:
               -# %input#name{:name => "name", :placeholder => "Name", :type => "text"}/
             .col-md-6
-              =f.text_field :last_name, placeholder: "Last name"
+              =f.text_field :last_name, placeholder: "Last name / 名字"
             .col-md-6
               =f.email_field :email, placeholder: "Email"
             .col-md-6

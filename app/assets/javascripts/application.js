@@ -16,3 +16,4 @@
 //= require flatpickr/flatpickr
 //= require flatpickr/ja
 //= require common
+//= require common-beauty

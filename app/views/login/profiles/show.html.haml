@@ -8,7 +8,7 @@
       %li
         =link_to 'home', root_path
       %li
-        My page
+        =link_to 'My page', login_profile_path
 -if current_user.profile.present?
   %section.blogs
     .container
@@ -37,49 +37,61 @@
             .text-center.margin-50px-bottom.xs-margin-30px-bottom
               %h3.margin-10px-bottom Your History
               %p.no-margin-bottom 予約履歴
-            .row
-              -@inquiries.each do |inquiry|
-                .col-lg-12
-                  =link_to shop_path(inquiry.shop) do
-                    .row.padding-15px-all.border.margin-30px-bottom.no-gutters.align-items-center
-                      .col-md-3.xs-margin-20px-bottom
-                        .agent-image.overflow-hidden
-                          -# %a{:href => "blog-details.html"}
-                          =image_tag inquiry.shop.image_top_url(:top_info)
-                          -# %img{:alt => "", :src => "img/blog/blog-06.jpg"}/
-                      .col-md-9
-                        .padding-30px-left.xs-no-padding-lr.padding-20px-right
-                          %span.text-uppercase.font-size12.text-theme-color.font-weight-600.letter-spacing-1=inquiry.updated_at.strftime("%F")
-                          %h5.margin-5px-bottom.font-size28.xs-font-size24=inquiry.shop.name
-                          %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom="第1希望日 /　#{inquiry.datetime_1.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
-                          -if inquiry.datetime_2.present?
-                            %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom="第2希望日 /　#{inquiry.datetime_2.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
-                          -if inquiry.datetime_3.present?
-                            %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom="第3希望日 /　#{inquiry.datetime_3.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
-                          -# %a.font-weight-600{:href => "blog-details.html"}
-                          .font-weight-600.margin-nine-top
-                            Salon detail
-                            %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
-            =paginate @inquiries
-
+            -if current_user.inquiries.present?
+              .row
+                -@inquiries.each do |inquiry|
+                  .col-lg-12
+                    =link_to shop_path(inquiry.shop) do
+                      .row.padding-15px-all.border.margin-30px-bottom.no-gutters.align-items-center
+                        .col-md-3.xs-margin-20px-bottom
+                          .agent-image.overflow-hidden
+                            -# %a{:href => "blog-details.html"}
+                            =image_tag inquiry.shop.image_top_url(:top_info)
+                            -# %img{:alt => "", :src => "img/blog/blog-06.jpg"}/
+                        .col-md-9
+                          .padding-30px-left.xs-no-padding-lr.padding-20px-right
+                            %span.text-uppercase.font-size12.text-theme-color.font-weight-600.letter-spacing-1=inquiry.updated_at.strftime("%F")
+                            %h5.margin-5px-bottom.font-size28.xs-font-size24=inquiry.shop.name
+                            %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom="第1希望日 /　#{inquiry.datetime_1.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
+                            -if inquiry.datetime_2.present?
+                              %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom="第2希望日 /　#{inquiry.datetime_2.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
+                            -if inquiry.datetime_3.present?
+                              %p.no-margin-bottom.sm-margin-seven-bottom.xs-margin-four-bottom="第3希望日 /　#{inquiry.datetime_3.strftime("%Y年%-m月%-d日　%-H時%-M分")}"
+                            -# %a.font-weight-600{:href => "blog-details.html"}
+                            .font-weight-600.margin-nine-top
+                              Salon detail
+                              %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size12
+              =paginate @inquiries
+            -else
+              .row
+                .mypage-notice
+                  %p You don't have reservations.
+                  %p.small 現在の予約はありません
+          .posts.padding-30px-right.sm-no-padding-right
             .text-center.margin-50px-top.margin-50px-bottom.xs-margin-30px-bottom#favorite
               %h3.margin-10px-bottom Favorites
-              %p.no-margin-bottom お気に入り ♥
-            .row.justify-content-center
-              -@profile.user.favorites.each do |favorite|
-                .col-xl-8.col-lg-8.col-md-12.sm-margin-30px-bottom
-                  =link_to shop_path(favorite.shop) do
-                    .row.no-gutters.margin-30px-bottom.theme-shadow.align-items-center
-                      .col-md-4
-                        -# %img{:alt => "", :src => "/img/blog/blog-01.jpg"}/
-                        =image_tag favorite.shop.image_top_url(:top_info)
-                      .col-md-8
-                        .padding-15px-lr.xs-padding-15px-all
-                          %h5.margin-5px-bottom.font-size24=favorite.shop.name
-                          %p.margin-seven-bottom.sm-margin-four-bottom.xs-margin-four-bottom.font-size14=favorite.shop.introduction
-                          .font-weight-600.text-theme-color
-                            Shop Details
-                            %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size10
+              %p.no-margin-bottom お気に入り ♡
+            -if current_user.favorites.present?
+              .row.justify-content-center
+                -@profile.user.favorites.each do |favorite|
+                  .col-xl-8.col-lg-8.col-md-12.sm-margin-30px-bottom
+                    =link_to shop_path(favorite.shop) do
+                      .row.no-gutters.margin-30px-bottom.theme-shadow.align-items-center
+                        .col-md-4
+                          -# %img{:alt => "", :src => "/img/blog/blog-01.jpg"}/
+                          =image_tag favorite.shop.image_top_url(:top_info)
+                        .col-md-8
+                          .padding-15px-lr.xs-padding-15px-all
+                            %h5.margin-5px-bottom.font-size24=favorite.shop.name
+                            %p.margin-seven-bottom.sm-margin-four-bottom.xs-margin-four-bottom.font-size14=favorite.shop.introduction
+                            .font-weight-600.text-theme-color
+                              Shop Details
+                              %i.fas.fa-arrow-right.margin-10px-left.vertical-align.middle.font-size10
+            -else
+              .row
+                .mypage-notice
+                  %p Pick your favorite salons ♡
+                  %p.small お気に入りはありません
 -else
   %section
     .container

@@ -6,6 +6,17 @@
     width: 535px;
 }
 
+/*toppage notice bar*/
+.main-wrapper .top-notice {
+  position: absolute;
+  transition: all 0.5s;
+  z-index: 980;
+  top: 105px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-bottom: 0;
+}
 
 /* #categories .top-title h3 {
   position: relative;
@@ -43,4 +54,22 @@
   .footer-site-map {
     padding-left: 15px;
   }
+}
+
+/* mypage */
+.mypage-notice {
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 10px 30px;
+  /* background-color: #e6be8a; */
+  color: #ff9966;
+  border-radius: 5px;
+  border: solid 1px #ff9966;
+  /* border: double 5px #ff8243; */
+  /* box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32); */
+}
+
+.mypage-notice p {
+  margin: 0;
+  text-align: center;
 }
